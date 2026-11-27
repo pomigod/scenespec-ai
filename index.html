@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SceneSpec AI — Declarative AI Video & Multimodal Compiler on Vertex AI</title>
+  <meta name="description" content="Compile a single declarative storyboard spec into consistent, frame-accurate AI videos, voiceovers, and localized cuts using Google Cloud Vertex AI." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark" aria-hidden="true">S</span>
+        <span class="brand-name">SceneSpec <span class="brand-accent">AI</span></span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#features" data-i18n="nav_features">Features</a>
+        <a href="#compiler" data-i18n="nav_demo">Live Compiler</a>
+        <a href="#architecture" data-i18n="nav_arch">Architecture</a>
+        <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="langToggle" class="btn-ghost" type="button" aria-label="Switch language">KO / EN</button>
+        <a href="#waitlist" class="btn-primary btn-sm" data-i18n="nav_cta">Request Early Access</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="pill">
+            <span class="pill-dot"></span>
+            <span data-i18n="hero_badge">Built on Google Cloud &amp; Vertex AI (Gemini 4)</span>
+          </div>
+          <h1 data-i18n="hero_title">Compile Storyboard Specs into Consistent AI Videos.</h1>
+          <p class="hero-sub" data-i18n="hero_subtitle">
+            Stop rewriting fragmented prompts across five tools. SceneSpec AI turns one declarative JSON/natural-language spec into deterministic, brand-consistent scenes, voiceovers, and multi-ratio cuts with incremental re-rendering.
+          </p>
+          <div class="hero-cta">
+            <a href="#waitlist" class="btn-primary" data-i18n="hero_cta_primary">Join Private Beta</a>
+            <a href="#compiler" class="btn-secondary" data-i18n="hero_cta_secondary">Try Spec Compiler</a>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric">
+              <strong>70%</strong>
+              <span data-i18n="metric_1">Lower re-render cost via AST diffing</span>
+            </div>
+            <div class="metric">
+              <strong>3 Ratios</strong>
+              <span data-i18n="metric_2">16:9, 9:16, 1:1 from a single spec</span>
+            </div>
+            <div class="metric">
+              <strong>Vertex AI</strong>
+              <span data-i18n="metric_3">Structured reasoning &amp; Cloud Run scale</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Compiler preview card">
+          <div class="code-header">
+            <span class="dot red"></span>
+            <span class="dot amber"></span>
+            <span class="dot green"></span>
+            <span class="code-title">product_launch.scenespec.json</span>
+          </div>
+          <pre class="code-block"><code>{
+  "project": "launch-teaser-v2",
+  "engine": "vertex-ai/gemini-4",
+  "style_lock": {
+    "palette": ["#0B1020", "#38BDF8", "#6366F1"],
+    "voice": "en-US-Studio-O",
+    "aspect_ratios": ["16:9", "9:16"]
+  },
+  "scenes": [
+    { "id": "s1", "duration": 3.5, "shot": "macro-product-reveal" },
+    { "id": "s2", "duration": 4.0, "shot": "ui-workflow-zoom", "dirty": true },
+    { "id": "s3", "duration": 2.5, "shot": "cta-endcard" }
+  ]
+}</code></pre>
+          <div class="compile-bar">
+            <span class="compile-status" data-i18n="card_status">Incremental Diff: Re-rendering only scene [s2] (1 of 3)</span>
+            <span class="compile-badge">PASS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="features_title">Why a Compiler Beats Prompt Roulette</h2>
+          <p data-i18n="features_sub">Treat AI video production like modern software engineering: structured, versioned, and reproducible.</p>
+        </div>
+        <div class="cards-3">
+          <article class="card">
+            <div class="card-icon">01</div>
+            <h3 data-i18n="f1_title">Declarative Scene Graph</h3>
+            <p data-i18n="f1_desc">Vertex AI Gemini 4 compiles your product brief into a typed Scene AST with locked timing, camera grammar, and multilingual subtitle tracks.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">02</div>
+            <h3 data-i18n="f2_title">Hash-Based Diff Rendering</h3>
+            <p data-i18n="f2_desc">Edit one line of narration or swap a single visual shot without regenerating the entire timeline. Only modified nodes trigger Cloud Run workers.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">03</div>
+            <h3 data-i18n="f3_title">Brand &amp; Style Lock</h3>
+            <p data-i18n="f3_desc">Persist color tokens, character seeds, and typography across every cut so 16:9 YouTube trailers and 9:16 Reels share identical visual DNA.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="compiler" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="demo_title">Interactive Spec Compiler Preview</h2>
+          <p data-i18n="demo_sub">Select a workflow preset to inspect how SceneSpec compiles prompts into a Vertex AI execution plan.</p>
+        </div>
+        <div class="compiler-box">
+          <div class="preset-tabs" role="tablist" aria-label="Compiler Presets">
+            <button class="preset-btn active" data-preset="saas" type="button" data-i18n="preset_saas">SaaS Product Launch</button>
+            <button class="preset-btn" data-preset="ecommerce" type="button" data-i18n="preset_ecom">E-Commerce Short</button>
+            <button class="preset-btn" data-preset="edu" type="button" data-i18n="preset_edu">Research Explainer</button>
+          </div>
+          <div class="compiler-grid">
+            <div class="compiler-pane">
+              <div class="pane-label" data-i18n="pane_input">1. Declarative Input Spec</div>
+              <pre id="specPreview" class="code-block"></pre>
+            </div>
+            <div class="compiler-pane">
+              <div class="pane-label" data-i18n="pane_output">2. Compiled Vertex AI Execution Graph</div>
+              <div id="pipelineOutput" class="pipeline-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="arch_title">Cloud-Native Architecture on Google Cloud</h2>
+          <p data-i18n="arch_sub">Designed for low-latency API orchestration, deterministic caching, and pay-per-second rendering scale.</p>
+        </div>
+        <div class="arch-grid">
+          <div class="arch-node">
+            <span class="arch-tag">Reasoning</span>
+            <h3>Vertex AI Gemini 4</h3>
+            <p data-i18n="arch_1">Translates natural-language briefs into schema-validated Scene ASTs, shot timing, and localized scripts.</p>
+          </div>
+          <div class="arch-node">
+            <span class="arch-tag">Orchestration</span>
+            <h3>Cloud Run &amp; Cloud Tasks</h3>
+            <p data-i18n="arch_2">Stateless compiler API and parallel FFmpeg / media synthesis workers scaled automatically on demand.</p>
+          </div>
+          <div class="arch-node">
+            <span class="arch-tag">State &amp; Diff</span>
+            <h3>Cloud Firestore</h3>
+            <p data-i18n="arch_3">Stores scene-node SHA-256 hashes and version graphs so unchanged segments are reused instantaneously.</p>
+          </div>
+          <div class="arch-node">
+            <span class="arch-tag">Assets</span>
+            <h3>Cloud Storage</h3>
+            <p data-i18n="arch_4">Stores intermediate visual frames, TTS stems, SRT subtitles, and final MP4 deliverables with signed URLs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="pricing_title">Simple, Predictable Plans</h2>
+          <p data-i18n="pricing_sub">Start free during our private beta, then scale with deterministic credit usage.</p>
+        </div>
+        <div class="cards-3">
+          <article class="card price-card">
+            <h3>Starter</h3>
+            <div class="price">$0<span>/mo</span></div>
+            <ul>
+              <li data-i18n="p1_1">3 declarative projects / month</li>
+              <li data-i18n="p1_2">720p preview builds</li>
+              <li data-i18n="p1_3">JSON Spec Editor &amp; EN/KO subtitles</li>
+            </ul>
+            <a href="#waitlist" class="btn-secondary full" data-i18n="p_cta_free">Start Free</a>
+          </article>
+          <article class="card price-card featured">
+            <div class="badge-top" data-i18n="p_popular">Most Popular</div>
+            <h3>Pro</h3>
+            <div class="price">$29<span>/mo</span></div>
+            <ul>
+              <li data-i18n="p2_1">30 projects / month, 1080p clean export</li>
+              <li data-i18n="p2_2">Hash-based incremental re-rendering</li>
+              <li data-i18n="p2_3">Simultaneous 16:9, 9:16, 1:1 builds</li>
+            </ul>
+            <a href="#waitlist" class="btn-primary full" data-i18n="p_cta_pro">Join Pro Waitlist</a>
+          </article>
+          <article class="card price-card">
+            <h3>Studio API</h3>
+            <div class="price">$99<span>/mo</span></div>
+            <ul>
+              <li data-i18n="p3_1">REST API &amp; CI/CD webhook triggers</li>
+              <li data-i18n="p3_2">Shared team brand style locks</li>
+              <li data-i18n="p3_3">Priority Vertex AI Cloud Run queue</li>
+            </ul>
+            <a href="#waitlist" class="btn-secondary full" data-i18n="p_cta_studio">Request API Access</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2 data-i18n="team_title">Founder &amp; Engineering Background</h2>
+          <p data-i18n="team_sub">Built by AI engineers focused on deterministic compiler tooling and multimodal media automation.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar" aria-hidden="true">JH</div>
+          <div class="team-info">
+            <h3 data-i18n="team_name">Jin Hwang — Founder &amp; Lead AI Architect</h3>
+            <p class="team-role" data-i18n="team_org">B.S. Candidate in Artificial Intelligence, Konyang University · Republic of Korea</p>
+            <p data-i18n="team_bio">Designed declarative video compiler pipelines, Graph Convolutional Network (GCN) temporal models, and Swin Transformer vision workflows across multiple production AI software and video engineering projects. Building SceneSpec AI to bring compiler-grade reliability to enterprise multimodal generation on Google Cloud Vertex AI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="waitlist" class="section section-alt">
+      <div class="container waitlist-wrap">
+        <div class="waitlist-box">
+          <h2 data-i18n="wl_title">Request Early Access</h2>
+          <p data-i18n="wl_sub">Building automated product videos, localized ads, or AI media pipelines? Leave your work email to join the Vertex AI beta cohort.</p>
+          <form id="waitlistForm" class="waitlist-form">
+            <input id="emailInput" type="email" required placeholder="you@company.com" aria-label="Work email address" />
+            <select id="roleSelect" aria-label="Primary use case">
+              <option value="startup" data-i18n="role_1">SaaS / Startup Team</option>
+              <option value="agency" data-i18n="role_2">Marketing / Creative Agency</option>
+              <option value="developer" data-i18n="role_3">Developer / API Integration</option>
+            </select>
+            <button type="submit" class="btn-primary" data-i18n="wl_btn">Request Access</button>
+          </form>
+          <p id="waitlistMsg" class="waitlist-msg" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>SceneSpec AI</strong>
+        <p data-i18n="footer_desc">Declarative AI Video &amp; Multimodal Production Compiler — Daejeon / Nonsan, Republic of Korea</p>
+        <p class="footer-contact">Contact: <a href="mailto:contact@scenespec.ai">contact@scenespec.ai</a></p>
+      </div>
+      <div class="footer-links">
+        <button type="button" class="link-btn" data-modal="privacyModal" data-i18n="footer_privacy">Privacy Policy</button>
+        <button type="button" class="link-btn" data-modal="termsModal" data-i18n="footer_terms">Terms of Service</button>
+      </div>
+    </div>
+  </footer>
+
+  <dialog id="privacyModal" class="info-modal">
+    <h3 data-i18n="footer_privacy">Privacy Policy</h3>
+    <p data-i18n="privacy_body">SceneSpec AI collects only the work email address and use-case selection voluntarily submitted for private beta onboarding. Data is never sold or shared with third-party advertisers. You may request deletion anytime via contact@scenespec.ai.</p>
+    <button type="button" class="btn-secondary btn-sm close-modal" data-i18n="close_btn">Close</button>
+  </dialog>
+
+  <dialog id="termsModal" class="info-modal">
+    <h3 data-i18n="footer_terms">Terms of Service</h3>
+    <p data-i18n="terms_body">SceneSpec AI is currently in private beta. Generated storyboard specifications and rendered media assets remain the intellectual property of the workspace owner.</p>
+    <button type="button" class="btn-secondary btn-sm close-modal" data-i18n="close_btn">Close</button>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
