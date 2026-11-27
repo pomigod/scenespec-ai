@@ -568,9 +568,29 @@ body {
   margin-bottom: 10px;
 }
 
-.team-info p:last-child {
+.team-info p:last-of-type {
   color: var(--muted);
   font-size: 0.94rem;
+}
+
+.team-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.team-links a {
+  font-size: 0.84rem;
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.team-links a:hover {
+  background: rgba(56, 189, 248, 0.1);
 }
 
 @media (max-width: 640px) {
