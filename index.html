@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CutGate AI — Model-Agnostic AI Video Consistency, VFR Forensics &amp; Mastering</title>
   <meta name="description" content="CutGate AI is a model-agnostic generative video QA, consistency, and mastering platform built on Google Cloud Vertex AI (Gemini 4). Screen 480p drafts via VFR cadence forensics and 4x4 micro-grid multimodal inspection before 720p/1080p mastering." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000000'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='sans-serif' font-size='13' font-weight='800' fill='%23ffffff'%3ECG%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ffffff'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='sans-serif' font-size='13' font-weight='800' fill='%23000000'%3ECG%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -63,66 +63,72 @@
               <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CutGate 3-Gate Architecture Diagram">
                 <defs>
                   <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#000000"/>
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#ffffff"/>
+                  </marker>
+                  <marker id="arrow-fail" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#f87171"/>
+                  </marker>
+                  <marker id="arrow-pass" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399"/>
                   </marker>
                 </defs>
-                <rect x="8" y="8" width="664" height="284" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
+                <rect x="8" y="8" width="664" height="284" fill="#000000" stroke="#ffffff" stroke-width="1.5"/>
                 <!-- Swimlane Header -->
-                <rect x="8" y="8" width="664" height="28" fill="#000000"/>
-                <text x="20" y="26" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="800">STAGE 1: ANCHOR &amp; 480P DRAFT</text>
-                <text x="242" y="26" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="800">STAGE 2: GEMINI 4 4x4 GATE</text>
-                <text x="466" y="26" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="800">STAGE 3: CAS &amp; EBU MASTER</text>
-                <line x1="228" y1="36" x2="228" y2="292" stroke="#000000" stroke-width="1.2" stroke-dasharray="4 3"/>
-                <line x1="452" y1="36" x2="452" y2="292" stroke="#000000" stroke-width="1.2" stroke-dasharray="4 3"/>
+                <rect x="8" y="8" width="664" height="28" fill="#ffffff"/>
+                <text x="20" y="26" fill="#000000" font-family="sans-serif" font-size="11" font-weight="800">STAGE 1: ANCHOR &amp; 480P DRAFT</text>
+                <text x="242" y="26" fill="#000000" font-family="sans-serif" font-size="11" font-weight="800">STAGE 2: GEMINI 4 4x4 GATE</text>
+                <text x="466" y="26" fill="#000000" font-family="sans-serif" font-size="11" font-weight="800">STAGE 3: CAS &amp; EBU MASTER</text>
+                <line x1="228" y1="36" x2="228" y2="292" stroke="#52525b" stroke-width="1.2" stroke-dasharray="4 3"/>
+                <line x1="452" y1="36" x2="452" y2="292" stroke="#52525b" stroke-width="1.2" stroke-dasharray="4 3"/>
 
                 <!-- Stage 1 Nodes -->
-                <rect x="24" y="54" width="188" height="52" fill="#f8fafc" stroke="#000000" stroke-width="1.5"/>
-                <text x="118" y="76" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800">720p Video-Ref Anchor</text>
-                <text x="118" y="93" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#1f2937">+ Multi-Angle Prop Sheets</text>
+                <rect x="24" y="54" width="188" height="52" fill="#111111" stroke="#ffffff" stroke-width="1.5"/>
+                <text x="118" y="76" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">720p Video-Ref Anchor</text>
+                <text x="118" y="93" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#d4d4d8">+ Multi-Angle Prop Sheets</text>
 
-                <rect x="24" y="132" width="188" height="56" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
-                <text x="118" y="154" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800">480p Draft Generation</text>
-                <text x="118" y="171" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#1f2937">Veo · Kling · Seedance · Runway</text>
+                <rect x="24" y="132" width="188" height="56" fill="#000000" stroke="#ffffff" stroke-width="1.5"/>
+                <text x="118" y="154" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">480p Draft Generation</text>
+                <text x="118" y="171" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#d4d4d8">Veo · Kling · Seedance · Runway</text>
 
-                <rect x="24" y="214" width="188" height="58" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
-                <text x="118" y="237" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800">VFR pts_time Extractor</text>
-                <text x="118" y="254" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#1f2937">-vsync passthrough · 0.5s Bins</text>
+                <rect x="24" y="214" width="188" height="58" fill="#000000" stroke="#ffffff" stroke-width="1.5"/>
+                <text x="118" y="237" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">VFR pts_time Extractor</text>
+                <text x="118" y="254" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#d4d4d8">-vsync passthrough · 0.5s Bins</text>
 
                 <!-- Stage 2 Nodes -->
-                <rect x="246" y="54" width="188" height="58" fill="#f8fafc" stroke="#000000" stroke-width="1.5"/>
-                <text x="340" y="77" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800">3fps Sheet + 4x4 Micro-Grid</text>
-                <text x="340" y="94" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#1f2937">16 Sequential Peak-Cut Frames</text>
+                <rect x="246" y="54" width="188" height="58" fill="#111111" stroke="#ffffff" stroke-width="1.5"/>
+                <text x="340" y="77" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">3fps Sheet + 4x4 Micro-Grid</text>
+                <text x="340" y="94" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#d4d4d8">16 Sequential Peak-Cut Frames</text>
 
-                <rect x="246" y="138" width="188" height="62" fill="#000000" stroke="#000000" stroke-width="1.5"/>
-                <text x="340" y="162" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">Vertex AI Gemini 4 Gate</text>
-                <text x="340" y="180" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#e5e7eb">Physics &amp; Prop Continuity Check</text>
+                <rect x="246" y="138" width="188" height="62" fill="#ffffff" stroke="#ffffff" stroke-width="1.5"/>
+                <text x="340" y="162" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#000000">Vertex AI Gemini 4 Gate</text>
+                <text x="340" y="180" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#27272a">Physics &amp; Prop Continuity Check</text>
 
-                <rect x="246" y="226" width="188" height="46" fill="#fef2f2" stroke="#991b1b" stroke-width="1.5"/>
-                <text x="340" y="246" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="800" fill="#991b1b">FAIL -> BLOCK 720p SPEND</text>
-                <text x="340" y="261" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#991b1b">Flag Frame on X-Ray Board</text>
+                <rect x="246" y="226" width="188" height="46" fill="#450a0a" stroke="#f87171" stroke-width="1.5"/>
+                <text x="340" y="246" text-anchor="middle" font-family="sans-serif" font-size="10.5" font-weight="800" fill="#fecaca">FAIL -&gt; BLOCK 720p SPEND</text>
+                <text x="340" y="261" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#fecaca">Flag Frame on X-Ray Board</text>
 
                 <!-- Stage 3 Nodes -->
-                <rect x="468" y="54" width="188" height="58" fill="#ecfdf5" stroke="#065f46" stroke-width="1.5"/>
-                <text x="562" y="77" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#065f46">PASS -> 720p Promotion</text>
-                <text x="562" y="94" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#065f46">SHA-256 Segment Cache</text>
+                <rect x="468" y="54" width="188" height="58" fill="#052e16" stroke="#34d399" stroke-width="1.5"/>
+                <text x="562" y="77" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#a7f3d0">PASS -&gt; 720p Promotion</text>
+                <text x="562" y="94" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#a7f3d0">SHA-256 Segment Cache</text>
 
-                <rect x="468" y="138" width="188" height="58" fill="#ffffff" stroke="#000000" stroke-width="1.5"/>
-                <text x="562" y="161" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800">AMD CAS A/B (+8.88%)</text>
-                <text x="562" y="178" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#1f2937">-15.5 LUFS · 0.08s Crossfade</text>
+                <rect x="468" y="138" width="188" height="58" fill="#000000" stroke="#ffffff" stroke-width="1.5"/>
+                <text x="562" y="161" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">AMD CAS A/B (+8.88%)</text>
+                <text x="562" y="178" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#d4d4d8">-15.5 LUFS · 0.08s Crossfade</text>
 
-                <rect x="468" y="220" width="188" height="52" fill="#f8fafc" stroke="#000000" stroke-width="1.8"/>
-                <text x="562" y="242" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800">1080p CRF14 + X-Ray PDF/PNG</text>
-                <text x="562" y="258" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#1f2937">0 Black Frames · &lt;50ms Sync</text>
+                <rect x="468" y="220" width="188" height="52" fill="#111111" stroke="#ffffff" stroke-width="1.8"/>
+                <text x="562" y="242" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#ffffff">1080p CRF14 + X-Ray PDF/PNG</text>
+                <text x="562" y="258" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#d4d4d8">0 Black Frames · &lt;50ms Sync</text>
 
                 <!-- Arrows -->
-                <line x1="118" y1="106" x2="118" y2="128" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
-                <line x1="118" y1="188" x2="118" y2="210" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
-                <path d="M 212 243 L 234 243 L 234 83 L 242 83" fill="none" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
-                <line x1="340" y1="112" x2="340" y2="134" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
-                <line x1="340" y1="200" x2="340" y2="222" stroke="#991b1b" stroke-width="1.5" marker-end="url(#arrow)"/>
-                <path d="M 434 169 L 456 169 L 456 83 L 464 83" fill="none" stroke="#065f46" stroke-width="1.5" marker-end="url(#arrow)"/>
-                <line x1="562" y1="112" x2="562" y2="134" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
-                <line x1="562" y1="196" x2="562" y2="216" stroke="#000000" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <line x1="118" y1="106" x2="118" y2="128" stroke="#ffffff" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <line x1="118" y1="188" x2="118" y2="210" stroke="#ffffff" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <path d="M 212 243 L 234 243 L 234 83 L 242 83" fill="none" stroke="#ffffff" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <line x1="340" y1="112" x2="340" y2="134" stroke="#ffffff" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <line x1="340" y1="200" x2="340" y2="222" stroke="#f87171" stroke-width="1.5" marker-end="url(#arrow-fail)"/>
+                <path d="M 434 169 L 456 169 L 456 83 L 464 83" fill="none" stroke="#34d399" stroke-width="1.5" marker-end="url(#arrow-pass)"/>
+                <line x1="562" y1="112" x2="562" y2="134" stroke="#ffffff" stroke-width="1.5" marker-end="url(#arrow)"/>
+                <line x1="562" y1="196" x2="562" y2="216" stroke="#ffffff" stroke-width="1.5" marker-end="url(#arrow)"/>
               </svg>
             </div>
           </div>
@@ -225,35 +231,35 @@
             </div>
             <div class="svg-wrap">
               <svg viewBox="0 0 540 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AMD CAS A/B Benchmark Chart">
-                <rect x="0" y="0" width="540" height="230" fill="#ffffff"/>
-                <line x1="60" y1="26" x2="60" y2="185" stroke="#000000" stroke-width="1.5"/>
-                <line x1="60" y1="185" x2="510" y2="185" stroke="#000000" stroke-width="1.5"/>
-                <line x1="60" y1="105" x2="510" y2="105" stroke="#d4d4d8" stroke-width="1" stroke-dasharray="3 3"/>
-                <line x1="60" y1="45" x2="510" y2="45" stroke="#d4d4d8" stroke-width="1" stroke-dasharray="3 3"/>
-                <text x="50" y="188" text-anchor="end" font-family="monospace" font-size="10">0%</text>
-                <text x="50" y="109" text-anchor="end" font-family="monospace" font-size="10">+5%</text>
-                <text x="50" y="49" text-anchor="end" font-family="monospace" font-size="10">+10%</text>
+                <rect x="0" y="0" width="540" height="230" fill="#000000"/>
+                <line x1="60" y1="26" x2="60" y2="185" stroke="#ffffff" stroke-width="1.5"/>
+                <line x1="60" y1="185" x2="510" y2="185" stroke="#ffffff" stroke-width="1.5"/>
+                <line x1="60" y1="105" x2="510" y2="105" stroke="#3f3f46" stroke-width="1" stroke-dasharray="3 3"/>
+                <line x1="60" y1="45" x2="510" y2="45" stroke="#3f3f46" stroke-width="1" stroke-dasharray="3 3"/>
+                <text x="50" y="188" text-anchor="end" font-family="monospace" font-size="10" fill="#d4d4d8">0%</text>
+                <text x="50" y="109" text-anchor="end" font-family="monospace" font-size="10" fill="#d4d4d8">+5%</text>
+                <text x="50" y="49" text-anchor="end" font-family="monospace" font-size="10" fill="#d4d4d8">+10%</text>
 
                 <!-- Bars -->
-                <rect x="92" y="182" width="56" height="3" fill="#000000"/>
-                <text x="120" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700">CAS 0.00</text>
-                <text x="120" y="176" text-anchor="middle" font-family="monospace" font-size="10">+0.00%</text>
+                <rect x="92" y="182" width="56" height="3" fill="#ffffff"/>
+                <text x="120" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#ffffff">CAS 0.00</text>
+                <text x="120" y="176" text-anchor="middle" font-family="monospace" font-size="10" fill="#d4d4d8">+0.00%</text>
 
-                <rect x="186" y="64" width="56" height="121" fill="#ffffff" stroke="#000000" stroke-width="1.8"/>
-                <text x="214" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700">CAS 0.14</text>
-                <text x="214" y="57" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700">+8.65%</text>
+                <rect x="186" y="64" width="56" height="121" fill="#111111" stroke="#ffffff" stroke-width="1.8"/>
+                <text x="214" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#ffffff">CAS 0.14</text>
+                <text x="214" y="57" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#ffffff">+8.65%</text>
 
-                <rect x="280" y="60" width="56" height="125" fill="#000000"/>
-                <text x="308" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="800">CAS 0.18*</text>
-                <text x="308" y="53" text-anchor="middle" font-family="monospace" font-size="10" font-weight="800">+8.88%</text>
+                <rect x="280" y="60" width="56" height="125" fill="#ffffff"/>
+                <text x="308" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="800" fill="#ffffff">CAS 0.18*</text>
+                <text x="308" y="53" text-anchor="middle" font-family="monospace" font-size="10" font-weight="800" fill="#ffffff">+8.88%</text>
 
-                <rect x="374" y="56" width="56" height="129" fill="#ffffff" stroke="#000000" stroke-width="1.5" stroke-dasharray="4 2"/>
-                <text x="402" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700">CAS 0.22</text>
-                <text x="402" y="49" text-anchor="middle" font-family="monospace" font-size="10">+9.15%</text>
+                <rect x="374" y="56" width="56" height="129" fill="#111111" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="4 2"/>
+                <text x="402" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#ffffff">CAS 0.22</text>
+                <text x="402" y="49" text-anchor="middle" font-family="monospace" font-size="10" fill="#d4d4d8">+9.15%</text>
 
-                <rect x="448" y="54" width="42" height="131" fill="#ffffff" stroke="#991b1b" stroke-width="1.5"/>
-                <text x="469" y="203" text-anchor="middle" font-family="monospace" font-size="10" fill="#991b1b">0.24</text>
-                <text x="469" y="47" text-anchor="middle" font-family="monospace" font-size="10" fill="#991b1b">+9.30%</text>
+                <rect x="448" y="54" width="42" height="131" fill="#450a0a" stroke="#f87171" stroke-width="1.5"/>
+                <text x="469" y="203" text-anchor="middle" font-family="monospace" font-size="10" fill="#f87171">0.24</text>
+                <text x="469" y="47" text-anchor="middle" font-family="monospace" font-size="10" fill="#f87171">+9.30%</text>
               </svg>
             </div>
             <div class="chart-caption"><b>cas_ab_report:</b> CAS 0.18 selected as optimal sweet spot (+8.88% Tenengrad sharpness, flat noise delta 1.9306).</div>
@@ -266,22 +272,22 @@
             </div>
             <div class="svg-wrap">
               <svg viewBox="0 0 540 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VFR 0.5s Motion Bins Chart">
-                <rect x="0" y="0" width="540" height="230" fill="#ffffff"/>
-                <line x1="55" y1="26" x2="55" y2="185" stroke="#000000" stroke-width="1.5"/>
-                <line x1="55" y1="185" x2="510" y2="185" stroke="#000000" stroke-width="1.5"/>
-                <line x1="55" y1="162" x2="510" y2="162" stroke="#991b1b" stroke-width="1.2" stroke-dasharray="4 3"/>
-                <text x="506" y="157" text-anchor="end" font-family="monospace" font-size="9.5" fill="#991b1b">HOLD THRESHOLD (diff &lt; 0.8)</text>
+                <rect x="0" y="0" width="540" height="230" fill="#000000"/>
+                <line x1="55" y1="26" x2="55" y2="185" stroke="#ffffff" stroke-width="1.5"/>
+                <line x1="55" y1="185" x2="510" y2="185" stroke="#ffffff" stroke-width="1.5"/>
+                <line x1="55" y1="162" x2="510" y2="162" stroke="#f87171" stroke-width="1.2" stroke-dasharray="4 3"/>
+                <text x="506" y="157" text-anchor="end" font-family="monospace" font-size="9.5" fill="#f87171">HOLD THRESHOLD (diff &lt; 0.8)</text>
 
                 <!-- Motion Bins Polyline -->
-                <polyline fill="none" stroke="#000000" stroke-width="2"
+                <polyline fill="none" stroke="#ffffff" stroke-width="2"
                   points="75,135 120,128 165,120 210,174 255,176 300,48 345,115 390,122 435,130 480,126"/>
-                <circle cx="210" cy="174" r="4.5" fill="#991b1b"/>
-                <circle cx="255" cy="176" r="4.5" fill="#991b1b"/>
-                <circle cx="300" cy="48" r="5" fill="#000000"/>
-                <text x="232" y="198" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#991b1b" font-weight="700">4.5-6.0s FREEZE</text>
-                <text x="300" y="38" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800">F142 SPIKE -> 4x4 GRID</text>
-                <text x="85" y="203" font-family="monospace" font-size="9.5">0.0s</text>
-                <text x="468" y="203" font-family="monospace" font-size="9.5">10.0s</text>
+                <circle cx="210" cy="174" r="4.5" fill="#f87171"/>
+                <circle cx="255" cy="176" r="4.5" fill="#f87171"/>
+                <circle cx="300" cy="48" r="5" fill="#ffffff"/>
+                <text x="232" y="198" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#f87171" font-weight="700">4.5-6.0s FREEZE</text>
+                <text x="300" y="38" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#ffffff">F142 SPIKE -&gt; 4x4 GRID</text>
+                <text x="85" y="203" font-family="monospace" font-size="9.5" fill="#d4d4d8">0.0s</text>
+                <text x="468" y="203" font-family="monospace" font-size="9.5" fill="#d4d4d8">10.0s</text>
               </svg>
             </div>
             <div class="chart-caption"><b>qc_clip_vref:</b> Extracts 16-frame 4x4 micro-grid around peak motion spike F142 for Vertex AI Gemini 4 inspection.</div>

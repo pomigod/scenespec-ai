@@ -1,16 +1,16 @@
 :root {
-  --bg: #ffffff;
-  --surface: #ffffff;
-  --subtle: #f8fafc;
-  --ink: #000000;
-  --ink-muted: #1f2937;
-  --border-light: #d4d4d8;
-  --accent-bg: #000000;
-  --accent-text: #ffffff;
-  --pass-bg: #ecfdf5;
-  --pass-border: #065f46;
-  --warn-bg: #fef2f2;
-  --warn-border: #991b1b;
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --subtle: #111111;
+  --ink: #ffffff;
+  --ink-muted: #d4d4d8;
+  --border-light: #3f3f46;
+  --accent-bg: #ffffff;
+  --accent-text: #000000;
+  --pass-bg: #052e16;
+  --pass-border: #34d399;
+  --warn-bg: #450a0a;
+  --warn-border: #f87171;
 }
 
 * {
@@ -135,7 +135,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: #222222;
+  background: #e4e4e7;
   box-shadow: 3px 3px 0 #71717a;
 }
 
@@ -657,13 +657,17 @@ body {
 
 .waitlist-form input,
 .waitlist-form select {
-  background: var(--bg);
+  background: var(--surface);
   border: 1.5px solid var(--ink);
   color: var(--ink);
   padding: 10px 14px;
   font-family: inherit;
   font-size: 0.9rem;
   min-width: 220px;
+}
+
+.waitlist-form input::placeholder {
+  color: #a1a1aa;
 }
 
 .waitlist-msg {
@@ -733,7 +737,7 @@ body {
 }
 
 .info-modal::backdrop {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(0, 0, 0, 0.84);
 }
 
 .info-modal h3 {
