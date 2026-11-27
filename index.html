@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CutGate AI — 3-Second Motion Gate &amp; Forensic Video QA on Vertex AI</title>
-  <meta name="description" content="CutGate AI protects generative AI video budgets with a Vertex AI Gemini 4 compiler, 360p 3-second OpenCV motion gate, deterministic FFmpeg directing, and 6-point forensic audio-visual QA." />
+  <title>CutGate AI — Model-Agnostic AI Video Consistency, VFR Forensics &amp; Mastering</title>
+  <meta name="description" content="CutGate AI is a model-agnostic generative video QA, consistency, and mastering platform built on Google Cloud Vertex AI (Gemini 4). Screen 480p drafts via VFR cadence forensics and 4x4 micro-grid multimodal inspection before 720p/1080p mastering." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234f46e5'/%3E%3Cstop offset='1' stop-color='%2338bdf8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='sans-serif' font-size='13' font-weight='800' fill='white'%3ECG%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -15,9 +16,9 @@
         <span class="brand-name">CutGate <span class="brand-accent">AI</span></span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#pipeline" data-i18n="nav_pipeline">3-Stage Pipeline</a>
-        <a href="#inspector" data-i18n="nav_demo">Live Telemetry</a>
-        <a href="#forensics" data-i18n="nav_forensics">6-Point QA</a>
+        <a href="#pipeline" data-i18n="nav_pipeline">3-Gate Pipeline</a>
+        <a href="#inspector" data-i18n="nav_demo">VFR &amp; CAS Telemetry</a>
+        <a href="#forensics" data-i18n="nav_forensics">6-Point Forensics</a>
         <a href="#architecture" data-i18n="nav_arch">Vertex AI Stack</a>
         <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
       </nav>
@@ -34,28 +35,28 @@
         <div class="hero-copy">
           <div class="pill">
             <span class="pill-dot"></span>
-            <span data-i18n="hero_badge">Built on Vertex AI (Gemini 4) · OpenCV · FFmpeg 7.1</span>
+            <span data-i18n="hero_badge">Built on Vertex AI (Gemini 4 Multimodal) · Veo · Kling · Seedance · Runway</span>
           </div>
-          <h1 data-i18n="hero_title">Stop Burning AI Video Credits on Frozen Cuts &amp; Hidden Defects.</h1>
+          <h1 data-i18n="hero_title">Universal Consistency, VFR Forensics &amp; Mastering for Generative Video.</h1>
           <p class="hero-sub" data-i18n="hero_subtitle">
-            CutGate AI sits in front of and behind generative video models. It compiles specs with Gemini 4, blocks static-locked 360p drafts in 3 seconds, applies deterministic FFmpeg camera directing, and audits every master cut with 6-point audio-visual forensics plus a 1-page X-Ray proof board.
+            CutGate AI is a model-agnostic QA and mastering layer for teams shipping multi-clip AI video across Veo, Kling, Seedance, and Runway. Lock style and physics with a Video-Reference Anchor, gate 480p drafts via VFR cadence and Gemini 4 4x4 micro-grid inspection before 720p promotion, and ship adaptive CAS-sharpened 1080p masters.
           </p>
           <div class="hero-cta">
             <a href="#waitlist" class="btn-primary" data-i18n="hero_cta_primary">Join Private Beta</a>
-            <a href="#inspector" class="btn-secondary" data-i18n="hero_cta_secondary">Inspect Gate Telemetry</a>
+            <a href="#inspector" class="btn-secondary" data-i18n="hero_cta_secondary">Inspect VFR &amp; CAS Benchmarks</a>
           </div>
           <div class="hero-metrics">
             <div class="metric">
-              <strong>360p Gate</strong>
-              <span data-i18n="metric_1">Blocks frozen shots in 0.4–4.8s before 4K spend</span>
+              <strong>480p 3-Gate</strong>
+              <span data-i18n="metric_1">Gemini 4 4x4 micro-grid gates 720p promotion</span>
             </div>
             <div class="metric">
-              <strong>6-Defect QA</strong>
-              <span data-i18n="metric_2">F0 pitch, reverse-zoom, tail margin &amp; AI badge checks</span>
+              <strong>+8.88% CAS</strong>
+              <span data-i18n="metric_2">Tenengrad sharpness gain at optimal 0.18 sweep</span>
             </div>
             <div class="metric">
-              <strong>10+ Campaigns</strong>
-              <span data-i18n="metric_3">Field-tested across real 4K &amp; FHD productions</span>
+              <strong>-15.5 LUFS</strong>
+              <span data-i18n="metric_3">VFR pts_time cadence &amp; &lt;50ms A/V sync QA</span>
             </div>
           </div>
         </div>
@@ -65,27 +66,26 @@
             <span class="dot red"></span>
             <span class="dot amber"></span>
             <span class="dot green"></span>
-            <span class="code-title">cutgate_run_manifest.json</span>
+            <span class="code-title">cutgate_vfr_promotion_gate.json</span>
           </div>
           <pre class="code-block"><code>{
-  "engine": "vertex-ai/gemini-4 + opencv-farneback",
-  "stage_1_motion_gate": {
-    "tier": "360p_draft",
-    "window_sec": [0.40, 4.80],
-    "rim_1f_mae": 22.4,
-    "rim_flow_max": 3.12,
-    "f0_vs_ref_mae": 31.8,
-    "verdict": "PASS_HARD_CUT"
+  "target_models": ["veo", "kling", "seedance", "runway"],
+  "video_anchor": "golden_720p_master_ref_idx0",
+  "vfr_cadence_audit": {
+    "vsync_mode": "passthrough_pts_time",
+    "actual_frames": 241,
+    "low_motion_holds": "2/240 (PASS)",
+    "gemini4_microgrid_4x4": "PROP_CONTINUITY_OK"
   },
-  "stage_3_forensic_qa": {
-    "voice_f0_hz": 294.2,
-    "audio_tail_margin": "PASS (-58.4 dBFS)",
-    "late_reverse_zoom_7_10s": "PASS",
-    "xray_proof_board": "1600px_250dpi_signed"
+  "mastering_pipeline": {
+    "amd_cas_optimal": 0.18,
+    "tenengrad_gain": "+8.88%",
+    "loudness_target": "-15.5 LUFS / -1.5 dBTP",
+    "av_sync_drift_ms": 8.4
   }
 }</code></pre>
           <div class="compile-bar">
-            <span class="compile-status" data-i18n="card_status">Zero-Trust Gate: Promoted to 720p/4K · X-Ray Proof Generated</span>
+            <span class="compile-status" data-i18n="card_status">Gemini 4 Promotion Gate: 480p Verified -&gt; 720p/1080p Master</span>
             <span class="compile-badge">EXIT 0</span>
           </div>
         </div>
@@ -95,24 +95,24 @@
     <section id="pipeline" class="section">
       <div class="container">
         <div class="section-head">
-          <h2 data-i18n="pipe_title">3-Stage Deterministic Pipeline</h2>
-          <p data-i18n="pipe_sub">Eliminate prompt gacha before rendering and catch invisible audio-visual failures before publishing.</p>
+          <h2 data-i18n="pipe_title">Model-Agnostic 3-Gate Video Consistency &amp; Mastering Pipeline</h2>
+          <p data-i18n="pipe_sub">Stop wasting 720p/1080p GPU budgets on prop teleportation, hidden VFR holds, and over-sharpened masters.</p>
         </div>
         <div class="cards-3">
           <article class="card">
             <div class="card-icon">01</div>
-            <h3 data-i18n="s1_title">Gemini 4 Spec &amp; 3s Motion Gate</h3>
-            <p data-i18n="s1_desc">Gemini 4 compiles scripts into 3-shot storyboards capped at 4 syllables/sec and flags static-lock hazards. OpenCV scores 360p drafts at 0.4–4.8s via outer-rim MAE, 1-SSIM, and Farneback optical flow before promoting to 720p or 4K.</p>
+            <h3 data-i18n="s1_title">Video-Anchor &amp; 480p Credit Firewall</h3>
+            <p data-i18n="s1_desc">Bind a golden 720p reference clip alongside multi-angle character and prop sheets to lock cadence, spatial scale, and texture across clips. Cheap 480p drafts must pass motion-bin screening before unlocking 720p spend.</p>
           </article>
           <article class="card">
             <div class="card-icon">02</div>
-            <h3 data-i18n="s2_title">Deterministic FFmpeg Director</h3>
-            <p data-i18n="s2_desc">Generative models ignore camera-move prompts 50–70% of the time. CutGate shifts sub-pixel push-ins, commercial S-curve LUTs, and audio-tail fades into exact FFmpeg 7.1 filtergraphs for 0% drift across renders.</p>
+            <h3 data-i18n="s2_title">VFR pts_time &amp; Gemini 4 4x4 Micro-Grid</h3>
+            <p data-i18n="s2_desc">AI generators often emit VFR streams (e.g. 60fps metadata hiding 241 real frames). CutGate extracts passthrough pts_time frames into 3fps sheets and 4x4 peak-cut micro-grids so Vertex AI Gemini 4 catches prop spawning and physics breaks before 720p promotion.</p>
           </article>
           <article class="card">
             <div class="card-icon">03</div>
-            <h3 data-i18n="s3_title">6-Defect Forensics &amp; X-Ray Board</h3>
-            <p data-i18n="s3_desc">Every stitched cut is audited for F0 voice bleed, late reverse-zoom morphing, cut flashes, and AI-disclosure compliance, then summarized into a 1-page color pop-out X-Ray proof board for 3-second human sign-off.</p>
+            <h3 data-i18n="s3_title">Adaptive AMD CAS &amp; EBU Mastering</h3>
+            <p data-i18n="s3_desc">Per-clip AMD CAS A/B sweeps balance Tenengrad sharpness (+8.88% at 0.18) against flat-region noise, followed by -15.5 LUFS normalization, 0.08s audio crossfades, blackdetect, &lt;50ms A/V sync checks, and SHA-256 segment caching.</p>
           </article>
         </div>
       </div>
@@ -121,22 +121,22 @@
     <section id="inspector" class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <h2 data-i18n="demo_title">Interactive Gate &amp; Forensic Telemetry</h2>
-          <p data-i18n="demo_sub">Switch between real production scenarios from our engineering benchmarks to inspect how CutGate saves credits and blocks hidden defects.</p>
+          <h2 data-i18n="demo_title">Interactive VFR Cadence, 4x4 Micro-Grid &amp; CAS Telemetry</h2>
+          <p data-i18n="demo_sub">Explore real production benchmarks verifying how Gemini 4 multimodal inspection and signal forensics govern promotion and mastering.</p>
         </div>
         <div class="compiler-box">
           <div class="preset-tabs" role="tablist" aria-label="Telemetry Scenarios">
-            <button class="preset-btn active" data-preset="pass_cut" type="button" data-i18n="tab_pass">PASS · 2.4s Cut Promoted</button>
-            <button class="preset-btn" data-preset="static_lock" type="button" data-i18n="tab_lock">BLOCKED · 360p Static Lock (8/8)</button>
-            <button class="preset-btn" data-preset="forensic_warn" type="button" data-i18n="tab_warn">WARN · Voice Bleed &amp; Reverse Zoom</button>
+            <button class="preset-btn active" data-preset="pass_vfr" type="button" data-i18n="tab_pass">PASS · 480p Promoted to 720p</button>
+            <button class="preset-btn" data-preset="block_prop" type="button" data-i18n="tab_block">BLOCKED · Gemini 4 Prop &amp; Hold Gate</button>
+            <button class="preset-btn" data-preset="cas_sweep" type="button" data-i18n="tab_cas">MASTER · AMD CAS A/B (+8.88%)</button>
           </div>
           <div class="compiler-grid">
             <div class="compiler-pane">
-              <div class="pane-label" data-i18n="pane_metrics">1. Quantitative Signal &amp; Vision Telemetry</div>
+              <div class="pane-label" data-i18n="pane_metrics">1. VFR pts_time, Motion Bins &amp; CAS Sweep Data</div>
               <pre id="specPreview" class="code-block"></pre>
             </div>
             <div class="compiler-pane">
-              <div class="pane-label" data-i18n="pane_verdict">2. CutGate Decision &amp; X-Ray Action</div>
+              <div class="pane-label" data-i18n="pane_verdict">2. Gemini 4 Gate Decision &amp; Mastering Output</div>
               <div id="pipelineOutput" class="pipeline-list"></div>
             </div>
           </div>
@@ -147,39 +147,39 @@
     <section id="forensics" class="section">
       <div class="container">
         <div class="section-head">
-          <h2 data-i18n="qa_title">6-Point Forensic Audio-Visual QA Module</h2>
-          <p data-i18n="qa_sub">Zero-trust verification built from real post-production failures: never ship unverified AI video again.</p>
+          <h2 data-i18n="qa_title">6-Point Forensic QA &amp; X-Ray Proof Board</h2>
+          <p data-i18n="qa_sub">Zero-trust verification across every multi-clip render: never ship broken generative artifacts to clients or contests.</p>
         </div>
         <div class="cards-3">
           <article class="card">
             <div class="card-icon">QA 1</div>
-            <h3 data-i18n="q1_t">Voice F0 Gender &amp; Pitch Bleed</h3>
-            <p data-i18n="q1_d">Bandpass + autocorrelation F0 tracking verifies narrator pitch consistency (165–350 Hz) and catches sudden male/off-tone voice bleed (&lt;150 Hz).</p>
+            <h3 data-i18n="q1_t">VFR Passthrough Cadence Audit</h3>
+            <p data-i18n="q1_d">Inspects showinfo pts_time frame deltas with -vsync passthrough to expose hidden variable-frame-rate stutter and duplicate hold frames.</p>
           </article>
           <article class="card">
             <div class="card-icon">QA 2</div>
-            <h3 data-i18n="q2_t">Audio Tail Margin Guard</h3>
-            <p data-i18n="q2_d">Scans the final 6.5–10.0s buffer window of every clip for RMS spikes, syllable overflow, and boundary clipping pops before stitching.</p>
+            <h3 data-i18n="q2_t">0.5s Motion Bins &amp; Spike Detection</h3>
+            <p data-i18n="q2_d">Quantifies frame-to-frame pixel deltas across 0.5-second bins to catch frozen stretches (&lt;0.8 diff) and sudden morphing/jump-cut spikes.</p>
           </article>
           <article class="card">
             <div class="card-icon">QA 3</div>
-            <h3 data-i18n="q3_t">Late Reverse-Zoom &amp; Freeze</h3>
-            <p data-i18n="q3_d">Radial optical flow over 07.0–10.0s flags generative bounce-back artifacts, sudden frame freezes, and morphing spikes.</p>
+            <h3 data-i18n="q3_t">4x4 Micro-Grid Physics Gate</h3>
+            <p data-i18n="q3_d">Extracts 16 sequential high-res frames around peak action cuts so Gemini 4 verifies object permanence, gravity, and zero prop teleportation.</p>
           </article>
           <article class="card">
             <div class="card-icon">QA 4</div>
-            <h3 data-i18n="q4_t">Cut-Boundary Flash &amp; Drift</h3>
-            <p data-i18n="q4_d">Measures luma (YAVG) dips and spikes across every 10s clip boundary to catch black frames, white flashes, and crossfade timing drift.</p>
+            <h3 data-i18n="q4_t">Adaptive AMD CAS A/B Benchmark</h3>
+            <p data-i18n="q4_d">Sweeps CAS strengths (0.14–0.24) per clip, selecting the exact point that maximizes Tenengrad edge clarity while bounding flat-surface noise.</p>
           </article>
           <article class="card">
             <div class="card-icon">QA 5</div>
-            <h3 data-i18n="q5_t">AI Disclosure &amp; Endcard Audit</h3>
-            <p data-i18n="q5_d">Verifies 0–3s AI-generated disclosure placement and final 55–63s brand endcard black purity, contrast, and exact resolution via FFprobe.</p>
+            <h3 data-i18n="q5_t">Audio F0, -15.5 LUFS &amp; &lt;50ms Sync</h3>
+            <p data-i18n="q5_d">Audits EBU R128 loudness (-15.5 LUFS / -1.5 dBTP), voice pitch bleed, 0.08s crossfade smoothing, blackdetect, and &lt;50ms A/V sync drift.</p>
           </article>
           <article class="card">
             <div class="card-icon">QA 6</div>
-            <h3 data-i18n="q6_t">3x Loupe &amp; 1-Page X-Ray Board</h3>
-            <p data-i18n="q6_d">Extracts 1.5s, 4.5s, and 8.0s 3x-zoomed detail crops into a single color-coded X-Ray approval sheet with SHA-256 integrity hashes.</p>
+            <h3 data-i18n="q6_t">3fps Sheet &amp; SHA-256 Proof Board</h3>
+            <p data-i18n="q6_d">Generates a 3fps full-clip contact sheet and 1-page X-Ray review board backed by SHA-256 segment caching for instant client approval.</p>
           </article>
         </div>
       </div>
@@ -189,28 +189,28 @@
       <div class="container">
         <div class="section-head">
           <h2 data-i18n="arch_title">Google Cloud &amp; Vertex AI Architecture</h2>
-          <p data-i18n="arch_sub">Cloud-native orchestration combining multimodal Gemini 4 reasoning with deterministic media signal processing.</p>
+          <p data-i18n="arch_sub">Vertex AI Gemini 4 multimodal reasoning paired with Cloud Run FFmpeg/OpenCV signal pipelines.</p>
         </div>
         <div class="arch-grid">
           <div class="arch-node">
-            <span class="arch-tag">Compiler &amp; QA</span>
+            <span class="arch-tag">Multimodal Gate</span>
             <h3>Vertex AI Gemini 4</h3>
-            <p data-i18n="arch_1">Compiles briefs into syllable-budgeted 3-shot specs and audits 3x loupe crops for broken text, logo hallucinations, and disclosure compliance.</p>
+            <p data-i18n="arch_1">Analyzes 4x4 peak-cut micro-grids, 3fps contact sheets, and reference prop assets to detect physics collapse or prop drift and authorize 720p promotion.</p>
           </div>
           <div class="arch-node">
-            <span class="arch-tag">Gate &amp; Direct</span>
+            <span class="arch-tag">Signal &amp; Master</span>
             <h3>Cloud Run Workers</h3>
-            <p data-i18n="arch_2">Runs OpenCV 3s motion gates, SciPy F0 voice forensics, and deterministic FFmpeg 7.1 filtergraphs in autoscaling containers.</p>
+            <p data-i18n="arch_2">Runs -vsync passthrough VFR cadence checks, 0.5s motion-bin scoring, AMD CAS A/B sweeps, and FFmpeg 7.1 -15.5 LUFS lossless mastering.</p>
           </div>
           <div class="arch-node">
-            <span class="arch-tag">FSM State</span>
+            <span class="arch-tag">3-Gate FSM</span>
             <h3>Cloud Firestore</h3>
-            <p data-i18n="arch_3">Tracks per-clip FSM promotion states (360p -&gt; 720p -&gt; 4K), SHA-256 asset hashes, and zero-trust audit verdicts.</p>
+            <p data-i18n="arch_3">Manages 480p -&gt; 720p -&gt; 1080p promotion states, SHA-256 segment cache keys, and per-clip CAS/VFR telemetry records.</p>
           </div>
           <div class="arch-node">
-            <span class="arch-tag">Media Vault</span>
+            <span class="arch-tag">Asset Vault</span>
             <h3>Cloud Storage</h3>
-            <p data-i18n="arch_4">Stores 360p screening drafts, 400Kbps H.264 review proxies, 1-page X-Ray proof PNGs, and signed 4K MP4 deliverables.</p>
+            <p data-i18n="arch_4">Stores golden video anchors, reference prop plates, 4x4 micro-grid sheets, 400Kbps review proxies, and signed 1080p/4K MP4 masters.</p>
           </div>
         </div>
       </div>
@@ -219,17 +219,17 @@
     <section id="pricing" class="section">
       <div class="container">
         <div class="section-head">
-          <h2 data-i18n="pricing_title">Predictable SaaS &amp; API Plans</h2>
-          <p data-i18n="pricing_sub">Pay less for GPU video renders by filtering bad drafts early and catching defects automatically.</p>
+          <h2 data-i18n="pricing_title">Predictable SaaS &amp; QA API Plans</h2>
+          <p data-i18n="pricing_sub">Cut wasted 720p/1080p renders across Veo, Kling, Seedance, and Runway with automated VFR and multimodal gates.</p>
         </div>
         <div class="cards-3">
           <article class="card price-card">
             <h3>Starter</h3>
             <div class="price">$0<span>/mo</span></div>
             <ul>
-              <li data-i18n="p1_1">15 360p Motion Gate scans / month</li>
-              <li data-i18n="p1_2">3 Forensic 6-Point QA audits / month</li>
-              <li data-i18n="p1_3">Gemini 4 Golden-Formula Spec Checker</li>
+              <li data-i18n="p1_1">20 480p VFR &amp; 4x4 Micro-Grid gates / mo</li>
+              <li data-i18n="p1_2">3 full 6-Point Forensic QA &amp; CAS sweeps</li>
+              <li data-i18n="p1_3">Multi-model reference continuity validator</li>
             </ul>
             <a href="#waitlist" class="btn-secondary full" data-i18n="p_cta_free">Start Free</a>
           </article>
@@ -238,9 +238,9 @@
             <h3>Pro Studio</h3>
             <div class="price">$39<span>/mo</span></div>
             <ul>
-              <li data-i18n="p2_1">300 Motion Gate scans &amp; 60 full QA audits</li>
-              <li data-i18n="p2_2">FFmpeg 7.1 Deterministic Director presets</li>
-              <li data-i18n="p2_3">1-Page X-Ray Proof Boards + 400Kbps proxies</li>
+              <li data-i18n="p2_1">300 480p -&gt; 720p Gemini 4 promotion gates</li>
+              <li data-i18n="p2_2">Adaptive AMD CAS A/B &amp; -15.5 LUFS mastering</li>
+              <li data-i18n="p2_3">3fps sheets, 4x4 micro-grids &amp; SHA-256 cache</li>
             </ul>
             <a href="#waitlist" class="btn-primary full" data-i18n="p_cta_pro">Join Pro Beta</a>
           </article>
@@ -248,9 +248,9 @@
             <h3>Enterprise API</h3>
             <div class="price">$149<span>/mo</span></div>
             <ul>
-              <li data-i18n="p3_1">REST &amp; Webhook CI/CD QA pipeline</li>
-              <li data-i18n="p3_2">Custom F0 voice &amp; brand disclosure rules</li>
-              <li data-i18n="p3_3">Signed SHA-256 audit certificates &amp; SLA</li>
+              <li data-i18n="p3_1">REST &amp; Webhook QA gate for video platforms</li>
+              <li data-i18n="p3_2">Custom Gemini 4 prop-continuity rulesets</li>
+              <li data-i18n="p3_3">Signed X-Ray QA certificates &amp; priority SLA</li>
             </ul>
             <a href="#waitlist" class="btn-secondary full" data-i18n="p_cta_studio">Request API Access</a>
           </article>
@@ -261,15 +261,15 @@
     <section id="team" class="section section-alt">
       <div class="container">
         <div class="section-head">
-          <h2 data-i18n="team_title">Founder &amp; Proven Engineering Track Record</h2>
-          <p data-i18n="team_sub">Born directly from solving real AI video production failures across 10+ commercial and public-sector 4K/FHD campaigns.</p>
+          <h2 data-i18n="team_title">Founder &amp; Proven Production Engineering</h2>
+          <p data-i18n="team_sub">Engineered from real multi-clip AI video pipelines across 10+ commercial, stop-motion, and public-sector campaigns.</p>
         </div>
         <div class="team-card">
           <div class="team-avatar" aria-hidden="true">JH</div>
           <div class="team-info">
             <h3 data-i18n="team_name">Jin Hwang — Founder &amp; Lead AI Systems Engineer</h3>
             <p class="team-role" data-i18n="team_org">B.S. Candidate in Artificial Intelligence (Minor: Medical IT Engineering), Konyang University · Republic of Korea</p>
-            <p data-i18n="team_bio">Built the underlying CutGate engine (Flow Studio OS, 3-Second Optical-Flow Gate, Deterministic FFmpeg Director, and 6-Defect Forensic Video Auditor) while delivering 10+ production AI video campaigns in 4K/FHD. Previously engineered Graph Convolutional Network (GCN) temporal models, Swin Transformer vision pipelines, and zero-trust verification tooling.</p>
+            <p data-i18n="team_bio">Built CutGate's core VFR passthrough cadence auditor, 4x4 peak-cut micro-grid inspection loop, adaptive AMD CAS A/B mastering benchmark, and multi-reference video-anchor continuity pipelines while shipping 10+ 4K/1080p AI video productions. Background spans Graph Convolutional Networks (GCN), Swin Transformer vision systems, and zero-trust verification tooling.</p>
             <div class="team-links">
               <a href="https://github.com/pomigod/scenespec-ai" target="_blank" rel="noopener noreferrer">GitHub Project</a>
               <a href="https://github.com/pomigod/research-portfolio" target="_blank" rel="noopener noreferrer">Research Portfolio</a>
@@ -284,7 +284,7 @@
       <div class="container waitlist-wrap">
         <div class="waitlist-box">
           <h2 data-i18n="wl_title">Request Early Access</h2>
-          <p data-i18n="wl_sub">Running generative AI video pipelines in production? Leave your work email to join the CutGate AI beta on Vertex AI.</p>
+          <p data-i18n="wl_sub">Shipping multi-shot AI videos on Veo, Kling, Seedance, or Runway? Leave your work email to join the CutGate AI beta on Vertex AI.</p>
           <form id="waitlistForm" class="waitlist-form">
             <input id="emailInput" type="email" required placeholder="you@company.com" aria-label="Work email address" />
             <select id="roleSelect" aria-label="Primary use case">
@@ -304,7 +304,7 @@
     <div class="container footer-inner">
       <div>
         <strong>CutGate AI</strong>
-        <p data-i18n="footer_desc">AI Video Credit Firewall, Deterministic Director &amp; Forensic QA Platform — Republic of Korea</p>
+        <p data-i18n="footer_desc">Model-Agnostic AI Video Consistency, VFR Forensics &amp; Mastering Platform — Republic of Korea</p>
         <p class="footer-contact">Contact: <a href="mailto:contact@cutgateai.com">contact@cutgateai.com</a></p>
       </div>
       <div class="footer-links">
