@@ -549,6 +549,13 @@ body {
   padding: 26px;
 }
 
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+
 .founder-card h3 {
   font-size: 1.1rem;
   font-weight: 600;
@@ -564,29 +571,7 @@ body {
 .founder-bio {
   font-size: 0.9rem;
   color: var(--muted);
-  margin-bottom: 18px;
-}
-
-.founder-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.founder-links a {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--ink);
-  text-decoration: none;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 6px 12px;
-  background: var(--bg);
-}
-
-.founder-links a:hover {
-  border-color: var(--border-hover);
-  color: var(--accent);
+  line-height: 1.65;
 }
 
 .contact-card {
@@ -678,9 +663,9 @@ body {
   min-height: 18px;
 }
 
-/* Footer (Transplanted from Portfolio) */
+/* Footer */
 .site-footer {
-  padding: 48px 16px;
+  padding: 44px 16px;
   border-top: 1px solid #333333;
   background: rgba(31, 31, 31, 0.3);
   text-align: center;
@@ -698,7 +683,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .footer-contacts a {
@@ -713,29 +698,6 @@ body {
 
 .footer-contacts a:hover {
   color: var(--accent);
-}
-
-.footer-github-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  height: 44px;
-  padding: 0 32px;
-  border-radius: 6px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-decoration: none;
-  margin-bottom: 32px;
-  box-shadow: 0 0 20px rgba(221, 249, 36, 0.5), 0 0 40px rgba(221, 249, 36, 0.3);
-  transition: all 0.2s ease;
-}
-
-.footer-github-btn:hover {
-  background: rgba(221, 249, 36, 0.92);
-  box-shadow: 0 0 30px rgba(221, 249, 36, 0.65), 0 0 60px rgba(221, 249, 36, 0.4);
 }
 
 .footer-copy {
