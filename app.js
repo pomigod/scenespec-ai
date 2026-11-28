@@ -40,6 +40,7 @@ const I18N = {
     g2_lbl: "AMD CAS Sharpness Gain (Tenengrad @ 0.18)",
     g3_lbl: "A/V Sync Margin (<50ms spec · 8.4ms measured)",
     g4_lbl: "16-Frame 4×4 Micro-Grid Audit Coverage",
+    cas_title: "AMD CAS A/B Sweep — Tenengrad Sharpness Gain (4.54s Sample)",
     cas_note: "CAS 0.18* sweet spot (+8.88%, flat noise delta 1.9306)",
     plans_heading: "Cloud Stack & Plans",
     plans_sub: "Built for early creative studios and AI video teams — accessible pricing, zero wasted GPU spend.",
@@ -113,6 +114,7 @@ const I18N = {
     g2_lbl: "AMD CAS 선명도 상승률 (Tenengrad @ 0.18)",
     g3_lbl: "A/V 싱크 실측 오차 (<50ms 기준 · 8.4ms)",
     g4_lbl: "16프레임 4×4 마이크로 그리드 감사율",
+    cas_title: "AMD CAS A/B 스윕 — Tenengrad 선명도 상승률 (4.54초 표본)",
     cas_note: "CAS 0.18* 최적 지점 (+8.88%, 평탄부 노이즈 델타 1.9306)",
     plans_heading: "Cloud Stack & Plans",
     plans_sub: "초기 스튜디오와 AI 영상 팀을 위한 합리적 요금제 — 불량 GPU 낭비 차단.",
@@ -200,10 +202,34 @@ function setupScrollAnimations() {
   };
 
   const runMiniBars = () => {
-    document.querySelectorAll("#casMiniChart .cas-fill").forEach((bar) => {
-      const h = bar.getAttribute("data-target-height") || "0";
-      bar.style.height = `${h}%`;
-    });
+    const bars = Array.from(document.querySelectorAll("#casMiniChart .svg-bar"));
+    const vals = Array.from(document.querySelectorAll("#casMiniChart .svg-bar-val"));
+    const baseLine = 248;
+    const duration = 1400;
+    const start = performance.now();
+
+    function frame(now) {
+      const progress = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      bars.forEach((bar, i) => {
+        const targetH = parseFloat(bar.getAttribute("data-target-h") || "0");
+        const curH = targetH * eased;
+        const curY = baseLine - curH;
+        bar.setAttribute("height", curH.toFixed(2));
+        bar.setAttribute("y", curY.toFixed(2));
+
+        const valEl = vals[i];
+        if (valEl) {
+          const targetNum = parseFloat(valEl.getAttribute("data-target") || "0");
+          valEl.setAttribute("y", (curY - 8).toFixed(2));
+          valEl.textContent = `+${(targetNum * eased).toFixed(2)}%`;
+        }
+      });
+      if (progress < 1) {
+        requestAnimationFrame(frame);
+      }
+    }
+    requestAnimationFrame(frame);
   };
 
   if ("IntersectionObserver" in window) {

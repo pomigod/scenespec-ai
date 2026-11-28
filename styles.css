@@ -122,16 +122,14 @@ body {
 }
 
 .brand-mark {
-  width: 30px;
-  height: 30px;
-  border-radius: 9999px;
-  border: 2px solid var(--primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  border: 1.5px solid var(--primary-border);
+  background: var(--card);
   display: grid;
   place-items: center;
-  color: var(--primary);
-  font-size: 0.72rem;
-  font-weight: 800;
-  box-shadow: 0 0 12px rgba(221, 249, 36, 0.35);
+  box-shadow: 0 0 12px rgba(221, 249, 36, 0.25);
 }
 
 .nav-links {
@@ -246,21 +244,27 @@ body {
   margin-bottom: 1.75rem;
 }
 
-.hero-emblem {
-  width: 8.5rem;
-  height: 8.5rem;
-  border-radius: 9999px;
-  border: 4px solid var(--primary);
-  background: radial-gradient(circle at 35% 30%, #262626, #121212);
-  display: grid;
-  place-items: center;
+.hero-logo-lockup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 14px;
+  border: 1.5px solid var(--primary-border);
+  background: linear-gradient(145deg, #1b1b1e, #121214);
+}
+
+.hero-logo-lockup svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero-halo {
   position: absolute;
   inset: -6px;
-  border-radius: 9999px;
-  background: rgba(221, 249, 36, 0.2);
+  border-radius: 18px;
+  background: rgba(221, 249, 36, 0.16);
   filter: blur(22px);
   z-index: -1;
 }
@@ -487,7 +491,7 @@ body {
   transition: width 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Compact 5-bar CAS Sweep inside same centered width */
+/* Publication-Grade Vertical Bar Chart inside centered container */
 .cas-card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -501,11 +505,11 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .cas-title {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: var(--foreground);
 }
@@ -515,68 +519,18 @@ body {
   color: var(--muted-foreground);
 }
 
-.cas-bars {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 0.75rem;
-  align-items: end;
-  height: 132px;
-  padding: 0.75rem 0.75rem 0;
+.cas-svg-wrap {
   background: var(--background);
   border: 1px solid var(--border);
   border-radius: 0.5rem;
+  padding: 0.5rem;
+  overflow: hidden;
 }
 
-.cas-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  height: 100%;
-  gap: 0.35rem;
-}
-
-.cas-val {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--muted-foreground);
-  font-variant-numeric: tabular-nums;
-}
-
-.cas-col.optimal .cas-val {
-  color: var(--primary);
-}
-
-.cas-wrap {
+.cas-svg-wrap svg {
   width: 100%;
-  max-width: 44px;
-  height: 76px;
-  display: flex;
-  align-items: flex-end;
-}
-
-.cas-fill {
-  width: 100%;
-  height: 0%;
-  border-radius: 4px 4px 0 0;
-  background: #3a3a3a;
-  transition: height 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.cas-col.optimal .cas-fill {
-  background: var(--primary);
-  box-shadow: var(--neon-glow);
-}
-
-.cas-lbl {
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--muted-foreground);
-  padding-bottom: 0.45rem;
-}
-
-.cas-col.optimal .cas-lbl {
-  color: var(--primary);
+  height: auto;
+  display: block;
 }
 
 /* 4. Cloud Stack & Pricing (1/10th Pricing) */
@@ -696,15 +650,15 @@ body {
 
 .founder-ring {
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  border-radius: 9999px;
-  border: 3px solid var(--primary);
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  border: 2px solid var(--primary);
   display: grid;
   place-items: center;
   color: var(--primary);
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   background: var(--background);
 }
 
