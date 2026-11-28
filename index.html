@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CutGate AI — Check AI Video Drafts Before HD Render</title>
   <meta name="description" content="CutGate AI screens 480p AI video drafts for frozen frames, prop glitches, and audio sync issues before you pay for 1080p renders. Built on Google Cloud Vertex AI and AWS." />
+  <link rel="canonical" href="https://cutgateai.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cutgateai.com/" />
+  <meta property="og:title" content="CutGate AI — Check AI Video Drafts Before HD Render" />
+  <meta property="og:description" content="Model-agnostic QA and mastering for Veo, Kling, Seedance, and Runway. Catch glitches at 480p before paying for HD renders." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="CutGate AI — Check AI Video Drafts Before HD Render" />
+  <meta name="twitter:description" content="Screen 480p AI video drafts for frame freezes, prop drift, and audio sync before 1080p mastering." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23121212'/%3E%3Cpath d='M5 5H20L15 10H10V22H15L20 27H5Z' fill='%23F2F2F2'/%3E%3Cpath d='M23 5H27V27H23L18 22H22V18H15V14H22V10H18Z' fill='%23DDF924'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -73,7 +81,7 @@
               <span class="flow-badge accent" data-i18n="fl2_tag">QA Gate</span>
             </div>
             <h2 class="flow-title" data-i18n="fl2_t">Auto Glitch Check</h2>
-            <p class="flow-desc" data-i18n="fl2_d">Gemini Vision + frame-timing checks block frozen holds or prop drift before HD spend.</p>
+            <p class="flow-desc" data-i18n="fl2_d">VFR frame-timing + Gemini 4x4 grid checks block frozen holds or prop drift before HD spend.</p>
           </div>
 
           <div class="flow-arrow" aria-hidden="true">→</div>
@@ -84,22 +92,22 @@
               <span class="flow-badge pass" data-i18n="fl3_tag">Output</span>
             </div>
             <h2 class="flow-title" data-i18n="fl3_t">Clean 1080p Master</h2>
-            <p class="flow-desc" data-i18n="fl3_d">Passed clips get balanced sharpening, even audio loudness, and frame-tight sync.</p>
+            <p class="flow-desc" data-i18n="fl3_d">Passed clips get CAS 0.18 sharpening, -15.5 LUFS audio leveling, and frame-tight sync.</p>
           </div>
         </div>
 
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-val" data-i18n="stat1_v">480p Draft Filter</span>
-            <span class="stat-lbl" data-i18n="stat1_l">Stop bad clips before paying for 720p / 1080p</span>
+            <span class="stat-val" data-i18n="stat1_v">480p Draft Gate</span>
+            <span class="stat-lbl" data-i18n="stat1_l">Screen out broken clips before paying for 720p / 1080p</span>
           </div>
           <div class="stat-item">
-            <span class="stat-val" data-i18n="stat2_v">+8.88% Clarity</span>
-            <span class="stat-lbl" data-i18n="stat2_l">Crisper edges without raising background grain</span>
+            <span class="stat-val" data-i18n="stat2_v">4 Video Engines</span>
+            <span class="stat-lbl" data-i18n="stat2_l">Model-agnostic support for Veo, Kling, Seedance &amp; Runway</span>
           </div>
           <div class="stat-item">
-            <span class="stat-val" data-i18n="stat3_v">8.4 ms Sync</span>
-            <span class="stat-lbl" data-i18n="stat3_l">Steady A/V timing and leveled audio across cuts</span>
+            <span class="stat-val" data-i18n="stat3_v">-15.5 LUFS Master</span>
+            <span class="stat-lbl" data-i18n="stat3_l">Broadcast-leveled audio and sub-50ms A/V sync</span>
           </div>
         </div>
       </div>
@@ -128,7 +136,7 @@
                 <li data-i18n="c1_b2">Matches color tone across every cut</li>
               </ul>
             </div>
-            <div class="card-meta" data-i18n="c1_m">Consistent across all scenes</div>
+            <div class="card-meta" data-i18n="c1_m">Video-Reference Anchor</div>
           </article>
 
           <article class="feature-card">
@@ -138,9 +146,9 @@
                 <span class="tag" data-i18n="t2_a">Gemini Vision</span>
               </div>
               <h3 data-i18n="c2_t">Block Broken 480p Drafts</h3>
-              <p data-i18n="c2_p">Inspects frame timestamps and key cut frames with Vertex AI Gemini before HD rendering.</p>
+              <p data-i18n="c2_p">Audits VFR frame timestamps and 4x4 peak-cut grids with Vertex AI Gemini before HD rendering.</p>
               <ul class="step-list">
-                <li data-i18n="c2_b1">Catches frozen frames and jitter</li>
+                <li data-i18n="c2_b1">Catches frozen holds via pts_time cadence</li>
                 <li data-i18n="c2_b2">Flags teleporting or warped props</li>
               </ul>
             </div>
@@ -154,10 +162,10 @@
                 <span class="tag" data-i18n="t3_a">Mastering</span>
               </div>
               <h3 data-i18n="c3_t">Sharpen &amp; Level Audio</h3>
-              <p data-i18n="c3_p">Applies adaptive sharpening per clip and balances cut audio for clean delivery.</p>
+              <p data-i18n="c3_p">Applies AMD CAS A/B sharpening per clip and balances cut audio for clean delivery.</p>
               <ul class="step-list">
-                <li data-i18n="c3_b1">Optimal 0.18 edge sharpening</li>
-                <li data-i18n="c3_b2">Even -15.5 LUFS loudness &amp; A/V sync</li>
+                <li data-i18n="c3_b1">Optimal 0.18 CAS (+8.88% Tenengrad clarity)</li>
+                <li data-i18n="c3_b2">-15.5 LUFS loudness &amp; SHA-256 segment cache</li>
               </ul>
             </div>
             <div class="card-meta" data-i18n="c3_m">Delivery-ready 1080p MP4</div>
@@ -179,11 +187,11 @@
           <div class="skills-stack" id="gaugeGrid">
             <div class="skill-item">
               <div class="skill-top">
-                <span class="skill-label" data-i18n="g1_lbl">Frame Timing Accuracy</span>
+                <span class="skill-label" data-i18n="g1_lbl">VFR Frame Audit Coverage</span>
                 <span class="skill-num" data-target="100" data-decimals="0" data-prefix="" data-suffix="%">0%</span>
               </div>
               <div class="skill-track"><div class="skill-fill" data-target-width="100"></div></div>
-              <span class="skill-hint" data-i18n="g1_hint">Detects every frozen hold or dropped frame</span>
+              <span class="skill-hint" data-i18n="g1_hint">Inspects every pts_time frame for frozen holds</span>
             </div>
 
             <div class="skill-item">
@@ -192,16 +200,16 @@
                 <span class="skill-num" data-target="100" data-decimals="0" data-prefix="" data-suffix="%">0%</span>
               </div>
               <div class="skill-track"><div class="skill-fill" data-target-width="100"></div></div>
-              <span class="skill-hint" data-i18n="g4_hint">Every cut verified against reference props</span>
+              <span class="skill-hint" data-i18n="g4_hint">Every cut verified via 4x4 grid against reference props</span>
             </div>
 
             <div class="skill-item">
               <div class="skill-top">
-                <span class="skill-label" data-i18n="g2_lbl">Edge Clarity Gain</span>
+                <span class="skill-label" data-i18n="g2_lbl">Edge Clarity Gain (CAS 0.18)</span>
                 <span class="skill-num" data-target="8.88" data-decimals="2" data-prefix="+" data-suffix="%">+0.00%</span>
               </div>
               <div class="skill-track"><div class="skill-fill" data-target-width="89"></div></div>
-              <span class="skill-hint" data-i18n="g2_hint">Sharper details at 0.18 without noise spikes</span>
+              <span class="skill-hint" data-i18n="g2_hint">Tenengrad sharpness gain without flat-area noise spikes</span>
             </div>
 
             <div class="skill-item">
@@ -210,14 +218,14 @@
                 <span class="skill-num" data-target="8.4" data-decimals="1" data-prefix="" data-suffix=" ms">0.0 ms</span>
               </div>
               <div class="skill-track"><div class="skill-fill" data-target-width="83"></div></div>
-              <span class="skill-hint" data-i18n="g3_hint">Far below the 50 ms human perception threshold</span>
+              <span class="skill-hint" data-i18n="g3_hint">Well below the 50 ms broadcast perception limit</span>
             </div>
           </div>
 
           <div class="cas-card" id="casMiniChart">
             <div class="cas-head">
-              <span class="cas-title" data-i18n="cas_title">Sharpening Strength Comparison</span>
-              <span class="cas-note" data-i18n="cas_note">0.18 hits the sweet spot: +8.88% clarity without flat-area noise</span>
+              <span class="cas-title" data-i18n="cas_title">Sharpening Strength Comparison (AMD CAS)</span>
+              <span class="cas-note" data-i18n="cas_note">0.22–0.24 increases flat-area grain; 0.18 hits +8.88% clarity cleanly</span>
             </div>
             <div class="cas-svg-wrap">
               <svg viewBox="0 0 640 315" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sharpening Strength Comparison Chart">
@@ -242,37 +250,37 @@
                 <text x="64" y="102" text-anchor="end" font-size="11" fill="#A1A1AA">+9%</text>
                 <text x="64" y="52"  text-anchor="end" font-size="11" fill="#A1A1AA">+12%</text>
 
-                <text x="20" y="148" text-anchor="middle" font-size="11.5" font-weight="600" fill="#A1A1AA" transform="rotate(-90 20 148)">Edge Clarity Gain (%)</text>
+                <text x="20" y="148" text-anchor="middle" font-size="11.5" font-weight="600" fill="#A1A1AA" transform="rotate(-90 20 148)" data-i18n="svg_yaxis">Edge Clarity Gain (%)</text>
 
-                <rect x="279" y="22" width="128" height="24" rx="4" fill="#1C1C1F" stroke="#DDF924" stroke-opacity="0.55" stroke-width="1" />
-                <text x="343" y="38" text-anchor="middle" font-size="10.5" font-weight="600" fill="#DDF924">Recommended: 0.18</text>
+                <rect x="275" y="22" width="136" height="24" rx="4" fill="#1C1C1F" stroke="#DDF924" stroke-opacity="0.55" stroke-width="1" />
+                <text x="343" y="38" text-anchor="middle" font-size="10.5" font-weight="600" fill="#DDF924" data-i18n="svg_badge">Recommended: 0.18</text>
 
                 <rect class="svg-bar" x="108" y="248" width="58" height="0" rx="2" fill="#3B4252" stroke="#52525B" stroke-width="1" data-target-y="244" data-target-h="4" />
                 <text class="svg-bar-val" x="137" y="236" text-anchor="middle" font-size="11.5" font-weight="600" fill="#A1A1AA" data-target="0.00">+0.00%</text>
                 <line x1="137" y1="248" x2="137" y2="253" stroke="#525252" stroke-width="1.5" />
-                <text x="137" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#A1A1AA">Off (0.0)</text>
+                <text x="137" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#A1A1AA" data-i18n="svg_x0">Off (0.0)</text>
 
                 <rect class="svg-bar" x="211" y="248" width="58" height="0" rx="2" fill="#3B6E8C" stroke="#5491B5" stroke-width="1" data-target-y="103.8" data-target-h="144.2" />
                 <text class="svg-bar-val" x="240" y="236" text-anchor="middle" font-size="11.5" font-weight="600" fill="#E4E4E7" data-target="8.65">+0.00%</text>
                 <line x1="240" y1="248" x2="240" y2="253" stroke="#525252" stroke-width="1.5" />
-                <text x="240" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#E4E4E7">Light (0.14)</text>
+                <text x="240" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#E4E4E7" data-i18n="svg_x1">Light (0.14)</text>
 
                 <rect class="svg-bar" x="314" y="248" width="58" height="0" rx="2" fill="#DDF924" stroke="#E7FF66" stroke-width="1" data-target-y="100" data-target-h="148" />
                 <text class="svg-bar-val" x="343" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#DDF924" data-target="8.88">+0.00%</text>
                 <line x1="343" y1="248" x2="343" y2="253" stroke="#DDF924" stroke-width="1.5" />
-                <text x="343" y="270" text-anchor="middle" font-size="11.5" font-weight="700" fill="#DDF924">Balanced (0.18)</text>
+                <text x="343" y="270" text-anchor="middle" font-size="11.5" font-weight="700" fill="#DDF924" data-i18n="svg_x2">Balanced (0.18)</text>
 
                 <rect class="svg-bar" x="417" y="248" width="58" height="0" rx="2" fill="#3C9D8B" stroke="#5AC2AE" stroke-width="1" data-target-y="95.5" data-target-h="152.5" />
                 <text class="svg-bar-val" x="446" y="236" text-anchor="middle" font-size="11.5" font-weight="600" fill="#E4E4E7" data-target="9.15">+0.00%</text>
                 <line x1="446" y1="248" x2="446" y2="253" stroke="#525252" stroke-width="1.5" />
-                <text x="446" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#E4E4E7">Strong (0.22)</text>
+                <text x="446" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#E4E4E7" data-i18n="svg_x3">Strong (0.22)</text>
 
                 <rect class="svg-bar" x="520" y="248" width="58" height="0" rx="2" fill="#63B36C" stroke="#85D18E" stroke-width="1" data-target-y="93" data-target-h="155" />
                 <text class="svg-bar-val" x="549" y="236" text-anchor="middle" font-size="11.5" font-weight="600" fill="#E4E4E7" data-target="9.30">+0.00%</text>
                 <line x1="549" y1="248" x2="549" y2="253" stroke="#525252" stroke-width="1.5" />
-                <text x="549" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#E4E4E7">Max (0.24)</text>
+                <text x="549" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#E4E4E7" data-i18n="svg_x4">Max (0.24)</text>
 
-                <text x="343" y="298" text-anchor="middle" font-size="11.5" font-weight="600" fill="#A1A1AA">Sharpening Strength</text>
+                <text x="343" y="298" text-anchor="middle" font-size="11.5" font-weight="600" fill="#A1A1AA" data-i18n="svg_xaxis">Sharpening Strength</text>
               </svg>
             </div>
           </div>
@@ -284,7 +292,7 @@
     <section id="pricing" class="section section-subtle">
       <div class="container">
         <div class="section-header">
-          <p class="section-kicker" data-i18n="plans_kicker">Pricing</p>
+          <p class="section-kicker" data-i18n="plans_kicker">Early-Access Beta Pricing</p>
           <h2 class="section-title" data-i18n="plans_title">Simple plans for creators and video teams</h2>
           <p class="section-desc" data-i18n="plans_sub">Powered by Google Cloud Vertex AI and AWS GPU workers to cut wasted render spend.</p>
         </div>
@@ -292,14 +300,14 @@
         <div class="stack-strip" aria-label="Cloud Infrastructure">
           <span class="stack-pill primary">Vertex AI Gemini</span>
           <span class="stack-pill">Cloud Run &amp; EC2 GPU</span>
-          <span class="stack-pill">Cloud Firestore</span>
+          <span class="stack-pill">Cloud Firestore &amp; DynamoDB</span>
           <span class="stack-pill">Cloud Storage &amp; S3</span>
         </div>
 
         <div class="cards-3">
           <article class="price-card">
             <div class="price-head"><span class="price-tier">Starter</span></div>
-            <div class="price-amount">$0<span>/mo</span></div>
+            <div class="price-amount">$0<span data-i18n="per_mo">/mo</span></div>
             <p class="price-for" data-i18n="p1_for">For trying out draft screening</p>
             <ul class="price-list">
               <li data-i18n="p1_1">20 draft continuity checks / mo</li>
@@ -312,26 +320,26 @@
           <article class="price-card featured">
             <div class="price-head">
               <span class="price-tier">Pro Studio</span>
-              <span class="price-badge" data-i18n="p_popular">Popular</span>
+              <span class="price-badge" data-i18n="p_popular">Beta Popular</span>
             </div>
-            <div class="price-amount">$3.90<span>/mo</span></div>
-            <p class="price-for" data-i18n="p2_for">For active AI video studios</p>
+            <div class="price-amount">$3.90<span data-i18n="per_mo">/mo</span></div>
+            <p class="price-for" data-i18n="p2_for">For active AI video creators &amp; studios</p>
             <ul class="price-list">
               <li data-i18n="p2_1">300 draft-to-HD checks / mo</li>
-              <li data-i18n="p2_2">Sharpening &amp; audio leveling</li>
-              <li data-i18n="p2_3">Cached segments &amp; QA summary</li>
+              <li data-i18n="p2_2">CAS 0.18 sharpening &amp; -15.5 LUFS audio</li>
+              <li data-i18n="p2_3">SHA-256 segment cache &amp; QA summary</li>
             </ul>
             <a href="#founder" class="btn-primary full" data-i18n="p_cta_pro">Join Pro Beta</a>
           </article>
 
           <article class="price-card">
-            <div class="price-head"><span class="price-tier">Enterprise API</span></div>
-            <div class="price-amount">$14.90<span>/mo</span></div>
-            <p class="price-for" data-i18n="p3_for">For automated production pipelines</p>
+            <div class="price-head"><span class="price-tier">Team API</span></div>
+            <div class="price-amount">$14.90<span data-i18n="per_mo">/mo</span></div>
+            <p class="price-for" data-i18n="p3_for">For automated studio pipelines</p>
             <ul class="price-list">
               <li data-i18n="p3_1">REST &amp; webhook QA integration</li>
               <li data-i18n="p3_2">Custom continuity rulesets</li>
-              <li data-i18n="p3_3">Signed audit logs &amp; priority SLA</li>
+              <li data-i18n="p3_3">Signed X-Ray QA audit logs</li>
             </ul>
             <a href="#founder" class="btn-secondary full" data-i18n="p_cta_api">Request API</a>
           </article>
@@ -339,36 +347,36 @@
       </div>
     </section>
 
-    <!-- 5. ABOUT & EARLY ACCESS -->
+    <!-- 5. COMPANY & EARLY ACCESS -->
     <section id="founder" class="section">
       <div class="container">
         <div class="section-header">
-          <p class="section-kicker" data-i18n="founder_kicker">Early Access</p>
+          <p class="section-kicker" data-i18n="founder_kicker">Company &amp; Early Access</p>
           <h2 class="section-title" data-i18n="founder_title">Start screening drafts with CutGate AI</h2>
         </div>
 
         <div class="founder-grid">
           <div class="founder-card">
             <div>
-              <h3 data-i18n="team_name">Why CutGate AI</h3>
-              <p class="founder-role" data-i18n="team_role">Built for multi-clip AI video production</p>
+              <h3 data-i18n="team_name">CutGate AI</h3>
+              <p class="founder-role" data-i18n="team_role">Founded by Jin Hwang · South Korea</p>
               <ul class="step-list">
                 <li data-i18n="about_b1">Model-agnostic: works with Veo, Kling, Seedance, and Runway</li>
                 <li data-i18n="about_b2">Saves render budget by catching broken clips at 480p</li>
                 <li data-i18n="about_b3">Delivers sharp, loudness-leveled 1080p masters</li>
               </ul>
             </div>
-            <div class="card-meta" data-i18n="team_meta">Private Beta · Google Cloud &amp; AWS</div>
+            <div class="card-meta" data-i18n="team_meta">Private Beta · Google Cloud Vertex AI &amp; AWS</div>
           </div>
 
           <div class="contact-card">
             <div>
               <h3 data-i18n="contact_title">Get in touch</h3>
-              <p class="contact-sub" data-i18n="contact_sub">Copy our team email or leave yours for early access.</p>
+              <p class="contact-sub" data-i18n="contact_sub">Copy our team email or request private beta access below.</p>
             </div>
             <div class="email-copy-box">
               <a href="mailto:hwangjin@cutgateai.com">hwangjin@cutgateai.com</a>
-              <button type="button" id="copyEmailBtn" class="copy-btn" data-email="hwangjin@cutgateai.com">Copy</button>
+              <button type="button" id="copyEmailBtn" class="copy-btn" data-email="hwangjin@cutgateai.com" data-i18n="copy_btn">Copy</button>
             </div>
             <form id="waitlistForm" class="waitlist-form">
               <input id="emailInput" type="email" required placeholder="you@company.com" aria-label="Work email" />
@@ -410,13 +418,13 @@
 
   <dialog id="privacyModal" class="info-modal">
     <h3 data-i18n="footer_privacy">Privacy Policy</h3>
-    <p data-i18n="privacy_body">CutGate AI collects only the email submitted for early access and never sells data. Contact hwangjin@cutgateai.com for removal.</p>
+    <p data-i18n="privacy_body">Effective 2026. CutGate AI (cutgateai.com) collects only the work email you submit for private beta onboarding and support correspondence. We never sell or share personal data with third-party advertisers. Media drafts processed during QA are handled solely via our Google Cloud Vertex AI and AWS infrastructure and purged per workspace retention settings. To request access or deletion, contact contact@cutgateai.com or hwangjin@cutgateai.com.</p>
     <button type="button" class="btn-secondary btn-sm close-modal" data-i18n="close_btn">Close</button>
   </dialog>
 
   <dialog id="termsModal" class="info-modal">
     <h3 data-i18n="footer_terms">Terms of Service</h3>
-    <p data-i18n="terms_body">CutGate AI is in private beta. Uploaded drafts, QA logs, and mastered exports remain the property of the workspace owner.</p>
+    <p data-i18n="terms_body">Effective 2026. CutGate AI is currently offered in Private Beta on an as-is basis for generative video QA, continuity verification, and mastering. Workspace owners retain 100% ownership and intellectual property rights over all uploaded reference clips, 480p drafts, QA logs, and 1080p mastered exports. Questions regarding API usage or enterprise terms can be directed to contact@cutgateai.com.</p>
     <button type="button" class="btn-secondary btn-sm close-modal" data-i18n="close_btn">Close</button>
   </dialog>
 

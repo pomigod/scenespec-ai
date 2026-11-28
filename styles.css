@@ -772,6 +772,19 @@ body {
   font-size: 0.8rem;
   color: var(--accent);
   min-height: 18px;
+  line-height: 1.5;
+}
+
+.waitlist-mailto {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+.waitlist-mailto:hover {
+  color: var(--accent);
 }
 
 /* Footer with Neon GitHub Mark CTA */
