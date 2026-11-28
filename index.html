@@ -40,7 +40,7 @@
       </nav>
       <div class="nav-actions">
         <button id="langToggle" class="btn-ghost" type="button" aria-label="Switch language">한국어</button>
-        <a href="#founder" class="btn-secondary btn-sm" data-i18n="nav_cta">Request Access</a>
+        <button type="button" class="btn-secondary btn-sm open-checkout" data-plan="starter" data-i18n="nav_cta">Start Beta</button>
       </div>
     </div>
   </header>
@@ -58,7 +58,7 @@
         </p>
 
         <div class="hero-cta">
-          <a href="#founder" class="btn-primary" data-i18n="hero_cta_1">Request Early Access</a>
+          <button type="button" class="btn-primary open-checkout" data-plan="pro" data-i18n="hero_cta_1">Select Plan &amp; Start Beta</button>
           <a href="#engine" class="btn-secondary" data-i18n="hero_cta_2">See 3-Step Flow</a>
         </div>
 
@@ -113,7 +113,7 @@
       </div>
     </section>
 
-    <!-- 2. HOW IT WORKS -->
+    <!-- 2. HOW IT WORKS + INTERACTIVE MVP INSPECTOR -->
     <section id="engine" class="section section-subtle">
       <div class="container">
         <div class="section-header">
@@ -170,6 +170,44 @@
             </div>
             <div class="card-meta" data-i18n="c3_m">Delivery-ready 1080p MP4</div>
           </article>
+        </div>
+
+        <!-- Interactive 480p QA Inspector Preview -->
+        <div class="qa-demo" id="qaDemo">
+          <div class="qa-demo-head">
+            <div>
+              <span class="qa-demo-kicker" data-i18n="demo_kicker">Interactive MVP Preview</span>
+              <h3 class="qa-demo-title" data-i18n="demo_title">Test how CutGate AI gates a 480p draft</h3>
+            </div>
+            <div class="qa-demo-tabs" role="tablist" aria-label="Sample clip selector">
+              <button type="button" id="demoFailBtn" class="demo-tab active" role="tab" aria-selected="true" data-sample="fail" data-i18n="demo_tab_fail">Sample A · Broken Draft</button>
+              <button type="button" id="demoPassBtn" class="demo-tab" role="tab" aria-selected="false" data-sample="pass" data-i18n="demo_tab_pass">Sample B · Clean Draft</button>
+            </div>
+          </div>
+
+          <div class="qa-demo-grid">
+            <div class="qa-metric">
+              <span class="qa-metric-lbl" data-i18n="demo_m1_lbl">Source 480p Clip</span>
+              <span class="qa-metric-val mono" id="demoClipVal">kling_scene04_480p.mp4</span>
+            </div>
+            <div class="qa-metric">
+              <span class="qa-metric-lbl" data-i18n="demo_m2_lbl">VFR Frame Timing</span>
+              <span class="qa-metric-val" id="demoVfrVal">14 frozen holds @ 1.8s</span>
+            </div>
+            <div class="qa-metric">
+              <span class="qa-metric-lbl" data-i18n="demo_m3_lbl">Gemini 4x4 Prop Audit</span>
+              <span class="qa-metric-val" id="demoPropVal">Prop scale drifted +42%</span>
+            </div>
+            <div class="qa-metric">
+              <span class="qa-metric-lbl" data-i18n="demo_m4_lbl">Pipeline Output</span>
+              <span class="qa-metric-val" id="demoOutVal">Blocked before 1080p render</span>
+            </div>
+          </div>
+
+          <div class="qa-verdict is-fail" id="demoVerdictBar">
+            <span class="qa-verdict-badge" id="demoBadge">BLOCKED AT 480P</span>
+            <span class="qa-verdict-msg" id="demoSummary">Saved 1080p GPU spend — flagged frozen frames and prop drift for re-roll.</span>
+          </div>
         </div>
       </div>
     </section>
@@ -291,10 +329,17 @@
     <!-- 4. INFRASTRUCTURE & PRICING -->
     <section id="pricing" class="section section-subtle">
       <div class="container">
-        <div class="section-header">
-          <p class="section-kicker" data-i18n="plans_kicker">Early-Access Beta Pricing</p>
-          <h2 class="section-title" data-i18n="plans_title">Simple plans for creators and video teams</h2>
-          <p class="section-desc" data-i18n="plans_sub">Powered by Google Cloud Vertex AI and AWS GPU workers to cut wasted render spend.</p>
+        <div class="pricing-top-row">
+          <div class="section-header">
+            <p class="section-kicker" data-i18n="plans_kicker">Early-Access Beta Pricing</p>
+            <h2 class="section-title" data-i18n="plans_title">Simple plans for creators and video teams</h2>
+            <p class="section-desc" data-i18n="plans_sub">Powered by Google Cloud Vertex AI and AWS GPU workers to cut wasted render spend.</p>
+          </div>
+
+          <div class="billing-toggle" role="group" aria-label="Billing cycle">
+            <button type="button" id="billMonthlyBtn" class="bill-btn active" data-cycle="monthly" data-i18n="bill_monthly">Monthly</button>
+            <button type="button" id="billAnnualBtn" class="bill-btn" data-cycle="annual" data-i18n="bill_annual">Annual (-20%)</button>
+          </div>
         </div>
 
         <div class="stack-strip" aria-label="Cloud Infrastructure">
@@ -307,14 +352,14 @@
         <div class="cards-3">
           <article class="price-card">
             <div class="price-head"><span class="price-tier">Starter</span></div>
-            <div class="price-amount">$0<span data-i18n="per_mo">/mo</span></div>
+            <div class="price-amount"><span id="priceStarter">$0</span><span class="price-unit" data-i18n="per_mo">/mo</span></div>
             <p class="price-for" data-i18n="p1_for">For trying out draft screening</p>
             <ul class="price-list">
               <li data-i18n="p1_1">20 draft continuity checks / mo</li>
               <li data-i18n="p1_2">3 adaptive 1080p masters</li>
               <li data-i18n="p1_3">Reference clip &amp; prop check</li>
             </ul>
-            <a href="#founder" class="btn-secondary full" data-i18n="p_cta_free">Start Free</a>
+            <button type="button" class="btn-secondary full open-checkout" data-plan="starter" data-i18n="p_cta_free">Start Free</button>
           </article>
 
           <article class="price-card featured">
@@ -322,26 +367,26 @@
               <span class="price-tier">Pro Studio</span>
               <span class="price-badge" data-i18n="p_popular">Beta Popular</span>
             </div>
-            <div class="price-amount">$3.90<span data-i18n="per_mo">/mo</span></div>
+            <div class="price-amount"><span id="pricePro">$3.90</span><span class="price-unit" data-i18n="per_mo">/mo</span></div>
             <p class="price-for" data-i18n="p2_for">For active AI video creators &amp; studios</p>
             <ul class="price-list">
               <li data-i18n="p2_1">300 draft-to-HD checks / mo</li>
               <li data-i18n="p2_2">CAS 0.18 sharpening &amp; -15.5 LUFS audio</li>
               <li data-i18n="p2_3">SHA-256 segment cache &amp; QA summary</li>
             </ul>
-            <a href="#founder" class="btn-primary full" data-i18n="p_cta_pro">Join Pro Beta</a>
+            <button type="button" class="btn-primary full open-checkout" data-plan="pro" data-i18n="p_cta_pro">Join Pro Beta</button>
           </article>
 
           <article class="price-card">
             <div class="price-head"><span class="price-tier">Team API</span></div>
-            <div class="price-amount">$14.90<span data-i18n="per_mo">/mo</span></div>
+            <div class="price-amount"><span id="priceApi">$14.90</span><span class="price-unit" data-i18n="per_mo">/mo</span></div>
             <p class="price-for" data-i18n="p3_for">For automated studio pipelines</p>
             <ul class="price-list">
               <li data-i18n="p3_1">REST &amp; webhook QA integration</li>
               <li data-i18n="p3_2">Custom continuity rulesets</li>
               <li data-i18n="p3_3">Signed X-Ray QA audit logs</li>
             </ul>
-            <a href="#founder" class="btn-secondary full" data-i18n="p_cta_api">Request API</a>
+            <button type="button" class="btn-secondary full open-checkout" data-plan="api" data-i18n="p_cta_api">Request API</button>
           </article>
         </div>
       </div>
@@ -415,6 +460,93 @@
       </div>
     </div>
   </footer>
+
+  <!-- Workspace & Billing Activation Modal -->
+  <dialog id="checkoutModal" class="info-modal checkout-modal" aria-labelledby="coTitle">
+    <div class="co-header">
+      <div>
+        <p class="co-kicker" data-i18n="co_kicker">Workspace Activation</p>
+        <h3 id="coTitle" data-i18n="co_title">Configure Your CutGate AI Plan</h3>
+      </div>
+      <button type="button" class="co-close close-modal" aria-label="Close">×</button>
+    </div>
+
+    <div id="coFormPane">
+      <div class="co-plan-tabs" role="tablist" aria-label="Select plan">
+        <button type="button" class="co-plan-tab" data-plan-tab="starter">Starter</button>
+        <button type="button" class="co-plan-tab" data-plan-tab="pro">Pro Studio</button>
+        <button type="button" class="co-plan-tab" data-plan-tab="api">Team API</button>
+      </div>
+
+      <div class="co-summary-box">
+        <div>
+          <strong id="coPlanLabel">Pro Studio</strong>
+          <p class="co-quota" id="coPlanQuota">300 draft-to-HD checks / mo · CAS 0.18 + -15.5 LUFS</p>
+        </div>
+        <div class="co-price-col">
+          <span class="co-price" id="coPlanPrice">$3.90/mo</span>
+          <span class="co-due" id="coDueNote" data-i18n="co_due_note">$0 due today (Private Beta)</span>
+        </div>
+      </div>
+
+      <form id="checkoutForm" class="co-form">
+        <label class="co-field">
+          <span data-i18n="co_lbl_email">Work Email</span>
+          <input id="coEmail" type="email" required placeholder="you@company.com" />
+        </label>
+
+        <div class="co-row">
+          <label class="co-field">
+            <span data-i18n="co_lbl_team">Studio / Company Name</span>
+            <input id="coTeam" type="text" placeholder="CutGate Studio" />
+          </label>
+          <label class="co-field">
+            <span data-i18n="co_lbl_engine">Primary Video Engine</span>
+            <select id="coEngine">
+              <option value="Multi-Model (Veo + Kling + Seedance)">Multi-Model (All)</option>
+              <option value="Veo">Google Veo</option>
+              <option value="Kling">Kling</option>
+              <option value="Seedance">Seedance</option>
+              <option value="Runway">Runway</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="co-field" id="coBillingWrap">
+          <span data-i18n="co_lbl_billing">Billing &amp; Checkout Preference</span>
+          <select id="coBilling">
+            <option value="Beta Card / Stripe Link on Provisioning" data-i18n="co_bill_opt1">Card Checkout Link (Stripe / Mastercard) on Provisioning</option>
+            <option value="B2B Invoice on Activation" data-i18n="co_bill_opt2">B2B Invoice upon Workspace Activation</option>
+          </select>
+        </label>
+
+        <p class="co-note" data-i18n="co_security_note">No card numbers are collected on this preview page. Verified workspaces receive a secure Stripe / Mastercard checkout link or invoice upon provisioning.</p>
+
+        <div class="co-actions">
+          <button type="button" class="btn-ghost close-modal" data-i18n="close_btn">Close</button>
+          <button type="submit" class="btn-primary" id="coSubmitBtn" data-i18n="co_submit">Activate Workspace Request</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="coReceiptPane" hidden>
+      <div class="co-receipt">
+        <div class="co-receipt-badge" data-i18n="co_rec_badge">ORDER RECORDED · PRIVATE BETA</div>
+        <p class="co-receipt-row"><span data-i18n="co_rec_id">Reference ID</span><strong class="mono" id="recId"></strong></p>
+        <p class="co-receipt-row"><span data-i18n="co_rec_plan">Plan &amp; Cycle</span><strong id="recPlan"></strong></p>
+        <p class="co-receipt-row"><span data-i18n="co_rec_email">Workspace Email</span><strong class="mono" id="recEmail"></strong></p>
+        <p class="co-receipt-row"><span data-i18n="co_rec_bill">Billing Mode</span><strong id="recBilling"></strong></p>
+      </div>
+      <div class="co-receipt-actions">
+        <button type="button" class="btn-secondary btn-sm" id="copyOrderBtn" data-i18n="co_copy_rec">Copy Summary</button>
+        <a href="#" class="btn-primary btn-sm" id="sendOrderMailBtn" data-i18n="co_send_mail">Send Activation Email →</a>
+      </div>
+      <div class="co-actions">
+        <button type="button" class="btn-ghost btn-sm" id="coEditBtn" data-i18n="co_edit_btn">Change Plan</button>
+        <button type="button" class="btn-secondary btn-sm close-modal" data-i18n="close_btn">Close</button>
+      </div>
+    </div>
+  </dialog>
 
   <dialog id="privacyModal" class="info-modal">
     <h3 data-i18n="footer_privacy">Privacy Policy</h3>

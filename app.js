@@ -5,12 +5,12 @@ const I18N = {
     nav_bench: "Benchmarks",
     nav_plans: "Pricing",
     nav_founder: "Contact",
-    nav_cta: "Request Access",
+    nav_cta: "Start Beta",
     hero_eyebrow: "AI Video QA & Mastering · Google Cloud Vertex AI + AWS",
     hero_title: "Catch broken AI video drafts at 480p before paying for HD renders.",
     hero_sub:
       "Works with Veo, Kling, Seedance, and Runway. CutGate AI checks frame freezes, prop glitches, and audio sync automatically — so only clean takes move to 1080p.",
-    hero_cta_1: "Request Early Access",
+    hero_cta_1: "Select Plan & Start Beta",
     hero_cta_2: "See 3-Step Flow",
     fl1_tag: "Input",
     fl1_t: "480p Draft Clips",
@@ -48,6 +48,14 @@ const I18N = {
     c3_b1: "Optimal 0.18 CAS (+8.88% Tenengrad clarity)",
     c3_b2: "-15.5 LUFS loudness & SHA-256 segment cache",
     c3_m: "Delivery-ready 1080p MP4",
+    demo_kicker: "Interactive MVP Preview",
+    demo_title: "Test how CutGate AI gates a 480p draft",
+    demo_tab_fail: "Sample A · Broken Draft",
+    demo_tab_pass: "Sample B · Clean Draft",
+    demo_m1_lbl: "Source 480p Clip",
+    demo_m2_lbl: "VFR Frame Timing",
+    demo_m3_lbl: "Gemini 4x4 Prop Audit",
+    demo_m4_lbl: "Pipeline Output",
     bench_kicker: "Benchmarks",
     bench_title: "Measured results at a glance",
     bench_sub: "Recorded across our multi-clip test pipeline, sorted from highest reliability to fine-tuned precision.",
@@ -72,7 +80,10 @@ const I18N = {
     plans_kicker: "Early-Access Beta Pricing",
     plans_title: "Simple plans for creators and video teams",
     plans_sub: "Powered by Google Cloud Vertex AI and AWS GPU workers to cut wasted render spend.",
+    bill_monthly: "Monthly",
+    bill_annual: "Annual (-20%)",
     per_mo: "/mo",
+    per_yr: "/yr",
     p_popular: "Beta Popular",
     p1_for: "For trying out draft screening",
     p1_1: "20 draft continuity checks / mo",
@@ -108,6 +119,27 @@ const I18N = {
     footer_gh: "CutGate AI on GitHub",
     footer_privacy: "Privacy Policy",
     footer_terms: "Terms of Service",
+    co_kicker: "Workspace Activation",
+    co_title: "Configure Your CutGate AI Plan",
+    co_due_note: "$0 due today (Private Beta)",
+    co_free_note: "Free Tier — No payment required",
+    co_lbl_email: "Work Email",
+    co_lbl_team: "Studio / Company Name",
+    co_lbl_engine: "Primary Video Engine",
+    co_lbl_billing: "Billing & Checkout Preference",
+    co_bill_opt1: "Card Checkout Link (Stripe / Mastercard) on Provisioning",
+    co_bill_opt2: "B2B Invoice upon Workspace Activation",
+    co_security_note:
+      "No card numbers are collected on this preview page. Verified workspaces receive a secure Stripe / Mastercard checkout link or invoice upon provisioning.",
+    co_submit: "Activate Workspace Request",
+    co_rec_badge: "ORDER RECORDED · PRIVATE BETA",
+    co_rec_id: "Reference ID",
+    co_rec_plan: "Plan & Cycle",
+    co_rec_email: "Workspace Email",
+    co_rec_bill: "Billing Mode",
+    co_copy_rec: "Copy Summary",
+    co_send_mail: "Send Activation Email →",
+    co_edit_btn: "Change Plan",
     privacy_body:
       "Effective 2026. CutGate AI (cutgateai.com) collects only the work email you submit for private beta onboarding and support correspondence. We never sell or share personal data with third-party advertisers. Media drafts processed during QA are handled solely via our Google Cloud Vertex AI and AWS infrastructure and purged per workspace retention settings. To request access or deletion, contact contact@cutgateai.com or hwangjin@cutgateai.com.",
     terms_body:
@@ -120,12 +152,12 @@ const I18N = {
     nav_bench: "벤치마크",
     nav_plans: "요금제",
     nav_founder: "문의",
-    nav_cta: "베타 신청",
+    nav_cta: "베타 시작",
     hero_eyebrow: "AI 영상 QA · 마스터링 · Google Cloud Vertex AI + AWS 기반",
     hero_title: "HD 렌더링 비용을 쓰기 전에, 480p 초안에서 오류를 먼저 잡아내세요.",
     hero_sub:
       "Veo, Kling, Seedance, Runway와 모두 호환됩니다. CutGate AI가 화면 정지, 소품 이탈, 오디오 싱크 밀림을 자동 검수해 정상 컷만 1080p로 넘깁니다.",
-    hero_cta_1: "얼리 액세스 신청",
+    hero_cta_1: "플랜 선택 및 베타 시작",
     hero_cta_2: "3단계 흐름 보기",
     fl1_tag: "입력",
     fl1_t: "480p 초안 클립",
@@ -163,6 +195,14 @@ const I18N = {
     c3_b1: "최적 강도 CAS 0.18 (선명도 +8.88%)",
     c3_b2: "-15.5 LUFS 음량 평준화 · SHA-256 캐시",
     c3_m: "바로 납품 가능한 1080p MP4",
+    demo_kicker: "MVP 인터랙티브 미리보기",
+    demo_title: "CutGate AI가 480p 초안을 검수하는 과정을 직접 확인하세요",
+    demo_tab_fail: "샘플 A · 불량 초안",
+    demo_tab_pass: "샘플 B · 정상 초안",
+    demo_m1_lbl: "입력 480p 클립",
+    demo_m2_lbl: "VFR 프레임 타이밍",
+    demo_m3_lbl: "Gemini 4x4 소품 검수",
+    demo_m4_lbl: "파이프라인 출력",
     bench_kicker: "벤치마크",
     bench_title: "한눈에 보는 실측 성능 지표",
     bench_sub: "멀티클립 테스트 파이프라인에서 측정한 결과를 핵심 지표 순으로 정리했습니다.",
@@ -187,7 +227,10 @@ const I18N = {
     plans_kicker: "얼리 액세스 베타 요금제",
     plans_title: "크리에이터와 영상 팀을 위한 심플한 요금제",
     plans_sub: "Google Cloud Vertex AI와 AWS GPU 워커 기반으로 렌더링 크레딧 낭비를 줄여줍니다.",
+    bill_monthly: "월간 결제",
+    bill_annual: "연간 (-20%)",
     per_mo: "/월",
+    per_yr: "/년",
     p_popular: "베타 추천",
     p1_for: "초안 검수 기능 체험용",
     p1_1: "월 20회 초안 연속성 검수",
@@ -223,6 +266,27 @@ const I18N = {
     footer_gh: "CutGate AI GitHub 보기",
     footer_privacy: "개인정보처리방침",
     footer_terms: "이용약관",
+    co_kicker: "워크스페이스 활성화",
+    co_title: "CutGate AI 플랜 설정 및 결제 요청",
+    co_due_note: "오늘 결제 금액 $0 (프라이빗 베타)",
+    co_free_note: "무료 플랜 — 결제 정보 불필요",
+    co_lbl_email: "업무용 이메일",
+    co_lbl_team: "스튜디오 / 회사명",
+    co_lbl_engine: "주력 영상 생성 모델",
+    co_lbl_billing: "결제 및 청구 방식",
+    co_bill_opt1: "워크스페이스 승인 후 카드 결제 링크(Stripe / 해외겸용 카드) 발송",
+    co_bill_opt2: "활성화 시 B2B 인보이스 청구",
+    co_security_note:
+      "이 페이지에서는 실제 카드 번호를 직접 수집하지 않습니다. 워크스페이스 승인 시 안전한 Stripe / 해외겸용 카드 결제 링크 또는 인보이스가 발송됩니다.",
+    co_submit: "워크스페이스 활성화 요청",
+    co_rec_badge: "주문 요청 기록 완료 · 프라이빗 베타",
+    co_rec_id: "접수 번호",
+    co_rec_plan: "선택 플랜 · 주기",
+    co_rec_email: "워크스페이스 이메일",
+    co_rec_bill: "결제 방식",
+    co_copy_rec: "요청 내역 복사",
+    co_send_mail: "활성화 메일 바로 보내기 →",
+    co_edit_btn: "플랜 변경",
     privacy_body:
       "시행일 2026년. CutGate AI(cutgateai.com)는 프라이빗 베타 안내 및 기술 지원 응대를 위해 사용자가 직접 입력한 업무용 이메일만 수집하며, 제3자 광고주에게 판매·공유하지 않습니다. QA 과정에서 처리되는 영상 초안은 Google Cloud Vertex AI 및 AWS 인프라에서만 안전하게 처리되며 워크스페이스 보관 정책에 따라 파기됩니다. 열람·삭제 요청은 contact@cutgateai.com 또는 hwangjin@cutgateai.com 으로 문의해 주세요.",
     terms_body:
@@ -231,7 +295,166 @@ const I18N = {
   }
 };
 
+const DEMO_SAMPLES = {
+  en: {
+    fail: {
+      clip: "kling_scene04_480p.mp4",
+      vfr: "14 frozen holds @ 1.8s",
+      prop: "Prop scale drifted +42%",
+      out: "Blocked before 1080p render",
+      badge: "BLOCKED AT 480P",
+      summary: "Saved 1080p GPU spend — flagged frozen frames and prop drift for re-roll.",
+      pass: false
+    },
+    pass: {
+      clip: "veo_scene02_480p.mp4",
+      vfr: "240 / 240 unique pts_time",
+      prop: "Matched reference sheet",
+      out: "CAS 0.18 · -15.5 LUFS · 8.4 ms",
+      badge: "PROMOTED TO 1080P",
+      summary: "Passed all QA gates — exported sharp, loudness-leveled 1080p master MP4.",
+      pass: true
+    }
+  },
+  ko: {
+    fail: {
+      clip: "kling_scene04_480p.mp4",
+      vfr: "1.8초 구간 정지 프레임 14개",
+      prop: "소품 비율 +42% 이탈 감지",
+      out: "1080p 렌더링 진입 차단",
+      badge: "480P 단계 차단",
+      summary: "정지 프레임과 소품 이탈을 사전에 잡아내 불필요한 1080p GPU 과금을 막았습니다.",
+      pass: false
+    },
+    pass: {
+      clip: "veo_scene02_480p.mp4",
+      vfr: "240 / 240 pts_time 정상",
+      prop: "기준 소품 시트 일치 통과",
+      out: "CAS 0.18 · -15.5 LUFS · 8.4 ms",
+      badge: "1080P 승격 완료",
+      summary: "모든 QA 게이트를 통과해 선명도와 음량이 맞춰진 1080p 마스터로 출력했습니다.",
+      pass: true
+    }
+  }
+};
+
+const PLANS = {
+  starter: {
+    name: "Starter",
+    monthly: "$0",
+    annual: "$0",
+    quotaEn: "20 draft checks / mo · 3 1080p masters",
+    quotaKo: "월 20회 초안 검수 · 1080p 마스터 3회",
+    isFree: true
+  },
+  pro: {
+    name: "Pro Studio",
+    monthly: "$3.90",
+    annual: "$37.40",
+    quotaEn: "300 draft-to-HD checks / mo · CAS 0.18 + -15.5 LUFS",
+    quotaKo: "월 300회 초안-HD 검수 · CAS 0.18 + -15.5 LUFS",
+    isFree: false
+  },
+  api: {
+    name: "Team API",
+    monthly: "$14.90",
+    annual: "$143.00",
+    quotaEn: "REST & webhook QA · Custom rules · Signed audit logs",
+    quotaKo: "REST·웹훅 연동 · 맞춤형 규칙 · 서명된 감사 로그",
+    isFree: false
+  }
+};
+
 let currentLang = "en";
+let currentDemo = "fail";
+let currentCycle = "monthly";
+let currentPlan = "pro";
+let lastOrderText = "";
+
+function renderDemo() {
+  const sample = DEMO_SAMPLES[currentLang][currentDemo];
+  const clipEl = document.getElementById("demoClipVal");
+  const vfrEl = document.getElementById("demoVfrVal");
+  const propEl = document.getElementById("demoPropVal");
+  const outEl = document.getElementById("demoOutVal");
+  const badgeEl = document.getElementById("demoBadge");
+  const sumEl = document.getElementById("demoSummary");
+  const barEl = document.getElementById("demoVerdictBar");
+
+  if (clipEl) clipEl.textContent = sample.clip;
+  if (vfrEl) vfrEl.textContent = sample.vfr;
+  if (propEl) propEl.textContent = sample.prop;
+  if (outEl) outEl.textContent = sample.out;
+  if (badgeEl) badgeEl.textContent = sample.badge;
+  if (sumEl) sumEl.textContent = sample.summary;
+  if (barEl) {
+    barEl.classList.toggle("is-pass", sample.pass);
+    barEl.classList.toggle("is-fail", !sample.pass);
+  }
+
+  document.querySelectorAll(".demo-tab").forEach((btn) => {
+    const active = btn.getAttribute("data-sample") === currentDemo;
+    btn.classList.toggle("active", active);
+    btn.setAttribute("aria-selected", active ? "true" : "false");
+  });
+}
+
+function renderPricingDisplay() {
+  const dict = I18N[currentLang];
+  const unit = currentCycle === "monthly" ? dict.per_mo : dict.per_yr;
+  const sEl = document.getElementById("priceStarter");
+  const pEl = document.getElementById("pricePro");
+  const aEl = document.getElementById("priceApi");
+
+  if (sEl) sEl.textContent = PLANS.starter[currentCycle];
+  if (pEl) pEl.textContent = PLANS.pro[currentCycle];
+  if (aEl) aEl.textContent = PLANS.api[currentCycle];
+
+  document.querySelectorAll(".price-unit").forEach((el) => {
+    el.textContent = unit;
+  });
+
+  document.querySelectorAll(".bill-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.getAttribute("data-cycle") === currentCycle);
+  });
+}
+
+function renderCheckoutPlan() {
+  const dict = I18N[currentLang];
+  const plan = PLANS[currentPlan];
+  const unit = currentCycle === "monthly" ? dict.per_mo : dict.per_yr;
+
+  const labelEl = document.getElementById("coPlanLabel");
+  const quotaEl = document.getElementById("coPlanQuota");
+  const priceEl = document.getElementById("coPlanPrice");
+  const dueEl = document.getElementById("coDueNote");
+  const billingWrap = document.getElementById("coBillingWrap");
+
+  if (labelEl) labelEl.textContent = plan.name;
+  if (quotaEl) quotaEl.textContent = currentLang === "en" ? plan.quotaEn : plan.quotaKo;
+  if (priceEl) priceEl.textContent = `${plan[currentCycle]}${unit}`;
+  if (dueEl) dueEl.textContent = plan.isFree ? dict.co_free_note : dict.co_due_note;
+  if (billingWrap) billingWrap.style.display = plan.isFree ? "none" : "grid";
+
+  document.querySelectorAll(".co-plan-tab").forEach((btn) => {
+    btn.classList.toggle("active", btn.getAttribute("data-plan-tab") === currentPlan);
+  });
+}
+
+function openCheckout(planKey) {
+  if (planKey && PLANS[planKey]) {
+    currentPlan = planKey;
+  }
+  const formPane = document.getElementById("coFormPane");
+  const recPane = document.getElementById("coReceiptPane");
+  if (formPane) formPane.hidden = false;
+  if (recPane) recPane.hidden = true;
+  renderCheckoutPlan();
+  const modal = document.getElementById("checkoutModal");
+  if (modal && typeof modal.showModal === "function") {
+    modal.showModal();
+  }
+}
 
 function applyLanguage(lang) {
   currentLang = lang;
@@ -250,6 +473,10 @@ function applyLanguage(lang) {
   if (emailInput && dict.email_placeholder) {
     emailInput.placeholder = dict.email_placeholder;
   }
+  const coEmailInput = document.getElementById("coEmail");
+  if (coEmailInput && dict.email_placeholder) {
+    coEmailInput.placeholder = dict.email_placeholder;
+  }
   const copyBtn = document.getElementById("copyEmailBtn");
   if (copyBtn && !copyBtn.classList.contains("copied")) {
     copyBtn.textContent = dict.copy_btn;
@@ -258,6 +485,9 @@ function applyLanguage(lang) {
   if (toggleBtn) {
     toggleBtn.textContent = lang === "en" ? "한국어" : "English";
   }
+  renderDemo();
+  renderPricingDisplay();
+  renderCheckoutPlan();
 }
 
 function animateCountUp(el, target, decimals, prefix, suffix, duration) {
@@ -371,6 +601,18 @@ function fallbackCopy(text) {
   document.body.removeChild(ta);
 }
 
+async function copyText(text) {
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(text);
+    } else {
+      fallbackCopy(text);
+    }
+  } catch {
+    fallbackCopy(text);
+  }
+}
+
 function renderWaitlistFeedback(email) {
   const msgEl = document.getElementById("waitlistMsg");
   if (!msgEl || !email) return;
@@ -416,18 +658,130 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  document.querySelectorAll(".demo-tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const sample = btn.getAttribute("data-sample");
+      if (sample === "fail" || sample === "pass") {
+        currentDemo = sample;
+        renderDemo();
+      }
+    });
+  });
+
+  document.querySelectorAll(".bill-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const cycle = btn.getAttribute("data-cycle");
+      if (cycle === "monthly" || cycle === "annual") {
+        currentCycle = cycle;
+        renderPricingDisplay();
+        renderCheckoutPlan();
+      }
+    });
+  });
+
+  document.querySelectorAll(".open-checkout").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const planKey = btn.getAttribute("data-plan") || "pro";
+      openCheckout(planKey);
+    });
+  });
+
+  document.querySelectorAll(".co-plan-tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const planKey = btn.getAttribute("data-plan-tab");
+      if (planKey && PLANS[planKey]) {
+        currentPlan = planKey;
+        renderCheckoutPlan();
+      }
+    });
+  });
+
+  document.getElementById("checkoutForm")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const emailEl = document.getElementById("coEmail");
+    const teamEl = document.getElementById("coTeam");
+    const engineEl = document.getElementById("coEngine");
+    const billingEl = document.getElementById("coBilling");
+    if (!emailEl || !emailEl.value.trim()) return;
+
+    const email = emailEl.value.trim();
+    const team = (teamEl?.value || "").trim() || "Independent Studio";
+    const engine = engineEl?.value || "Multi-Model";
+    const plan = PLANS[currentPlan];
+    const dict = I18N[currentLang];
+    const unit = currentCycle === "monthly" ? dict.per_mo : dict.per_yr;
+    const priceLabel = `${plan[currentCycle]}${unit}`;
+    const billingMode = plan.isFree
+      ? dict.co_free_note
+      : billingEl?.options[billingEl.selectedIndex]?.text || "Invoice / Card Link";
+    const refId = `CG-2026-${currentPlan.toUpperCase()}-${Math.floor(1000 + Math.random() * 9000)}`;
+
+    const orderPayload = { refId, plan: plan.name, priceLabel, cycle: currentCycle, email, team, engine, billingMode };
+    lastOrderText = `Ref: ${refId}
+Plan: ${plan.name} (${priceLabel})
+Email: ${email}
+Team: ${team}
+Engine: ${engine}
+Billing: ${billingMode}`;
+
+    try {
+      localStorage.setItem("cutgate_checkout_order", JSON.stringify(orderPayload));
+      localStorage.setItem("cutgate_beta_email", email);
+    } catch {
+      // ignore storage errors
+    }
+
+    const recIdEl = document.getElementById("recId");
+    const recPlanEl = document.getElementById("recPlan");
+    const recEmailEl = document.getElementById("recEmail");
+    const recBillEl = document.getElementById("recBilling");
+    const mailBtn = document.getElementById("sendOrderMailBtn");
+
+    if (recIdEl) recIdEl.textContent = refId;
+    if (recPlanEl) recPlanEl.textContent = `${plan.name} · ${priceLabel}`;
+    if (recEmailEl) recEmailEl.textContent = email;
+    if (recBillEl) recBillEl.textContent = billingMode;
+    if (mailBtn) {
+      const subject = encodeURIComponent(`[CutGate AI] Workspace Activation (${refId})`);
+      const body = encodeURIComponent(
+        `Hi CutGate AI team,
+
+Please provision my workspace with the following plan:
+
+${lastOrderText}
+`
+      );
+      mailBtn.href = `mailto:hwangjin@cutgateai.com?subject=${subject}&body=${body}`;
+    }
+
+    const formPane = document.getElementById("coFormPane");
+    const recPane = document.getElementById("coReceiptPane");
+    if (formPane) formPane.hidden = true;
+    if (recPane) recPane.hidden = false;
+    renderWaitlistFeedback(email);
+  });
+
+  document.getElementById("coEditBtn")?.addEventListener("click", () => {
+    const formPane = document.getElementById("coFormPane");
+    const recPane = document.getElementById("coReceiptPane");
+    if (formPane) formPane.hidden = false;
+    if (recPane) recPane.hidden = true;
+  });
+
+  const copyOrderBtn = document.getElementById("copyOrderBtn");
+  copyOrderBtn?.addEventListener("click", async () => {
+    if (!lastOrderText) return;
+    await copyText(lastOrderText);
+    copyOrderBtn.textContent = I18N[currentLang].copied_btn;
+    setTimeout(() => {
+      copyOrderBtn.textContent = I18N[currentLang].co_copy_rec;
+    }, 1800);
+  });
+
   const copyBtn = document.getElementById("copyEmailBtn");
   copyBtn?.addEventListener("click", async () => {
     const email = copyBtn.getAttribute("data-email") || "hwangjin@cutgateai.com";
-    try {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        await navigator.clipboard.writeText(email);
-      } else {
-        fallbackCopy(email);
-      }
-    } catch {
-      fallbackCopy(email);
-    }
+    await copyText(email);
     copyBtn.classList.add("copied");
     copyBtn.textContent = I18N[currentLang].copied_btn;
     setTimeout(() => {
