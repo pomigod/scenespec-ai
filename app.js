@@ -6,7 +6,7 @@ const I18N = {
     nav_plans: "Pricing",
     nav_founder: "Contact",
     nav_cta: "Start Beta",
-    hero_eyebrow: "AI Video QA & Mastering · Google Cloud Vertex AI + AWS",
+    hero_eyebrow: "Multi-Cloud AI Video QA & Mastering · Google Cloud & AWS",
     hero_title: "Catch broken AI video drafts at 480p before paying for HD renders.",
     hero_sub:
       "Works with Veo, Kling, Seedance, and Runway. CutGate AI checks frame freezes, prop glitches, and audio sync automatically — so only clean takes move to 1080p.",
@@ -36,9 +36,9 @@ const I18N = {
     c1_b1: "Keeps character and prop scale steady",
     c1_b2: "Matches color tone across every cut",
     c1_m: "Video-Reference Anchor",
-    t2_a: "Gemini Vision",
+    t2_a: "Multimodal Vision",
     c2_t: "Block Broken 480p Drafts",
-    c2_p: "Audits VFR frame timestamps and 4x4 peak-cut grids with Vertex AI Gemini before HD rendering.",
+    c2_p: "Audits VFR frame timestamps and 4x4 peak-cut grids via Vertex AI Gemini and AWS Bedrock before HD rendering.",
     c2_b1: "Catches frozen holds via pts_time cadence",
     c2_b2: "Flags teleporting or warped props",
     c2_m: "Zero wasted HD render credits",
@@ -83,14 +83,18 @@ const I18N = {
     svg_x3: "Strong (0.22)",
     svg_x4: "Max (0.24)",
     svg_xaxis: "Sharpening Strength",
+    bench_footnote:
+      "Methodology: Measured across internal 480p→1080p multi-clip test runs using FFmpeg VFR pts_time timestamps, Tenengrad edge sharpness, and EBU R128 loudness logs.",
     plans_kicker: "Early-Access Beta Pricing",
     plans_title: "Simple plans for creators and video teams",
-    plans_sub: "Powered by Google Cloud Vertex AI and AWS GPU workers to cut wasted render spend.",
+    plans_sub:
+      "Multi-cloud orchestration on Google Cloud and AWS GPU workers. Early-beta rates are discounted ~70–80% off standard post-beta pricing.",
     bill_monthly: "Monthly",
     bill_annual: "Annual (-20%)",
     per_mo: "/mo",
     per_yr: "/yr",
-    p_popular: "Beta Popular",
+    p_popular: "Beta Rate",
+    p_api_badge: "Beta Rate",
     p1_for: "For trying out draft screening",
     p1_1: "20 draft continuity checks / mo",
     p1_2: "3 adaptive 1080p masters",
@@ -160,7 +164,7 @@ const I18N = {
     nav_plans: "요금제",
     nav_founder: "문의",
     nav_cta: "베타 시작",
-    hero_eyebrow: "AI 영상 QA · 마스터링 · Google Cloud Vertex AI + AWS 기반",
+    hero_eyebrow: "멀티클라우드 AI 영상 QA · 마스터링 · Google Cloud & AWS 기반",
     hero_title: "HD 렌더링 비용을 쓰기 전에, 480p 초안에서 오류를 먼저 잡아내세요.",
     hero_sub:
       "Veo, Kling, Seedance, Runway와 모두 호환됩니다. CutGate AI가 화면 정지, 소품 이탈, 오디오 싱크 밀림을 자동 검수해 정상 컷만 1080p로 넘깁니다.",
@@ -190,9 +194,9 @@ const I18N = {
     c1_b1: "캐릭터·소품 비율 흔들림 방지",
     c1_b2: "컷이 바뀌어도 색감과 질감 통일",
     c1_m: "Video-Reference 앵커 고정",
-    t2_a: "Gemini 비전",
+    t2_a: "멀티모달 비전",
     c2_t: "480p 불량 초안 차단",
-    c2_p: "Vertex AI Gemini로 VFR 프레임 간격과 4x4 피크 컷 그리드를 검사해 HD 낭비를 막습니다.",
+    c2_p: "Vertex AI Gemini와 AWS Bedrock 멀티모달로 VFR 프레임 간격과 4x4 피크 컷 그리드를 검사해 HD 낭비를 막습니다.",
     c2_b1: "pts_time 케이던스로 정지 프레임 탐지",
     c2_b2: "소품 순간이동·물리 붕괴 즉시 차단",
     c2_m: "불필요한 HD 렌더링 비용 절감",
@@ -237,14 +241,18 @@ const I18N = {
     svg_x3: "강함 (0.22)",
     svg_x4: "최대 (0.24)",
     svg_xaxis: "샤프닝 강도",
+    bench_footnote:
+      "측정 기준: 내부 480p→1080p 멀티클립 테스트 구간에서 FFmpeg VFR pts_time 타임스탬프, Tenengrad 윤곽 선명도, EBU R128 음량 로그로 실측했습니다.",
     plans_kicker: "얼리 액세스 베타 요금제",
     plans_title: "크리에이터와 영상 팀을 위한 심플한 요금제",
-    plans_sub: "Google Cloud Vertex AI와 AWS GPU 워커 기반으로 렌더링 크레딧 낭비를 줄여줍니다.",
+    plans_sub:
+      "Google Cloud와 AWS GPU 워커 멀티클라우드 기반으로 운영됩니다. 정식 출시 전 베타 기간에는 정상가 대비 약 70–80% 할인된 얼리버드 요금이 적용됩니다.",
     bill_monthly: "월간 결제",
     bill_annual: "연간 (-20%)",
     per_mo: "/월",
     per_yr: "/년",
-    p_popular: "베타 추천",
+    p_popular: "베타 특가",
+    p_api_badge: "베타 특가",
     p1_for: "초안 검수 기능 체험용",
     p1_1: "월 20회 초안 연속성 검수",
     p1_2: "월 3회 1080p 마스터링",
@@ -481,10 +489,14 @@ function renderPricingDisplay() {
   const sEl = document.getElementById("priceStarter");
   const pEl = document.getElementById("pricePro");
   const aEl = document.getElementById("priceApi");
+  const oldProEl = document.getElementById("oldPro");
+  const oldApiEl = document.getElementById("oldApi");
 
   if (sEl) sEl.textContent = PLANS.starter[currentCycle];
   if (pEl) pEl.textContent = PLANS.pro[currentCycle];
   if (aEl) aEl.textContent = PLANS.api[currentCycle];
+  if (oldProEl) oldProEl.textContent = currentCycle === "monthly" ? "$19" : "$228";
+  if (oldApiEl) oldApiEl.textContent = currentCycle === "monthly" ? "$49" : "$588";
 
   document.querySelectorAll(".price-unit").forEach((el) => {
     el.textContent = unit;

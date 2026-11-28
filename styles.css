@@ -767,6 +767,12 @@ body {
   color: var(--accent);
 }
 
+.bench-footnote {
+  margin-top: 18px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
 /* 4. Cloud Stack & Pricing */
 .pricing-top-row {
   display: flex;
@@ -873,6 +879,13 @@ body {
   letter-spacing: -0.02em;
   color: var(--ink);
   line-height: 1.1;
+}
+
+.price-old {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #71717a;
+  margin-right: 4px;
 }
 
 .price-amount .price-unit {

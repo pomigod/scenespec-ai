@@ -13,6 +13,35 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="CutGate AI — Check AI Video Drafts Before HD Render" />
   <meta name="twitter:description" content="Screen 480p AI video drafts for frame freezes, prop drift, and audio sync before 1080p mastering." />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CutGate AI",
+    "url": "https://cutgateai.com",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Web, Cloud API",
+    "description": "Model-agnostic AI video QA, continuity gating, and mastering platform for Veo, Kling, Seedance, and Runway.",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "USD",
+      "lowPrice": "0",
+      "highPrice": "49"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "CutGate AI",
+      "url": "https://cutgateai.com",
+      "email": "contact@cutgateai.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Jin Hwang"
+      },
+      "areaServed": "Global"
+    }
+  }
+  </script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23121212'/%3E%3Cpath d='M5 5H20L15 10H10V22H15L20 27H5Z' fill='%23F2F2F2'/%3E%3Cpath d='M23 5H27V27H23L18 22H22V18H15V14H22V10H18Z' fill='%23DDF924'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,7 +85,7 @@
     <!-- 1. HERO -->
     <section class="hero">
       <div class="container">
-        <p class="hero-eyebrow" data-i18n="hero_eyebrow">AI Video QA &amp; Mastering · Google Cloud Vertex AI + AWS</p>
+        <p class="hero-eyebrow" data-i18n="hero_eyebrow">Multi-Cloud AI Video QA &amp; Mastering · Google Cloud &amp; AWS</p>
         <h1 class="hero-title" data-i18n="hero_title">
           Catch broken AI video drafts at 480p before paying for HD renders.
         </h1>
@@ -150,10 +179,10 @@
             <div>
               <div class="card-tags">
                 <span class="tag tag-step">STEP 02</span>
-                <span class="tag" data-i18n="t2_a">Gemini Vision</span>
+                <span class="tag" data-i18n="t2_a">Multimodal Vision</span>
               </div>
               <h3 data-i18n="c2_t">Block Broken 480p Drafts</h3>
-              <p data-i18n="c2_p">Audits VFR frame timestamps and 4x4 peak-cut grids with Vertex AI Gemini before HD rendering.</p>
+              <p data-i18n="c2_p">Audits VFR frame timestamps and 4x4 peak-cut grids via Vertex AI Gemini and AWS Bedrock before HD rendering.</p>
               <ul class="step-list">
                 <li data-i18n="c2_b1">Catches frozen holds via pts_time cadence</li>
                 <li data-i18n="c2_b2">Flags teleporting or warped props</li>
@@ -340,6 +369,7 @@
             </div>
           </div>
         </div>
+        <p class="bench-footnote" data-i18n="bench_footnote">Methodology: Measured across internal 480p→1080p multi-clip test runs using FFmpeg VFR pts_time timestamps, Tenengrad edge sharpness, and EBU R128 loudness logs.</p>
       </div>
     </section>
 
@@ -350,7 +380,7 @@
           <div class="section-header">
             <p class="section-kicker" data-i18n="plans_kicker">Early-Access Beta Pricing</p>
             <h2 class="section-title" data-i18n="plans_title">Simple plans for creators and video teams</h2>
-            <p class="section-desc" data-i18n="plans_sub">Powered by Google Cloud Vertex AI and AWS GPU workers to cut wasted render spend.</p>
+            <p class="section-desc" data-i18n="plans_sub">Multi-cloud orchestration on Google Cloud and AWS GPU workers. Early-beta rates are discounted ~70–80% off standard post-beta pricing.</p>
           </div>
 
           <div class="billing-toggle" role="group" aria-label="Billing cycle">
@@ -360,10 +390,10 @@
         </div>
 
         <div class="stack-strip" aria-label="Cloud Infrastructure">
-          <span class="stack-pill primary">Vertex AI Gemini</span>
-          <span class="stack-pill">Cloud Run &amp; EC2 GPU</span>
+          <span class="stack-pill primary">Google Cloud · Vertex AI &amp; Cloud Run</span>
+          <span class="stack-pill primary">AWS · EC2 GPU, Bedrock &amp; S3</span>
           <span class="stack-pill">Cloud Firestore &amp; DynamoDB</span>
-          <span class="stack-pill">Cloud Storage &amp; S3</span>
+          <span class="stack-pill">FFmpeg 7.1 + AMD CAS</span>
         </div>
 
         <div class="cards-3">
@@ -382,9 +412,9 @@
           <article class="price-card featured">
             <div class="price-head">
               <span class="price-tier">Pro Studio</span>
-              <span class="price-badge" data-i18n="p_popular">Beta Popular</span>
+              <span class="price-badge" data-i18n="p_popular">Beta Rate</span>
             </div>
-            <div class="price-amount"><span id="pricePro">$3.90</span><span class="price-unit" data-i18n="per_mo">/mo</span></div>
+            <div class="price-amount"><s class="price-old" id="oldPro">$19</s> <span id="pricePro">$3.90</span><span class="price-unit" data-i18n="per_mo">/mo</span></div>
             <p class="price-for" data-i18n="p2_for">For active AI video creators &amp; studios</p>
             <ul class="price-list">
               <li data-i18n="p2_1">300 draft-to-HD checks / mo</li>
@@ -395,8 +425,11 @@
           </article>
 
           <article class="price-card">
-            <div class="price-head"><span class="price-tier">Team API</span></div>
-            <div class="price-amount"><span id="priceApi">$14.90</span><span class="price-unit" data-i18n="per_mo">/mo</span></div>
+            <div class="price-head">
+              <span class="price-tier">Team API</span>
+              <span class="price-badge" data-i18n="p_api_badge">Beta Rate</span>
+            </div>
+            <div class="price-amount"><s class="price-old" id="oldApi">$49</s> <span id="priceApi">$14.90</span><span class="price-unit" data-i18n="per_mo">/mo</span></div>
             <p class="price-for" data-i18n="p3_for">For automated studio pipelines</p>
             <ul class="price-list">
               <li data-i18n="p3_1">REST &amp; webhook QA integration</li>
