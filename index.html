@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CutGate AI — Model-Agnostic AI Video Consistency, VFR Forensics &amp; Mastering</title>
-  <meta name="description" content="CutGate AI is a model-agnostic generative video QA, consistency, and mastering platform built on Google Cloud Vertex AI (Gemini 4). Screen 480p drafts via VFR cadence forensics and 4x4 micro-grid multimodal inspection before 720p/1080p mastering." />
+  <title>CutGate AI — Video QA, VFR Forensics &amp; Adaptive CAS Mastering</title>
+  <meta name="description" content="CutGate AI is a model-agnostic generative video QA, consistency, and mastering SaaS built on Google Cloud Vertex AI (Gemini 4)." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230C0C0E'/%3E%3Crect x='1' y='1' width='30' height='30' rx='5' fill='none' stroke='%23D9FF00' stroke-width='2'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='sans-serif' font-size='13' font-weight='800' fill='%23D9FF00'%3ECG%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,18 +19,10 @@
         <span class="brand-mark" aria-hidden="true">CG</span>
         <span>CutGate <span class="brand-accent">AI</span></span>
       </a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#pipeline" data-i18n="nav_pipeline">3-Gate Engine</a>
-        <a href="#inspector" data-i18n="nav_demo">Telemetry</a>
-        <a href="#spec-matrix" data-i18n="nav_spec">Pipeline Spec</a>
-        <a href="#architecture" data-i18n="nav_arch">Vertex AI Stack</a>
-        <a href="#pricing" data-i18n="nav_pricing">Pricing</a>
-        <a href="#team" data-i18n="nav_contact">Founder &amp; Contact</a>
-      </nav>
       <div class="nav-actions">
         <button id="langToggle" class="btn-ghost btn-sm" type="button" aria-label="Switch language">한국어</button>
-        <a href="#waitlist" class="btn-bracket btn-sm">
-          <span data-i18n="nav_cta">REQUEST ACCESS</span>
+        <a href="#contact" class="btn-bracket btn-sm">
+          <span data-i18n="nav_cta">Request Access</span>
           <span class="chevron">&gt;&gt;&gt;</span>
         </a>
       </div>
@@ -38,613 +30,263 @@
   </header>
 
   <main id="top">
-    <!-- 1. HERO (Neon Volt + Subtle Checkered Telemetry) -->
-    <section class="hero checker-bg">
+    <!-- 1. HERO -->
+    <section class="hero">
       <div class="container">
-        <div class="hero-top-row">
-          <div class="volt-pill">
-            <span class="volt-dot"></span>
-            <span data-i18n="hero_badge">Built on Vertex AI (Gemini 4 Multimodal) · Veo · Kling · Seedance · Runway</span>
-          </div>
-          <span class="tilted-badge">NEON VOLT TELEMETRY v3.5</span>
+        <div class="volt-pill">
+          <span class="volt-dot"></span>
+          <span data-i18n="hero_badge">Built on Vertex AI (Gemini 4) · Model-Agnostic Video QA</span>
         </div>
 
-        <p class="hero-eyebrow" data-i18n="hero_eyebrow">ZERO DRIFT <span class="chevron">&gt;&gt;&gt;</span> ZERO WASTED 720P/1080P RENDER</p>
         <h1 class="hero-title" data-i18n="hero_title_html">
-          UNIVERSAL VIDEO QA, VFR FORENSICS &amp; <span class="volt-glow">ADAPTIVE CAS MASTERING.</span>
+          ZERO DRIFT. <span class="volt-glow">ZERO WASTED RENDERS.</span>
         </h1>
         <p class="hero-sub" data-i18n="hero_subtitle">
-          CutGate AI is a model-agnostic QA, consistency, and mastering platform for teams shipping multi-clip AI video across Veo, Kling, Seedance, and Runway. Lock style and physics with a Video-Reference Anchor, gate 480p drafts via VFR pts_time cadence and Vertex AI Gemini 4 4x4 micro-grid inspection before 720p promotion, and ship adaptive CAS-sharpened 1080p masters.
+          Screen 480p AI video drafts via VFR pts_time cadence and Vertex AI Gemini 4 4x4 micro-grids before 720p spend, then ship adaptive AMD CAS (+8.88%) and -15.5 LUFS masters.
         </p>
 
         <div class="hero-cta">
-          <a href="#waitlist" class="btn-bracket">
+          <a href="#contact" class="btn-bracket">
             <span data-i18n="hero_cta_primary">REQUEST ACCESS</span>
             <span class="chevron">&gt;&gt;&gt;</span>
           </a>
-          <a href="#inspector" class="btn-outline">
-            <span data-i18n="hero_cta_secondary">LIVE TELEMETRY</span>
-            <span class="chevron-volt">&gt;&gt;&gt;</span>
+          <a href="#benchmarks" class="btn-outline">
+            <span data-i18n="hero_cta_secondary">BENCHMARKS</span>
+            <span class="chevron">&gt;&gt;&gt;</span>
           </a>
         </div>
 
-        <div class="spec-strip">
-          <div class="spec-pill-card">
-            <strong>[01] 480P 3-GATE FIREWALL</strong>
-            <span data-i18n="metric_1">Vertex AI Gemini 4 4x4 micro-grid gates 720p/1080p promotion</span>
-          </div>
-          <div class="spec-pill-card">
-            <strong>[02] AMD CAS +8.88% SWEEP</strong>
-            <span data-i18n="metric_2">Tenengrad edge clarity gain verified at optimal 0.18 CAS sweep</span>
-          </div>
-          <div class="spec-pill-card">
-            <strong>[03] VFR &lt;50MS MASTERING</strong>
-            <span data-i18n="metric_3">VFR pts_time cadence audit · -15.5 LUFS · &lt;50ms A/V sync</span>
-          </div>
-        </div>
-
-        <div class="hero-grid">
-          <div class="panel-card" aria-label="3-Gate Swimlane Architecture">
-            <div class="panel-head">
-              <span>FIG 01 · CUTGATE 3-GATE SWIMLANE ARCHITECTURE</span>
-              <span class="panel-tag">VERTEX AI + CLOUD RUN</span>
-            </div>
-            <div class="svg-wrap">
-              <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CutGate 3-Gate Architecture Diagram">
-                <defs>
-                  <marker id="arrow-volt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#D9FF00"/>
-                  </marker>
-                  <marker id="arrow-fail" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#F87171"/>
-                  </marker>
-                  <marker id="arrow-pass" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#34D399"/>
-                  </marker>
-                </defs>
-                <rect x="8" y="8" width="664" height="284" rx="8" fill="#0C0C0E" stroke="#262629" stroke-width="1.5"/>
-                <rect x="8" y="8" width="664" height="30" rx="8" fill="#151517"/>
-                <line x1="8" y1="38" x2="672" y2="38" stroke="#D9FF00" stroke-width="1.2" stroke-opacity="0.55"/>
-                <text x="22" y="27" fill="#D9FF00" font-family="monospace" font-size="10.5" font-weight="700">STAGE 1: ANCHOR &amp; 480P</text>
-                <text x="244" y="27" fill="#D9FF00" font-family="monospace" font-size="10.5" font-weight="700">STAGE 2: GEMINI 4 4x4 GATE</text>
-                <text x="466" y="27" fill="#D9FF00" font-family="monospace" font-size="10.5" font-weight="700">STAGE 3: CAS &amp; MASTER</text>
-                <line x1="228" y1="38" x2="228" y2="292" stroke="#262629" stroke-width="1.2" stroke-dasharray="4 3"/>
-                <line x1="452" y1="38" x2="452" y2="292" stroke="#262629" stroke-width="1.2" stroke-dasharray="4 3"/>
-
-                <rect x="24" y="54" width="188" height="52" rx="6" fill="#151517" stroke="#3A3A40" stroke-width="1.3"/>
-                <text x="118" y="76" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#F5F5F7">720p Video-Ref Anchor</text>
-                <text x="118" y="93" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#A1A1AA">+ Multi-Angle Prop Sheets</text>
-
-                <rect x="24" y="132" width="188" height="56" rx="6" fill="#151517" stroke="#3A3A40" stroke-width="1.3"/>
-                <text x="118" y="154" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#F5F5F7">480p Draft Screening</text>
-                <text x="118" y="171" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#A1A1AA">Veo · Kling · Seedance · Runway</text>
-
-                <rect x="24" y="214" width="188" height="58" rx="6" fill="#151517" stroke="#D9FF00" stroke-width="1.3"/>
-                <text x="118" y="237" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#D9FF00">VFR pts_time Extractor</text>
-                <text x="118" y="254" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#A1A1AA">-vsync passthrough · 0.5s Bins</text>
-
-                <rect x="246" y="54" width="188" height="58" rx="6" fill="#151517" stroke="#3A3A40" stroke-width="1.3"/>
-                <text x="340" y="77" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#F5F5F7">3fps Sheet + 4x4 Micro-Grid</text>
-                <text x="340" y="94" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#A1A1AA">16 Sequential Peak-Cut Frames</text>
-
-                <rect x="246" y="138" width="188" height="62" rx="6" fill="#D9FF00" stroke="#D9FF00" stroke-width="1.5"/>
-                <text x="340" y="162" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="800" fill="#0C0C0E">Vertex AI Gemini 4 Gate</text>
-                <text x="340" y="180" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="600" fill="#18181B">Physics &amp; Prop Continuity Check</text>
-
-                <rect x="246" y="226" width="188" height="46" rx="6" fill="#2A0B0E" stroke="#F87171" stroke-width="1.3"/>
-                <text x="340" y="246" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#FECACA">FAIL -&gt; BLOCK 720p SPEND</text>
-                <text x="340" y="261" text-anchor="middle" font-family="sans-serif" font-size="9.5" fill="#FCA5A5">Flag Frame on X-Ray Board</text>
-
-                <rect x="468" y="54" width="188" height="58" rx="6" fill="#062818" stroke="#34D399" stroke-width="1.3"/>
-                <text x="562" y="77" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#A7F3D0">PASS -&gt; 720p Promotion</text>
-                <text x="562" y="94" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#6EE7B7">SHA-256 Segment Cache</text>
-
-                <rect x="468" y="138" width="188" height="58" rx="6" fill="#151517" stroke="#D9FF00" stroke-width="1.3"/>
-                <text x="562" y="161" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#D9FF00">AMD CAS A/B (+8.88%)</text>
-                <text x="562" y="178" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#A1A1AA">-15.5 LUFS · 0.08s Crossfade</text>
-
-                <rect x="468" y="220" width="188" height="52" rx="6" fill="#151517" stroke="#F5F5F7" stroke-width="1.4"/>
-                <text x="562" y="242" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#F5F5F7">1080p CRF14 + X-Ray Board</text>
-                <text x="562" y="258" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#A1A1AA">0 Black Frames · &lt;50ms Sync</text>
-
-                <line x1="118" y1="106" x2="118" y2="128" stroke="#D9FF00" stroke-width="1.4" marker-end="url(#arrow-volt)"/>
-                <line x1="118" y1="188" x2="118" y2="210" stroke="#D9FF00" stroke-width="1.4" marker-end="url(#arrow-volt)"/>
-                <path d="M 212 243 L 234 243 L 234 83 L 242 83" fill="none" stroke="#D9FF00" stroke-width="1.4" marker-end="url(#arrow-volt)"/>
-                <line x1="340" y1="112" x2="340" y2="134" stroke="#D9FF00" stroke-width="1.4" marker-end="url(#arrow-volt)"/>
-                <line x1="340" y1="200" x2="340" y2="222" stroke="#F87171" stroke-width="1.4" marker-end="url(#arrow-fail)"/>
-                <path d="M 434 169 L 456 169 L 456 83 L 464 83" fill="none" stroke="#34D399" stroke-width="1.4" marker-end="url(#arrow-pass)"/>
-                <line x1="562" y1="112" x2="562" y2="134" stroke="#D9FF00" stroke-width="1.4" marker-end="url(#arrow-volt)"/>
-                <line x1="562" y1="196" x2="562" y2="216" stroke="#D9FF00" stroke-width="1.4" marker-end="url(#arrow-volt)"/>
-              </svg>
-            </div>
-          </div>
-
-          <div class="panel-card" aria-label="CutGate live telemetry preview">
-            <div class="panel-head">
-              <span>cutgate_vfr_promotion_gate.json</span>
-              <span class="panel-tag">SCHEMA v3.5</span>
-            </div>
-            <pre class="code-block"><code>{
-  "target_models": ["veo", "kling", "seedance", "runway"],
-  "video_anchor": "golden_720p_master_ref_idx0",
-  "vfr_cadence_audit": {
-    "vsync_mode": "passthrough_pts_time",
-    "actual_frames": 241,
-    "low_motion_holds": "2/240 (PASS)",
-    "gemini4_microgrid_4x4": "PROP_CONTINUITY_OK"
-  },
-  "mastering_pipeline": {
-    "amd_cas_optimal": 0.18,
-    "tenengrad_gain": "+8.88%",
-    "flat_noise_delta": 1.9306,
-    "loudness_target": "-15.5 LUFS / -1.5 dBTP",
-    "av_sync_drift_ms": 8.4
-  }
-}</code></pre>
-            <div class="compile-bar">
-              <span data-i18n="card_status">Gemini 4 Promotion Gate: 480p Verified -&gt; 720p/1080p Master</span>
-              <span class="compile-badge">EXIT 0</span>
-            </div>
-          </div>
+        <div class="hero-chips">
+          <div class="metric-chip"><span>[01]</span> <b data-i18n="chip_1">480p 3-Gate Firewall</b></div>
+          <div class="metric-chip"><span>[02]</span> <b data-i18n="chip_2">CAS +8.88% (@ 0.18)</b></div>
+          <div class="metric-chip"><span>[03]</span> <b data-i18n="chip_3">A/V &lt;50ms · -15.5 LUFS</b></div>
         </div>
       </div>
     </section>
 
-    <!-- 2. 3-GATE ENGINE CARDS (Portfolio STAR Dark Cards) -->
-    <section id="pipeline" class="section section-elev">
+    <!-- 2. CORE ENGINE — 3 CARDS -->
+    <section id="engine" class="section section-elev">
       <div class="container">
         <div class="section-head">
-          <span class="tilted-badge" data-i18n="pipe_badge">3-GATE ARCHITECTURE</span>
-          <h2 data-i18n="pipe_title">Model-Agnostic 3-Gate Video Consistency &amp; Mastering Engine</h2>
-          <p data-i18n="pipe_sub">Stop wasting 720p/1080p GPU budgets on prop teleportation, hidden VFR holds, and over-sharpened masters.</p>
+          <span class="tilted-badge">CORE ENGINE</span>
+          <h2 data-i18n="eng_title">3-Gate Consistency, VFR Forensics &amp; Mastering</h2>
         </div>
 
         <div class="cards-3">
           <article class="gate-card">
-            <div class="gate-card-head">
-              <span class="volt-pill">ANCHOR + 480P FIREWALL</span>
-              <span class="gate-index">[01]</span>
+            <div class="pill-row">
+              <span class="volt-pill">STAGE 01</span>
+              <span class="volt-pill">ANCHOR</span>
             </div>
-            <h3 data-i18n="s1_title">[01] Video-Reference Master Anchor</h3>
+            <h3 data-i18n="c1_t">[01] Video-Ref Anchor</h3>
             <div class="star-list">
-              <div class="star-item"><span class="star-tag">[PROBLEM]</span><span data-i18n="s1_prob">Multi-clip AI generations drift in texture, spatial scale, and motion cadence across cuts.</span></div>
-              <div class="star-item"><span class="star-tag">[ENGINE]</span><span data-i18n="s1_eng">Binds a golden 720p master clip and multi-angle prop sheets to lock reference continuity.</span></div>
-              <div class="star-item"><span class="star-tag">[VERTEX AI]</span><span data-i18n="s1_vai">Gemini 4 Multimodal scores structural alignment before unlocking high-res GPU spend.</span></div>
-              <div class="star-item"><span class="star-tag">[METRIC]</span><span data-i18n="s1_met">480p pre-screen gates 720p promotion · zero unanchored drift.</span></div>
+              <div class="star-item"><span class="star-tag">[PROBLEM]</span><span data-i18n="c1_p">Multi-clip AI videos lose character, prop scale, and texture continuity across cuts.</span></div>
+              <div class="star-item"><span class="star-tag">[ENGINE]</span><span data-i18n="c1_e">Binds a golden 720p video anchor and multi-angle prop sheets before rendering.</span></div>
+              <div class="star-item"><span class="star-tag">[RESULT]</span><span data-i18n="c1_r">Locks cross-clip style and spatial physics from the very first 480p draft.</span></div>
             </div>
-            <a href="#inspector" class="btn-outline full preset-jump" data-jump="pass_vfr">
-              <span data-i18n="s1_cta">Inspect Stage 01 Spec</span>
-              <span class="chevron-volt">&gt;&gt;&gt;</span>
-            </a>
           </article>
 
-          <article class="gate-card is-featured">
-            <div class="gate-card-head">
+          <article class="gate-card">
+            <div class="pill-row">
+              <span class="volt-pill">STAGE 02</span>
               <span class="volt-pill">VERTEX AI GEMINI 4</span>
-              <span class="gate-index">[02]</span>
             </div>
-            <h3 data-i18n="s2_title">[02] 480p VFR &amp; 4x4 Micro-Grid Gate</h3>
+            <h3 data-i18n="c2_t">[02] 480p VFR &amp; 4×4 Gate</h3>
             <div class="star-list">
-              <div class="star-item"><span class="star-tag">[PROBLEM]</span><span data-i18n="s2_prob">VFR streams (e.g. 60fps metadata hiding 241 real frames) mask hold freezes and prop spawning.</span></div>
-              <div class="star-item"><span class="star-tag">[ENGINE]</span><span data-i18n="s2_eng">Extracts -vsync passthrough pts_time frames, 0.5s motion bins, 3fps sheets, and 4x4 peak-cut grids.</span></div>
-              <div class="star-item"><span class="star-tag">[VERTEX AI]</span><span data-i18n="s2_vai">Gemini 4 inspects 16-frame 4x4 micro-grids against prop plates to block physics collapse.</span></div>
-              <div class="star-item"><span class="star-tag">[METRIC]</span><span data-i18n="s2_met">100% VFR frame fidelity · instant red-box flagging on X-Ray board.</span></div>
+              <div class="star-item"><span class="star-tag">[PROBLEM]</span><span data-i18n="c2_p">VFR streams hide frozen holds and mid-air prop spawning inside costly 720p renders.</span></div>
+              <div class="star-item"><span class="star-tag">[ENGINE]</span><span data-i18n="c2_e">Extracts pts_time frames and 4×4 peak-cut micro-grids for Gemini 4 multimodal inspection.</span></div>
+              <div class="star-item"><span class="star-tag">[RESULT]</span><span data-i18n="c2_r">Blocks defective 480p drafts automatically before authorizing 720p GPU spend.</span></div>
             </div>
-            <a href="#inspector" class="btn-volt full preset-jump" data-jump="block_prop">
-              <span data-i18n="s2_cta">Simulate 4x4 Gate</span>
-              <span class="chevron">&gt;&gt;&gt;</span>
-            </a>
           </article>
 
           <article class="gate-card">
-            <div class="gate-card-head">
-              <span class="volt-pill">CAS + EBU R128 MASTER</span>
-              <span class="gate-index">[03]</span>
+            <div class="pill-row">
+              <span class="volt-pill">STAGE 03</span>
+              <span class="volt-pill">AMD CAS + EBU R128</span>
             </div>
-            <h3 data-i18n="s3_title">[03] Adaptive AMD CAS &amp; Mastering</h3>
+            <h3 data-i18n="c3_t">[03] Adaptive CAS Mastering</h3>
             <div class="star-list">
-              <div class="star-item"><span class="star-tag">[PROBLEM]</span><span data-i18n="s3_prob">Uniform sharpening amplifies flat-surface noise while multi-clip audio jumps in loudness.</span></div>
-              <div class="star-item"><span class="star-tag">[ENGINE]</span><span data-i18n="s3_eng">Sweeps AMD CAS (0.14–0.24) per clip, normalizes EBU R128, and verifies blackdetect + A/V sync.</span></div>
-              <div class="star-item"><span class="star-tag">[VERTEX AI]</span><span data-i18n="s3_vai">Cloud Run workers &amp; Gemini 4 sign SHA-256 segment caches and 1-page X-Ray proof boards.</span></div>
-              <div class="star-item"><span class="star-tag">[METRIC]</span><span data-i18n="s3_met">+8.88% Tenengrad @ CAS 0.18 · -15.5 LUFS · &lt;50ms sync.</span></div>
+              <div class="star-item"><span class="star-tag">[PROBLEM]</span><span data-i18n="c3_p">Uniform sharpening amplifies flat noise while stitched cuts drift in loudness and sync.</span></div>
+              <div class="star-item"><span class="star-tag">[ENGINE]</span><span data-i18n="c3_e">Sweeps AMD CAS (0.14–0.24) per clip with -15.5 LUFS and blackdetect QA.</span></div>
+              <div class="star-item"><span class="star-tag">[RESULT]</span><span data-i18n="c3_r">Ships +8.88% sharper 1080p masters with &lt;50ms A/V sync and zero black frames.</span></div>
             </div>
-            <a href="#inspector" class="btn-outline full preset-jump" data-jump="cas_sweep">
-              <span data-i18n="s3_cta">Inspect CAS Sweep</span>
-              <span class="chevron-volt">&gt;&gt;&gt;</span>
-            </a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 3. TELEMETRY BENCHMARKS (Skills Bar Style + Interactive Lab) -->
-    <section id="inspector" class="section">
+    <!-- 3. TELEMETRY BENCHMARKS — SCROLL ANIMATED GAUGES -->
+    <section id="benchmarks" class="section">
       <div class="container">
         <div class="section-head">
-          <span class="tilted-badge" data-i18n="demo_badge">TELEMETRY BENCHMARKS</span>
-          <h2 data-i18n="demo_title">Measured VFR Cadence, 4x4 Micro-Grid &amp; CAS Performance</h2>
-          <p data-i18n="demo_sub">Production benchmarks verifying how Gemini 4 multimodal inspection and signal forensics govern promotion and mastering.</p>
+          <span class="tilted-badge">TELEMETRY BENCHMARKS</span>
+          <h2 data-i18n="bench_title">Measured VFR, Gemini 4 Gate &amp; CAS Benchmarks</h2>
+          <p data-i18n="bench_sub">Production metrics verified across multi-clip generative pipelines.</p>
         </div>
 
-        <div class="skills-grid" id="telemetryBars">
-          <div class="skill-card">
-            <div class="skill-top">
-              <span class="skill-name" data-i18n="bar1_label">AMD CAS Sharpness Gain (Tenengrad @ 0.18)</span>
-              <span class="skill-val">+8.88%</span>
+        <div class="gauge-grid" id="gaugeGrid">
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <span class="gauge-label" data-i18n="g1_lbl">VFR Frame Integrity (241/241 pts_time)</span>
+              <span class="gauge-value" data-target="100" data-decimals="0" data-prefix="" data-suffix="%">0%</span>
             </div>
-            <div class="skill-track"><div class="skill-fill" data-width="88.8"></div></div>
-            <p class="skill-note" data-i18n="bar1_note">Optimal sweet spot bounding flat-region noise delta to 1.9306 across A/B sweep (0.14–0.24).</p>
+            <div class="bar-track"><div class="bar-fill" data-target-width="100"></div></div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-top">
-              <span class="skill-name" data-i18n="bar2_label">480p Pre-Filter Credit Guard</span>
-              <span class="skill-val" data-i18n="bar2_val">480p -&gt; 720p Gated</span>
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <span class="gauge-label" data-i18n="g2_lbl">AMD CAS Sharpness Gain (Tenengrad @ 0.18)</span>
+              <span class="gauge-value" data-target="8.88" data-decimals="2" data-prefix="+" data-suffix="%">+0.00%</span>
             </div>
-            <div class="skill-track"><div class="skill-fill" data-width="95"></div></div>
-            <p class="skill-note" data-i18n="bar2_note">Blocks prop teleportation and hold freezes at 480p draft stage before 720p/1080p spend.</p>
+            <div class="bar-track"><div class="bar-fill" data-target-width="89"></div></div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-top">
-              <span class="skill-name" data-i18n="bar3_label">A/V Sync Precision &amp; Blackframe Guard</span>
-              <span class="skill-val">&lt;50ms (8.4ms)</span>
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <span class="gauge-label" data-i18n="g3_lbl">A/V Sync &amp; Blackframe Margin (&lt;50ms spec)</span>
+              <span class="gauge-value" data-target="8.4" data-decimals="1" data-prefix="" data-suffix="ms">0.0ms</span>
             </div>
-            <div class="skill-track"><div class="skill-fill" data-width="96"></div></div>
-            <p class="skill-note" data-i18n="bar3_note">FFprobe mux verification + blackdetect zero-frame guarantee across all 1080p exports.</p>
+            <div class="bar-track"><div class="bar-fill" data-target-width="83"></div></div>
           </div>
 
-          <div class="skill-card">
-            <div class="skill-top">
-              <span class="skill-name" data-i18n="bar4_label">VFR Frame Integrity (-vsync passthrough pts_time)</span>
-              <span class="skill-val">100% (241/241)</span>
+          <div class="gauge-card">
+            <div class="gauge-top">
+              <span class="gauge-label" data-i18n="g4_lbl">16-Frame 4×4 Micro-Grid Audit Coverage</span>
+              <span class="gauge-value" data-target="100" data-decimals="0" data-prefix="" data-suffix="%">0%</span>
             </div>
-            <div class="skill-track"><div class="skill-fill" data-width="100"></div></div>
-            <p class="skill-note" data-i18n="bar4_note">Eliminates frame duplication/drop errors when auditing variable-frame-rate generative clips.</p>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-top">
-              <span class="skill-name" data-i18n="bar5_label">EBU R128 Broadcast Loudness Lock</span>
-              <span class="skill-val">-15.5 LUFS / -1.5 dBTP</span>
-            </div>
-            <div class="skill-track"><div class="skill-fill" data-width="92"></div></div>
-            <p class="skill-note" data-i18n="bar5_note">Dual-pass loudness normalization with 0.08s crossfade smoothing across multi-clip cuts.</p>
-          </div>
-
-          <div class="skill-card">
-            <div class="skill-top">
-              <span class="skill-name" data-i18n="bar6_label">Vertex AI 4x4 Micro-Grid &amp; SHA-256 Cache</span>
-              <span class="skill-val">16-Frame Peak Audit</span>
-            </div>
-            <div class="skill-track"><div class="skill-fill" data-width="94"></div></div>
-            <p class="skill-note" data-i18n="bar6_note">3fps full contact sheet + 16-frame peak-cut micro-grid paired with deterministic segment caching.</p>
+            <div class="bar-track"><div class="bar-fill" data-target-width="100"></div></div>
           </div>
         </div>
 
-        <div class="compiler-box">
-          <div class="preset-tabs" role="tablist" aria-label="Telemetry Scenarios">
-            <button class="preset-btn active" data-preset="pass_vfr" type="button" data-i18n="tab_pass">PASS · 480p Promoted to 720p</button>
-            <button class="preset-btn" data-preset="block_prop" type="button" data-i18n="tab_block">BLOCKED · Gemini 4 Prop &amp; Hold Gate</button>
-            <button class="preset-btn" data-preset="cas_sweep" type="button" data-i18n="tab_cas">MASTER · AMD CAS A/B (+8.88%)</button>
+        <div class="mini-chart-card" id="casMiniChart">
+          <div class="mini-chart-head">
+            <span class="mini-chart-title">AMD CAS A/B SWEEP · TENENGRAD SHARPNESS GAIN (4.54s SAMPLE)</span>
+            <span class="mini-chart-sub" data-i18n="cas_note">CAS 0.18* optimal sweet spot (+8.88%, flat noise delta 1.9306)</span>
           </div>
-          <div class="compiler-grid">
-            <div class="compiler-pane">
-              <div class="pane-label" data-i18n="pane_metrics">1. VFR pts_time, Motion Bins &amp; CAS Sweep Data</div>
-              <pre id="specPreview" class="code-block"></pre>
+          <div class="mini-bars">
+            <div class="mini-col">
+              <span class="mini-val">+0.00%</span>
+              <div class="mini-bar-wrap"><div class="mini-bar-fill" data-target-height="6"></div></div>
+              <span class="mini-lbl">0.00</span>
             </div>
-            <div class="compiler-pane">
-              <div class="pane-label" data-i18n="pane_verdict">2. Gemini 4 Gate Decision &amp; Mastering Output</div>
-              <div id="pipelineOutput" class="pipeline-list"></div>
+            <div class="mini-col">
+              <span class="mini-val">+8.65%</span>
+              <div class="mini-bar-wrap"><div class="mini-bar-fill" data-target-height="86"></div></div>
+              <span class="mini-lbl">0.14</span>
             </div>
-          </div>
-        </div>
-
-        <div class="charts-2">
-          <div class="panel-card">
-            <div class="panel-head">
-              <span>FIG 02 · AMD CAS A/B SWEEP (TENENGRAD GAIN VS NOISE)</span>
-              <span class="panel-tag">SAMPLE: 4.54s</span>
+            <div class="mini-col optimal">
+              <span class="mini-val">+8.88%</span>
+              <div class="mini-bar-wrap"><div class="mini-bar-fill" data-target-height="89"></div></div>
+              <span class="mini-lbl">0.18*</span>
             </div>
-            <div class="svg-wrap">
-              <svg viewBox="0 0 540 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AMD CAS A/B Benchmark Chart">
-                <rect x="0" y="0" width="540" height="230" fill="#0C0C0E"/>
-                <line x1="60" y1="26" x2="60" y2="185" stroke="#3A3A40" stroke-width="1.5"/>
-                <line x1="60" y1="185" x2="510" y2="185" stroke="#3A3A40" stroke-width="1.5"/>
-                <line x1="60" y1="105" x2="510" y2="105" stroke="#262629" stroke-width="1" stroke-dasharray="3 3"/>
-                <line x1="60" y1="45" x2="510" y2="45" stroke="#262629" stroke-width="1" stroke-dasharray="3 3"/>
-                <text x="50" y="188" text-anchor="end" font-family="monospace" font-size="10" fill="#A1A1AA">0%</text>
-                <text x="50" y="109" text-anchor="end" font-family="monospace" font-size="10" fill="#A1A1AA">+5%</text>
-                <text x="50" y="49" text-anchor="end" font-family="monospace" font-size="10" fill="#A1A1AA">+10%</text>
-
-                <rect x="92" y="181" width="56" height="4" rx="2" fill="#3A3A40"/>
-                <text x="120" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#A1A1AA">CAS 0.00</text>
-                <text x="120" y="174" text-anchor="middle" font-family="monospace" font-size="10" fill="#A1A1AA">+0.00%</text>
-
-                <rect x="186" y="64" width="56" height="121" rx="4" fill="#151517" stroke="#52525B" stroke-width="1.5"/>
-                <text x="214" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#F5F5F7">CAS 0.14</text>
-                <text x="214" y="57" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#F5F5F7">+8.65%</text>
-
-                <rect x="280" y="60" width="56" height="125" rx="4" fill="#D9FF00"/>
-                <text x="308" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="800" fill="#D9FF00">CAS 0.18*</text>
-                <text x="308" y="53" text-anchor="middle" font-family="monospace" font-size="10" font-weight="800" fill="#D9FF00">+8.88%</text>
-
-                <rect x="374" y="56" width="56" height="129" rx="4" fill="#151517" stroke="#52525B" stroke-width="1.5" stroke-dasharray="4 2"/>
-                <text x="402" y="203" text-anchor="middle" font-family="monospace" font-size="10" font-weight="700" fill="#F5F5F7">CAS 0.22</text>
-                <text x="402" y="49" text-anchor="middle" font-family="monospace" font-size="10" fill="#A1A1AA">+9.15%</text>
-
-                <rect x="448" y="54" width="42" height="131" rx="4" fill="#2A0B0E" stroke="#F87171" stroke-width="1.5"/>
-                <text x="469" y="203" text-anchor="middle" font-family="monospace" font-size="10" fill="#F87171">0.24</text>
-                <text x="469" y="47" text-anchor="middle" font-family="monospace" font-size="10" fill="#F87171">+9.30%</text>
-              </svg>
+            <div class="mini-col">
+              <span class="mini-val">+9.15%</span>
+              <div class="mini-bar-wrap"><div class="mini-bar-fill" data-target-height="92"></div></div>
+              <span class="mini-lbl">0.22</span>
             </div>
-            <div class="chart-caption"><b>cas_ab_report:</b> CAS 0.18 selected as optimal sweet spot (+8.88% Tenengrad sharpness, flat noise delta 1.9306).</div>
-          </div>
-
-          <div class="panel-card">
-            <div class="panel-head">
-              <span>FIG 03 · VFR 0.5S MOTION BINS &amp; HOLD DETECTION</span>
-              <span class="panel-tag">241 FRAMES</span>
+            <div class="mini-col warn">
+              <span class="mini-val">+9.30%</span>
+              <div class="mini-bar-wrap"><div class="mini-bar-fill" data-target-height="94"></div></div>
+              <span class="mini-lbl">0.24</span>
             </div>
-            <div class="svg-wrap">
-              <svg viewBox="0 0 540 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VFR 0.5s Motion Bins Chart">
-                <rect x="0" y="0" width="540" height="230" fill="#0C0C0E"/>
-                <line x1="55" y1="26" x2="55" y2="185" stroke="#3A3A40" stroke-width="1.5"/>
-                <line x1="55" y1="185" x2="510" y2="185" stroke="#3A3A40" stroke-width="1.5"/>
-                <line x1="55" y1="162" x2="510" y2="162" stroke="#F87171" stroke-width="1.2" stroke-dasharray="4 3"/>
-                <text x="506" y="157" text-anchor="end" font-family="monospace" font-size="9.5" fill="#F87171">HOLD THRESHOLD (diff &lt; 0.8)</text>
-
-                <polyline fill="none" stroke="#D9FF00" stroke-width="2.4"
-                  points="75,135 120,128 165,120 210,174 255,176 300,48 345,115 390,122 435,130 480,126"/>
-                <circle cx="210" cy="174" r="4.5" fill="#F87171"/>
-                <circle cx="255" cy="176" r="4.5" fill="#F87171"/>
-                <circle cx="300" cy="48" r="5.5" fill="#D9FF00"/>
-                <text x="232" y="198" text-anchor="middle" font-family="monospace" font-size="9.5" fill="#F87171" font-weight="700">4.5-6.0s FREEZE</text>
-                <text x="300" y="38" text-anchor="middle" font-family="monospace" font-size="9.5" font-weight="800" fill="#D9FF00">F142 SPIKE -&gt; 4x4 GRID</text>
-                <text x="85" y="203" font-family="monospace" font-size="9.5" fill="#A1A1AA">0.0s</text>
-                <text x="468" y="203" font-family="monospace" font-size="9.5" fill="#A1A1AA">10.0s</text>
-              </svg>
-            </div>
-            <div class="chart-caption"><b>qc_clip_vref:</b> Extracts 16-frame 4x4 micro-grid around peak motion spike F142 for Vertex AI Gemini 4 inspection.</div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="checker-divider" aria-hidden="true"></div>
-
-    <!-- 4. PIPELINE ARCHITECTURE & SPEC MATRIX (DeepRacer Poster Schedule Band Style) -->
-    <section id="spec-matrix" class="section section-elev">
+    <!-- 4. VERTEX AI STACK & PLANS -->
+    <section id="stack" class="section section-elev">
       <div class="container">
         <div class="section-head">
-          <span class="tilted-badge">PIPELINE SPEC</span>
-          <h2 data-i18n="matrix_title">Pipeline Architecture &amp; Stage Gate Specification Matrix</h2>
-          <p data-i18n="matrix_sub">Deterministic stage-by-stage input, Vertex AI processing, output artifact, and strict pass thresholds.</p>
+          <span class="tilted-badge">VERTEX AI STACK &amp; PLANS</span>
+          <h2 data-i18n="stack_title">Google Cloud Architecture &amp; SaaS Plans</h2>
         </div>
 
-        <div class="matrix-wrap">
-          <table class="spec-table">
-            <thead>
-              <tr>
-                <th data-i18n="th_stage">Stage</th>
-                <th data-i18n="th_input">Input Stream / Assets</th>
-                <th data-i18n="th_process">Vertex AI &amp; Signal Processing</th>
-                <th data-i18n="th_output">Output Artifact</th>
-                <th data-i18n="th_pass">Pass Criteria</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="spec-stage">01 · ANCHOR</td>
-                <td data-i18n="m1_in">720p golden master + character &amp; prop sheets</td>
-                <td data-i18n="m1_pr">Video-Reference binding + 480p pre-screen orchestration</td>
-                <td data-i18n="m1_out">Locked anchor manifest &amp; 480p draft clip</td>
-                <td class="spec-pass" data-i18n="m1_pass">Cadence &amp; scale aligned</td>
-              </tr>
-              <tr>
-                <td class="spec-stage">02 · VFR + 4x4</td>
-                <td data-i18n="m2_in">480p VFR MP4 stream + prop reference plates</td>
-                <td data-i18n="m2_pr">-vsync passthrough pts_time, 0.5s motion bins, Vertex AI Gemini 4 4x4 inspection</td>
-                <td data-i18n="m2_out">3fps contact sheet + 16-frame 4x4 micro-grid</td>
-                <td class="spec-pass" data-i18n="m2_pass">0 prop spawn · &lt;5% holds</td>
-              </tr>
-              <tr>
-                <td class="spec-stage">03 · MASTER</td>
-                <td data-i18n="m3_in">Promoted 720p/1080p clip + multi-clip audio stems</td>
-                <td data-i18n="m3_pr">Per-clip AMD CAS A/B sweep (0.14–0.24) + EBU R128 + 0.08s crossfade</td>
-                <td data-i18n="m3_out">1080p CRF 14 master + cas_ab_report.json</td>
-                <td class="spec-pass" data-i18n="m3_pass">+8.88% CAS · -15.5 LUFS</td>
-              </tr>
-              <tr>
-                <td class="spec-stage">04 · X-RAY QA</td>
-                <td data-i18n="m4_in">Final stitched master MP4 + telemetry logs</td>
-                <td data-i18n="m4_pr">blackdetect, F0 voice audit, A/V mux delta, SHA-256 segment hash</td>
-                <td data-i18n="m4_out">1-page X-Ray Proof Board + signed cache</td>
-                <td class="spec-pass" data-i18n="m4_pass">0 black · &lt;50ms A/V sync</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="stack-strip" aria-label="Google Cloud Pipeline Flow">
+          <div class="stack-node primary">Vertex AI Gemini 4 <span class="mono" style="font-size:0.74rem;">(4×4 Gate)</span></div>
+          <span class="stack-arrow">-&gt;</span>
+          <div class="stack-node">Cloud Run <span class="mono" style="font-size:0.74rem;color:var(--muted);">(VFR + CAS)</span></div>
+          <span class="stack-arrow">-&gt;</span>
+          <div class="stack-node">Cloud Firestore <span class="mono" style="font-size:0.74rem;color:var(--muted);">(3-Gate FSM)</span></div>
+          <span class="stack-arrow">-&gt;</span>
+          <div class="stack-node">Cloud Storage <span class="mono" style="font-size:0.74rem;color:var(--muted);">(Anchors &amp; 1080p)</span></div>
         </div>
 
-        <div class="section-head" id="forensics">
-          <h2 data-i18n="qa_title">6-Point Forensic QA &amp; X-Ray Proof Board</h2>
-          <p data-i18n="qa_sub">Zero-trust verification across every multi-clip render: never ship broken generative artifacts to clients or contests.</p>
-        </div>
-        <div class="cards-3">
-          <article class="forensic-card">
-            <div class="forensic-head"><span class="volt-pill">QA 01</span><span>PTS_TIME</span></div>
-            <h3 data-i18n="q1_t">VFR Passthrough Cadence Audit</h3>
-            <p data-i18n="q1_d">Inspects showinfo pts_time frame deltas with -vsync passthrough to expose hidden variable-frame-rate stutter and duplicate hold frames.</p>
-          </article>
-          <article class="forensic-card">
-            <div class="forensic-head"><span class="volt-pill">QA 02</span><span>MOTION BINS</span></div>
-            <h3 data-i18n="q2_t">0.5s Motion Bins &amp; Spike Detection</h3>
-            <p data-i18n="q2_d">Quantifies frame-to-frame pixel deltas across 0.5-second bins to catch frozen stretches (&lt;0.8 diff) and sudden morphing/jump-cut spikes.</p>
-          </article>
-          <article class="forensic-card">
-            <div class="forensic-head"><span class="volt-pill">QA 03</span><span>GEMINI 4</span></div>
-            <h3 data-i18n="q3_t">4x4 Micro-Grid Physics Gate</h3>
-            <p data-i18n="q3_d">Extracts 16 sequential high-res frames around peak action cuts so Gemini 4 verifies object permanence, gravity, and zero prop teleportation.</p>
-          </article>
-          <article class="forensic-card">
-            <div class="forensic-head"><span class="volt-pill">QA 04</span><span>TENENGRAD</span></div>
-            <h3 data-i18n="q4_t">Adaptive AMD CAS A/B Benchmark</h3>
-            <p data-i18n="q4_d">Sweeps CAS strengths (0.14–0.24) per clip, selecting the exact point that maximizes Tenengrad edge clarity while bounding flat-surface noise.</p>
-          </article>
-          <article class="forensic-card">
-            <div class="forensic-head"><span class="volt-pill">QA 05</span><span>EBU R128</span></div>
-            <h3 data-i18n="q5_t">Audio F0, -15.5 LUFS &amp; &lt;50ms Sync</h3>
-            <p data-i18n="q5_d">Audits EBU R128 loudness (-15.5 LUFS / -1.5 dBTP), voice pitch bleed, 0.08s crossfade smoothing, blackdetect, and &lt;50ms A/V sync drift.</p>
-          </article>
-          <article class="forensic-card">
-            <div class="forensic-head"><span class="volt-pill">QA 06</span><span>SHA-256</span></div>
-            <h3 data-i18n="q6_t">3fps Sheet &amp; SHA-256 Proof Board</h3>
-            <p data-i18n="q6_d">Generates a 3fps full-clip contact sheet and 1-page X-Ray review board backed by SHA-256 segment caching for instant client approval.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Google Cloud & Vertex AI Stack -->
-    <section id="architecture" class="section">
-      <div class="container">
-        <div class="section-head">
-          <span class="tilted-badge">GOOGLE CLOUD STACK</span>
-          <h2 data-i18n="arch_title">Google Cloud &amp; Vertex AI Architecture</h2>
-          <p data-i18n="arch_sub">Vertex AI Gemini 4 multimodal reasoning paired with Cloud Run FFmpeg/OpenCV signal pipelines.</p>
-        </div>
-        <div class="arch-grid">
-          <div class="arch-node">
-            <span class="volt-pill">Multimodal Gate</span>
-            <h3>Vertex AI Gemini 4</h3>
-            <p data-i18n="arch_1">Analyzes 4x4 peak-cut micro-grids, 3fps contact sheets, and reference prop assets to detect physics collapse or prop drift and authorize 720p promotion.</p>
-          </div>
-          <div class="arch-node">
-            <span class="volt-pill">Signal &amp; Master</span>
-            <h3>Cloud Run Workers</h3>
-            <p data-i18n="arch_2">Runs -vsync passthrough VFR cadence checks, 0.5s motion-bin scoring, AMD CAS A/B sweeps, and FFmpeg 7.1 -15.5 LUFS lossless mastering.</p>
-          </div>
-          <div class="arch-node">
-            <span class="volt-pill">3-Gate FSM</span>
-            <h3>Cloud Firestore</h3>
-            <p data-i18n="arch_3">Manages 480p -&gt; 720p -&gt; 1080p promotion states, SHA-256 segment cache keys, and per-clip CAS/VFR telemetry records.</p>
-          </div>
-          <div class="arch-node">
-            <span class="volt-pill">Asset Vault</span>
-            <h3>Cloud Storage</h3>
-            <p data-i18n="arch_4">Stores golden video anchors, reference prop plates, 4x4 micro-grid sheets, 400Kbps review proxies, and signed 1080p/4K MP4 masters.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="section section-elev">
-      <div class="container">
-        <div class="section-head">
-          <span class="tilted-badge">PLANS &amp; API</span>
-          <h2 data-i18n="pricing_title">Predictable SaaS &amp; QA API Plans</h2>
-          <p data-i18n="pricing_sub">Cut wasted 720p/1080p renders across Veo, Kling, Seedance, and Runway with automated VFR and multimodal gates.</p>
-        </div>
         <div class="cards-3">
           <article class="price-card">
-            <div class="gate-card-head"><span class="volt-pill">STARTER</span><span class="gate-index">BETA</span></div>
+            <div class="price-top"><span class="volt-pill">STARTER</span></div>
             <div class="price">$0<span>/mo</span></div>
             <ul>
-              <li data-i18n="p1_1">20 480p VFR &amp; 4x4 Micro-Grid gates / mo</li>
-              <li data-i18n="p1_2">3 full 6-Point Forensic QA &amp; CAS sweeps</li>
-              <li data-i18n="p1_3">Multi-model reference continuity validator</li>
+              <li data-i18n="p1_1">20 480p VFR &amp; 4×4 Micro-Grid gates</li>
+              <li data-i18n="p1_2">3 AMD CAS A/B mastering sweeps</li>
+              <li data-i18n="p1_3">Multi-model reference validator</li>
             </ul>
-            <a href="#waitlist" class="btn-outline full" data-i18n="p_cta_free">Start Free</a>
+            <a href="#contact" class="btn-outline full" data-i18n="p_cta_free">Start Free</a>
           </article>
+
           <article class="price-card featured">
-            <div class="gate-card-head"><span class="volt-pill">PRO STUDIO</span><span class="tilted-badge" data-i18n="p_popular">MOST POPULAR</span></div>
+            <div class="price-top"><span class="volt-pill">PRO STUDIO</span><span class="tilted-badge" data-i18n="p_popular">POPULAR</span></div>
             <div class="price">$39<span>/mo</span></div>
             <ul>
-              <li data-i18n="p2_1">300 480p -&gt; 720p Gemini 4 promotion gates</li>
-              <li data-i18n="p2_2">Adaptive AMD CAS A/B &amp; -15.5 LUFS mastering</li>
-              <li data-i18n="p2_3">3fps sheets, 4x4 micro-grids &amp; SHA-256 cache</li>
+              <li data-i18n="p2_1">300 Gemini 4 480p -&gt; 720p gates</li>
+              <li data-i18n="p2_2">Adaptive CAS + -15.5 LUFS mastering</li>
+              <li data-i18n="p2_3">SHA-256 segment cache &amp; X-Ray board</li>
             </ul>
-            <a href="#waitlist" class="btn-volt full" data-i18n="p_cta_pro">Join Pro Beta</a>
+            <a href="#contact" class="btn-volt full" data-i18n="p_cta_pro">Join Pro Beta</a>
           </article>
+
           <article class="price-card">
-            <div class="gate-card-head"><span class="volt-pill">ENTERPRISE API</span><span class="gate-index">SLA</span></div>
+            <div class="price-top"><span class="volt-pill">ENTERPRISE API</span></div>
             <div class="price">$149<span>/mo</span></div>
             <ul>
-              <li data-i18n="p3_1">REST &amp; Webhook QA gate for video platforms</li>
-              <li data-i18n="p3_2">Custom Gemini 4 prop-continuity rulesets</li>
-              <li data-i18n="p3_3">Signed X-Ray QA certificates &amp; priority SLA</li>
+              <li data-i18n="p3_1">REST &amp; Webhook QA gate integration</li>
+              <li data-i18n="p3_2">Custom Gemini 4 prop continuity rules</li>
+              <li data-i18n="p3_3">Signed X-Ray certificates &amp; SLA</li>
             </ul>
-            <a href="#waitlist" class="btn-outline full" data-i18n="p_cta_studio">Request API Access</a>
+            <a href="#contact" class="btn-outline full" data-i18n="p_cta_api">Request API</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 5. FOUNDER & CONTACT BAND -->
-    <section id="team" class="section">
+    <!-- 5. FOUNDER & DIRECT CONTACT -->
+    <section id="contact" class="section">
       <div class="container">
         <div class="section-head">
           <span class="tilted-badge">FOUNDER &amp; CONTACT</span>
-          <h2 data-i18n="team_title">Founder &amp; Proven Production Engineering</h2>
-          <p data-i18n="team_sub">Engineered from real multi-clip AI video pipelines across 10+ commercial, stop-motion, and public-sector campaigns.</p>
+          <h2 data-i18n="contact_h">Founder &amp; Early Access</h2>
         </div>
 
-        <div class="founder-grid">
-          <div class="team-card">
+        <div class="founder-box">
+          <div class="founder-left">
             <div class="team-avatar" aria-hidden="true">JH</div>
-            <div class="team-info">
+            <div>
               <h3 data-i18n="team_name">Jin Hwang — Founder &amp; Lead AI Systems Engineer</h3>
-              <p class="team-role" data-i18n="team_org">B.S. Candidate in Artificial Intelligence (Minor: Medical IT Engineering), Konyang University · Republic of Korea</p>
-              <p class="team-bio" data-i18n="team_bio">Built CutGate's core VFR passthrough cadence auditor, 4x4 peak-cut micro-grid inspection loop, adaptive AMD CAS A/B mastering benchmark, and multi-reference video-anchor continuity pipelines while shipping 10+ 4K/1080p AI video productions. Background spans Graph Convolutional Networks (GCN), Swin Transformer vision systems, and zero-trust verification tooling.</p>
-              <div class="team-links">
-                <a href="https://github.com/pomigod/scenespec-ai" target="_blank" rel="noopener noreferrer">GitHub Project</a>
-                <a href="https://github.com/pomigod/research-portfolio" target="_blank" rel="noopener noreferrer">Research Portfolio</a>
-                <a href="https://orcid.org/0009-0007-4269-0168" target="_blank" rel="noopener noreferrer">ORCID 0009-0007-4269-0168</a>
+              <p class="founder-bio" data-i18n="team_bio">
+                Senior AI student at Konyang University (Minor: Medical IT). Built CutGate's VFR passthrough, 4×4 micro-grid, and AMD CAS mastering engine across 10+ AI video productions.
+              </p>
+              <div class="founder-links">
+                <a href="https://github.com/pomigod/scenespec-ai" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://github.com/pomigod/research-portfolio" target="_blank" rel="noopener noreferrer">Portfolio</a>
+                <a href="https://orcid.org/0009-0007-4269-0168" target="_blank" rel="noopener noreferrer">ORCID</a>
               </div>
             </div>
           </div>
 
-          <div class="contact-card">
-            <div>
-              <span class="volt-pill" data-i18n="contact_badge">DIRECT BUSINESS CONTACT</span>
-              <h3 style="margin-top:12px;font-size:1.15rem;font-weight:800;" data-i18n="contact_title">Founder &amp; Billing Contact</h3>
-              <p style="font-size:0.86rem;color:var(--muted);margin-top:4px;" data-i18n="contact_desc">Official domain contact for Google Cloud Startup Program, enterprise API trials, and studio onboarding.</p>
-            </div>
-
+          <div class="founder-right">
             <div class="email-copy-box">
-              <a href="mailto:hwangjin@cutgateai.com" id="contactEmailText">hwangjin@cutgateai.com</a>
+              <a href="mailto:hwangjin@cutgateai.com">hwangjin@cutgateai.com</a>
               <button type="button" id="copyEmailBtn" class="copy-email-btn" data-email="hwangjin@cutgateai.com">COPY</button>
             </div>
-
-            <div class="gcp-badge">
-              <span class="volt-dot"></span>
-              <span data-i18n="gcp_powered">Powered by Google Cloud Vertex AI (Gemini 4) · Domain: cutgateai.com</span>
-            </div>
+            <form id="waitlistForm" class="waitlist-form">
+              <input id="emailInput" type="email" required placeholder="you@company.com" aria-label="Work email" />
+              <button type="submit" class="btn-bracket btn-sm">
+                <span data-i18n="wl_btn">REQUEST ACCESS</span>
+                <span class="chevron">&gt;&gt;&gt;</span>
+              </button>
+            </form>
+            <p id="waitlistMsg" class="waitlist-msg" role="status" aria-live="polite"></p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Waitlist -->
-    <section id="waitlist" class="section section-elev">
-      <div class="container">
-        <div class="waitlist-box">
-          <h2 data-i18n="wl_title">REQUEST EARLY ACCESS</h2>
-          <p data-i18n="wl_sub">Shipping multi-shot AI videos on Veo, Kling, Seedance, or Runway? Leave your work email to join the CutGate AI beta on Vertex AI.</p>
-          <form id="waitlistForm" class="waitlist-form">
-            <input id="emailInput" type="email" required placeholder="you@company.com" aria-label="Work email address" />
-            <select id="roleSelect" aria-label="Primary use case">
-              <option value="startup" data-i18n="role_1">SaaS / Startup Video Team</option>
-              <option value="agency" data-i18n="role_2">Creative / Ad Agency</option>
-              <option value="platform" data-i18n="role_3">AI Video Platform (QA API)</option>
-            </select>
-            <button type="submit" class="btn-bracket">
-              <span data-i18n="wl_btn">REQUEST ACCESS</span>
-              <span class="chevron">&gt;&gt;&gt;</span>
-            </button>
-          </form>
-          <p id="waitlistMsg" class="waitlist-msg" role="status" aria-live="polite"></p>
         </div>
       </div>
     </section>
@@ -652,10 +294,8 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>
-        <strong>CutGate <span class="brand-accent">AI</span></strong>
-        <p data-i18n="footer_desc">Model-Agnostic AI Video Consistency, VFR Forensics &amp; Mastering Platform — Republic of Korea</p>
-        <p class="footer-contact">Contact: <a href="mailto:hwangjin@cutgateai.com">hwangjin@cutgateai.com</a> · <a href="mailto:contact@cutgateai.com">contact@cutgateai.com</a></p>
+      <div class="footer-meta">
+        <strong>CutGate <span class="brand-accent">AI</span></strong> · <a href="https://cutgateai.com">cutgateai.com</a> · <a href="mailto:hwangjin@cutgateai.com">hwangjin@cutgateai.com</a> · <a href="mailto:contact@cutgateai.com">contact@cutgateai.com</a>
       </div>
       <div class="footer-links">
         <button type="button" class="link-btn" data-modal="privacyModal" data-i18n="footer_privacy">Privacy Policy</button>
@@ -667,13 +307,13 @@
 
   <dialog id="privacyModal" class="info-modal">
     <h3 data-i18n="footer_privacy">Privacy Policy</h3>
-    <p data-i18n="privacy_body">CutGate AI collects only the work email address and use-case selection voluntarily submitted for private beta onboarding. Data is never sold or shared with third-party advertisers. You may request deletion anytime via hwangjin@cutgateai.com or contact@cutgateai.com.</p>
+    <p data-i18n="privacy_body">CutGate AI collects only the work email submitted for private beta onboarding and never sells data. Contact hwangjin@cutgateai.com for removal.</p>
     <button type="button" class="btn-outline btn-sm close-modal" data-i18n="close_btn">Close</button>
   </dialog>
 
   <dialog id="termsModal" class="info-modal">
     <h3 data-i18n="footer_terms">Terms of Service</h3>
-    <p data-i18n="terms_body">CutGate AI is currently in private beta. Uploaded draft clips, forensic QA audit reports, and X-Ray proof certificates remain the property of the workspace owner.</p>
+    <p data-i18n="terms_body">CutGate AI is in private beta. Uploaded drafts, forensic QA logs, and mastered exports remain the property of the workspace owner.</p>
     <button type="button" class="btn-outline btn-sm close-modal" data-i18n="close_btn">Close</button>
   </dialog>
 
