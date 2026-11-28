@@ -41,8 +41,15 @@
       <div class="nav-actions">
         <button id="langToggle" class="btn-ghost" type="button" aria-label="Switch language">한국어</button>
         <button type="button" class="btn-secondary btn-sm open-checkout" data-plan="starter" data-i18n="nav_cta">Start Beta</button>
+        <button id="mobileMenuBtn" class="btn-ghost mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Menu">☰</button>
       </div>
     </div>
+    <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation" hidden>
+      <a href="#engine" data-i18n="nav_engine">How it works</a>
+      <a href="#benchmarks" data-i18n="nav_bench">Benchmarks</a>
+      <a href="#pricing" data-i18n="nav_plans">Pricing</a>
+      <a href="#founder" data-i18n="nav_founder">Contact</a>
+    </nav>
   </header>
 
   <main id="top">
@@ -182,7 +189,14 @@
             <div class="qa-demo-tabs" role="tablist" aria-label="Sample clip selector">
               <button type="button" id="demoFailBtn" class="demo-tab active" role="tab" aria-selected="true" data-sample="fail" data-i18n="demo_tab_fail">Sample A · Broken Draft</button>
               <button type="button" id="demoPassBtn" class="demo-tab" role="tab" aria-selected="false" data-sample="pass" data-i18n="demo_tab_pass">Sample B · Clean Draft</button>
+              <button type="button" id="demoRunBtn" class="btn-secondary btn-sm" data-i18n="demo_run_btn">Run Gate Scan</button>
             </div>
+          </div>
+
+          <div class="qa-stage-strip" aria-label="Live Gate Stages">
+            <span class="stage-pill done" id="stagePill1" data-i18n="demo_st1">1. VFR pts_time</span>
+            <span class="stage-pill done" id="stagePill2" data-i18n="demo_st2">2. Gemini 4x4 Grid</span>
+            <span class="stage-pill done" id="stagePill3" data-i18n="demo_st3">3. CAS + Audio Gate</span>
           </div>
 
           <div class="qa-demo-grid">
@@ -263,7 +277,7 @@
           <div class="cas-card" id="casMiniChart">
             <div class="cas-head">
               <span class="cas-title" data-i18n="cas_title">Sharpening Strength Comparison (AMD CAS)</span>
-              <span class="cas-note" data-i18n="cas_note">0.22–0.24 increases flat-area grain; 0.18 hits +8.88% clarity cleanly</span>
+              <span class="cas-note" data-i18n="cas_note">Click any bar to inspect sharpness vs. flat-area noise tradeoff</span>
             </div>
             <div class="cas-svg-wrap">
               <svg viewBox="0 0 640 315" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sharpening Strength Comparison Chart">
@@ -293,33 +307,36 @@
                 <rect x="275" y="22" width="136" height="24" rx="4" fill="#1C1C1F" stroke="#DDF924" stroke-opacity="0.55" stroke-width="1" />
                 <text x="343" y="38" text-anchor="middle" font-size="10.5" font-weight="600" fill="#DDF924" data-i18n="svg_badge">Recommended: 0.18</text>
 
-                <rect class="svg-bar" x="108" y="248" width="58" height="0" rx="2" fill="#3B4252" stroke="#52525B" stroke-width="1" data-target-y="244" data-target-h="4" />
+                <rect class="svg-bar" data-cas="0.0" tabindex="0" role="button" aria-label="CAS 0.0" x="108" y="248" width="58" height="0" rx="2" fill="#3B4252" stroke="#52525B" stroke-width="1" data-target-y="244" data-target-h="4" />
                 <text class="svg-bar-val" x="137" y="236" text-anchor="middle" font-size="11.5" font-weight="600" fill="#A1A1AA" data-target="0.00">+0.00%</text>
                 <line x1="137" y1="248" x2="137" y2="253" stroke="#525252" stroke-width="1.5" />
                 <text x="137" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#A1A1AA" data-i18n="svg_x0">Off (0.0)</text>
 
-                <rect class="svg-bar" x="211" y="248" width="58" height="0" rx="2" fill="#3B6E8C" stroke="#5491B5" stroke-width="1" data-target-y="103.8" data-target-h="144.2" />
+                <rect class="svg-bar" data-cas="0.14" tabindex="0" role="button" aria-label="CAS 0.14" x="211" y="248" width="58" height="0" rx="2" fill="#3B6E8C" stroke="#5491B5" stroke-width="1" data-target-y="103.8" data-target-h="144.2" />
                 <text class="svg-bar-val" x="240" y="236" text-anchor="middle" font-size="11.5" font-weight="600" fill="#E4E4E7" data-target="8.65">+0.00%</text>
                 <line x1="240" y1="248" x2="240" y2="253" stroke="#525252" stroke-width="1.5" />
                 <text x="240" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#E4E4E7" data-i18n="svg_x1">Light (0.14)</text>
 
-                <rect class="svg-bar" x="314" y="248" width="58" height="0" rx="2" fill="#DDF924" stroke="#E7FF66" stroke-width="1" data-target-y="100" data-target-h="148" />
+                <rect class="svg-bar is-selected" data-cas="0.18" tabindex="0" role="button" aria-label="CAS 0.18" x="314" y="248" width="58" height="0" rx="2" fill="#DDF924" stroke="#E7FF66" stroke-width="2" data-target-y="100" data-target-h="148" />
                 <text class="svg-bar-val" x="343" y="236" text-anchor="middle" font-size="12" font-weight="700" fill="#DDF924" data-target="8.88">+0.00%</text>
                 <line x1="343" y1="248" x2="343" y2="253" stroke="#DDF924" stroke-width="1.5" />
                 <text x="343" y="270" text-anchor="middle" font-size="11.5" font-weight="700" fill="#DDF924" data-i18n="svg_x2">Balanced (0.18)</text>
 
-                <rect class="svg-bar" x="417" y="248" width="58" height="0" rx="2" fill="#3C9D8B" stroke="#5AC2AE" stroke-width="1" data-target-y="95.5" data-target-h="152.5" />
+                <rect class="svg-bar" data-cas="0.22" tabindex="0" role="button" aria-label="CAS 0.22" x="417" y="248" width="58" height="0" rx="2" fill="#3C9D8B" stroke="#5AC2AE" stroke-width="1" data-target-y="95.5" data-target-h="152.5" />
                 <text class="svg-bar-val" x="446" y="236" text-anchor="middle" font-size="11.5" font-weight="600" fill="#E4E4E7" data-target="9.15">+0.00%</text>
                 <line x1="446" y1="248" x2="446" y2="253" stroke="#525252" stroke-width="1.5" />
                 <text x="446" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#E4E4E7" data-i18n="svg_x3">Strong (0.22)</text>
 
-                <rect class="svg-bar" x="520" y="248" width="58" height="0" rx="2" fill="#63B36C" stroke="#85D18E" stroke-width="1" data-target-y="93" data-target-h="155" />
+                <rect class="svg-bar" data-cas="0.24" tabindex="0" role="button" aria-label="CAS 0.24" x="520" y="248" width="58" height="0" rx="2" fill="#63B36C" stroke="#85D18E" stroke-width="1" data-target-y="93" data-target-h="155" />
                 <text class="svg-bar-val" x="549" y="236" text-anchor="middle" font-size="11.5" font-weight="600" fill="#E4E4E7" data-target="9.30">+0.00%</text>
                 <line x1="549" y1="248" x2="549" y2="253" stroke="#525252" stroke-width="1.5" />
                 <text x="549" y="270" text-anchor="middle" font-size="11.5" font-weight="500" fill="#E4E4E7" data-i18n="svg_x4">Max (0.24)</text>
 
                 <text x="343" y="298" text-anchor="middle" font-size="11.5" font-weight="600" fill="#A1A1AA" data-i18n="svg_xaxis">Sharpening Strength</text>
               </svg>
+            </div>
+            <div class="cas-inspector" id="casInspector" aria-live="polite">
+              Balanced (0.18) · Tenengrad +8.88% · Flat Noise +1.93 (Optimal)
             </div>
           </div>
         </div>
@@ -472,10 +489,17 @@
     </div>
 
     <div id="coFormPane">
-      <div class="co-plan-tabs" role="tablist" aria-label="Select plan">
-        <button type="button" class="co-plan-tab" data-plan-tab="starter">Starter</button>
-        <button type="button" class="co-plan-tab" data-plan-tab="pro">Pro Studio</button>
-        <button type="button" class="co-plan-tab" data-plan-tab="api">Team API</button>
+      <div class="co-top-controls">
+        <div class="co-plan-tabs" role="tablist" aria-label="Select plan">
+          <button type="button" class="co-plan-tab" data-plan-tab="starter">Starter</button>
+          <button type="button" class="co-plan-tab" data-plan-tab="pro">Pro Studio</button>
+          <button type="button" class="co-plan-tab" data-plan-tab="api">Team API</button>
+        </div>
+
+        <div class="billing-toggle co-cycle-toggle" role="group" aria-label="Modal billing cycle">
+          <button type="button" id="coMonthlyBtn" class="bill-btn co-cycle-btn active" data-cycle="monthly" data-i18n="bill_monthly">Monthly</button>
+          <button type="button" id="coAnnualBtn" class="bill-btn co-cycle-btn" data-cycle="annual" data-i18n="bill_annual">Annual (-20%)</button>
+        </div>
       </div>
 
       <div class="co-summary-box">

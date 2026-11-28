@@ -110,6 +110,36 @@ body {
   gap: 10px;
 }
 
+.mobile-menu-btn {
+  display: none;
+  padding: 7px 11px;
+  font-size: 0.95rem;
+}
+
+.mobile-nav {
+  display: none;
+  border-top: 1px solid var(--border);
+  background: var(--bg-subtle);
+  padding: 10px 24px 14px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.mobile-nav:not([hidden]) {
+  display: flex;
+}
+
+.mobile-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.mobile-nav a:hover {
+  color: var(--ink);
+}
+
 /* Buttons */
 .btn-primary,
 .btn-secondary,
@@ -513,6 +543,35 @@ body {
   color: var(--accent);
 }
 
+.qa-stage-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.stage-pill {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 6px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  transition: all 0.15s ease;
+}
+
+.stage-pill.running {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.stage-pill.done {
+  border-color: rgba(52, 211, 153, 0.35);
+  color: #a7f3d0;
+}
+
 .qa-demo-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -677,6 +736,35 @@ body {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.svg-bar {
+  cursor: pointer;
+  transition: opacity 0.15s ease, stroke-width 0.15s ease;
+}
+
+.svg-bar:hover,
+.svg-bar:focus-visible {
+  opacity: 0.9;
+  stroke: #ffffff;
+  stroke-width: 1.8;
+  outline: none;
+}
+
+.svg-bar.is-selected {
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.cas-inspector {
+  margin-top: 10px;
+  padding: 9px 12px;
+  border-radius: 7px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--accent);
 }
 
 /* 4. Cloud Stack & Pricing */
@@ -1111,11 +1199,20 @@ body {
   border-color: var(--border-hover);
 }
 
+.co-top-controls {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
 .co-plan-tabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
-  margin-bottom: 14px;
+}
+
+.co-cycle-toggle {
+  justify-self: start;
 }
 
 .co-plan-tab {
@@ -1285,6 +1382,10 @@ body {
 
   .nav-links {
     display: none;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
   }
 }
 

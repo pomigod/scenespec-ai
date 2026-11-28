@@ -52,6 +52,12 @@ const I18N = {
     demo_title: "Test how CutGate AI gates a 480p draft",
     demo_tab_fail: "Sample A · Broken Draft",
     demo_tab_pass: "Sample B · Clean Draft",
+    demo_run_btn: "Run Gate Scan",
+    demo_scanning: "SCANNING...",
+    demo_scanning_msg: "Running VFR pts_time cadence & Gemini 4x4 continuity audit...",
+    demo_st1: "1. VFR pts_time",
+    demo_st2: "2. Gemini 4x4 Grid",
+    demo_st3: "3. CAS + Audio Gate",
     demo_m1_lbl: "Source 480p Clip",
     demo_m2_lbl: "VFR Frame Timing",
     demo_m3_lbl: "Gemini 4x4 Prop Audit",
@@ -68,7 +74,7 @@ const I18N = {
     g3_lbl: "Average A/V Sync Offset",
     g3_hint: "Well below the 50 ms broadcast perception limit",
     cas_title: "Sharpening Strength Comparison (AMD CAS)",
-    cas_note: "0.22–0.24 increases flat-area grain; 0.18 hits +8.88% clarity cleanly",
+    cas_note: "Click any bar to inspect sharpness vs. flat-area noise tradeoff",
     svg_yaxis: "Edge Clarity Gain (%)",
     svg_badge: "Recommended: 0.18",
     svg_x0: "Off (0.0)",
@@ -199,6 +205,12 @@ const I18N = {
     demo_title: "CutGate AI가 480p 초안을 검수하는 과정을 직접 확인하세요",
     demo_tab_fail: "샘플 A · 불량 초안",
     demo_tab_pass: "샘플 B · 정상 초안",
+    demo_run_btn: "게이트 스캔 실행",
+    demo_scanning: "스캔 중...",
+    demo_scanning_msg: "VFR pts_time 케이던스 및 Gemini 4x4 연속성 검수를 실행 중입니다...",
+    demo_st1: "1. VFR pts_time",
+    demo_st2: "2. Gemini 4x4 그리드",
+    demo_st3: "3. CAS · 오디오 게이트",
     demo_m1_lbl: "입력 480p 클립",
     demo_m2_lbl: "VFR 프레임 타이밍",
     demo_m3_lbl: "Gemini 4x4 소품 검수",
@@ -215,7 +227,7 @@ const I18N = {
     g3_lbl: "평균 오디오·영상 싱크 오차",
     g3_hint: "사람이 인지하는 50 ms 기준보다 훨씬 낮은 오차",
     cas_title: "샤프닝 강도별 비교 (AMD CAS)",
-    cas_note: "0.22–0.24 구간은 배경 노이즈가 증가하며, 0.18이 노이즈 없이 +8.88% 선명도를 달성하는 최적점입니다",
+    cas_note: "막대를 클릭하면 선명도 개선과 배경 노이즈 수치를 바로 비교할 수 있습니다",
     svg_yaxis: "선명도 개선폭 (%)",
     svg_badge: "권장 강도: 0.18",
     svg_x0: "꺼짐 (0.0)",
@@ -338,6 +350,23 @@ const DEMO_SAMPLES = {
   }
 };
 
+const CAS_DETAILS = {
+  en: {
+    "0.0": "Off (0.0) · Tenengrad +0.00% · Flat Noise +0.00 (Unsharpened baseline)",
+    "0.14": "Light (0.14) · Tenengrad +8.65% · Flat Noise +1.52 (Soft enhancement)",
+    "0.18": "Balanced (0.18) · Tenengrad +8.88% · Flat Noise +1.93 (Optimal)",
+    "0.22": "Strong (0.22) · Tenengrad +9.15% · Flat Noise +2.41 (Background grain rises)",
+    "0.24": "Max (0.24) · Tenengrad +9.30% · Flat Noise +2.78 (Excessive grain)"
+  },
+  ko: {
+    "0.0": "꺼짐 (0.0) · 선명도 +0.00% · 배경 노이즈 +0.00 (원본 기준)",
+    "0.14": "약함 (0.14) · 선명도 +8.65% · 배경 노이즈 +1.52 (부드러운 보정)",
+    "0.18": "최적 (0.18) · 선명도 +8.88% · 배경 노이즈 +1.93 (권장 균형점)",
+    "0.22": "강함 (0.22) · 선명도 +9.15% · 배경 노이즈 +2.41 (배경 그레인 상승)",
+    "0.24": "최대 (0.24) · 선명도 +9.30% · 배경 노이즈 +2.78 (과도한 노이즈)"
+  }
+};
+
 const PLANS = {
   starter: {
     name: "Starter",
@@ -367,12 +396,15 @@ const PLANS = {
 
 let currentLang = "en";
 let currentDemo = "fail";
+let currentCas = "0.18";
 let currentCycle = "monthly";
 let currentPlan = "pro";
 let lastOrderText = "";
+let scanTimer = null;
 
-function renderDemo() {
+function renderDemo(animateScan = false) {
   const sample = DEMO_SAMPLES[currentLang][currentDemo];
+  const dict = I18N[currentLang];
   const clipEl = document.getElementById("demoClipVal");
   const vfrEl = document.getElementById("demoVfrVal");
   const propEl = document.getElementById("demoPropVal");
@@ -380,22 +412,64 @@ function renderDemo() {
   const badgeEl = document.getElementById("demoBadge");
   const sumEl = document.getElementById("demoSummary");
   const barEl = document.getElementById("demoVerdictBar");
-
-  if (clipEl) clipEl.textContent = sample.clip;
-  if (vfrEl) vfrEl.textContent = sample.vfr;
-  if (propEl) propEl.textContent = sample.prop;
-  if (outEl) outEl.textContent = sample.out;
-  if (badgeEl) badgeEl.textContent = sample.badge;
-  if (sumEl) sumEl.textContent = sample.summary;
-  if (barEl) {
-    barEl.classList.toggle("is-pass", sample.pass);
-    barEl.classList.toggle("is-fail", !sample.pass);
-  }
+  const pills = [
+    document.getElementById("stagePill1"),
+    document.getElementById("stagePill2"),
+    document.getElementById("stagePill3")
+  ];
 
   document.querySelectorAll(".demo-tab").forEach((btn) => {
     const active = btn.getAttribute("data-sample") === currentDemo;
     btn.classList.toggle("active", active);
     btn.setAttribute("aria-selected", active ? "true" : "false");
+  });
+
+  if (scanTimer) {
+    clearTimeout(scanTimer);
+    scanTimer = null;
+  }
+
+  const applyFinal = () => {
+    pills.forEach((p) => {
+      if (!p) return;
+      p.classList.remove("running");
+      p.classList.add("done");
+    });
+    if (clipEl) clipEl.textContent = sample.clip;
+    if (vfrEl) vfrEl.textContent = sample.vfr;
+    if (propEl) propEl.textContent = sample.prop;
+    if (outEl) outEl.textContent = sample.out;
+    if (badgeEl) badgeEl.textContent = sample.badge;
+    if (sumEl) sumEl.textContent = sample.summary;
+    if (barEl) {
+      barEl.classList.toggle("is-pass", sample.pass);
+      barEl.classList.toggle("is-fail", !sample.pass);
+    }
+  };
+
+  if (!animateScan) {
+    applyFinal();
+    return;
+  }
+
+  if (clipEl) clipEl.textContent = sample.clip;
+  if (badgeEl) badgeEl.textContent = dict.demo_scanning;
+  if (sumEl) sumEl.textContent = dict.demo_scanning_msg;
+  pills.forEach((p) => {
+    if (!p) return;
+    p.classList.remove("done");
+    p.classList.add("running");
+  });
+  scanTimer = setTimeout(applyFinal, 220);
+}
+
+function renderCasInspector() {
+  const el = document.getElementById("casInspector");
+  if (el && CAS_DETAILS[currentLang][currentCas]) {
+    el.textContent = CAS_DETAILS[currentLang][currentCas];
+  }
+  document.querySelectorAll("#casMiniChart .svg-bar").forEach((bar) => {
+    bar.classList.toggle("is-selected", bar.getAttribute("data-cas") === currentCas);
   });
 }
 
@@ -439,6 +513,9 @@ function renderCheckoutPlan() {
   document.querySelectorAll(".co-plan-tab").forEach((btn) => {
     btn.classList.toggle("active", btn.getAttribute("data-plan-tab") === currentPlan);
   });
+  document.querySelectorAll(".co-cycle-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.getAttribute("data-cycle") === currentCycle);
+  });
 }
 
 function openCheckout(planKey) {
@@ -449,6 +526,17 @@ function openCheckout(planKey) {
   const recPane = document.getElementById("coReceiptPane");
   if (formPane) formPane.hidden = false;
   if (recPane) recPane.hidden = true;
+
+  const coEmailInput = document.getElementById("coEmail");
+  if (coEmailInput && !coEmailInput.value.trim()) {
+    try {
+      const savedEmail = localStorage.getItem("cutgate_beta_email");
+      if (savedEmail) coEmailInput.value = savedEmail;
+    } catch {
+      // ignore storage errors
+    }
+  }
+
   renderCheckoutPlan();
   const modal = document.getElementById("checkoutModal");
   if (modal && typeof modal.showModal === "function") {
@@ -485,7 +573,8 @@ function applyLanguage(lang) {
   if (toggleBtn) {
     toggleBtn.textContent = lang === "en" ? "한국어" : "English";
   }
-  renderDemo();
+  renderDemo(false);
+  renderCasInspector();
   renderPricingDisplay();
   renderCheckoutPlan();
 }
@@ -643,7 +732,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderWaitlistFeedback(savedEmail);
     }
   } catch {
-    // ignore storage errors in restricted environments
+    // ignore storage errors
   }
 
   document.getElementById("langToggle")?.addEventListener("click", () => {
@@ -658,12 +747,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const mobileBtn = document.getElementById("mobileMenuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+  mobileBtn?.addEventListener("click", () => {
+    if (!mobileNav) return;
+    const willOpen = mobileNav.hidden;
+    mobileNav.hidden = !willOpen;
+    mobileBtn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+  });
+  mobileNav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileNav.hidden = true;
+      mobileBtn?.setAttribute("aria-expanded", "false");
+    });
+  });
+
   document.querySelectorAll(".demo-tab").forEach((btn) => {
     btn.addEventListener("click", () => {
       const sample = btn.getAttribute("data-sample");
       if (sample === "fail" || sample === "pass") {
         currentDemo = sample;
-        renderDemo();
+        renderDemo(true);
+      }
+    });
+  });
+
+  document.getElementById("demoRunBtn")?.addEventListener("click", () => {
+    renderDemo(true);
+  });
+
+  document.querySelectorAll("#casMiniChart .svg-bar").forEach((bar) => {
+    const selectBar = () => {
+      const cas = bar.getAttribute("data-cas");
+      if (cas) {
+        currentCas = cas;
+        renderCasInspector();
+      }
+    };
+    bar.addEventListener("click", selectBar);
+    bar.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        selectBar();
       }
     });
   });
