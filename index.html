@@ -478,12 +478,12 @@
     </div>
   </footer>
 
-  <!-- Workspace & Billing Activation Modal -->
+  <!-- Private Beta Plan Request Modal -->
   <dialog id="checkoutModal" class="info-modal checkout-modal" aria-labelledby="coTitle">
     <div class="co-header">
       <div>
-        <p class="co-kicker" data-i18n="co_kicker">Workspace Activation</p>
-        <h3 id="coTitle" data-i18n="co_title">Configure Your CutGate AI Plan</h3>
+        <p class="co-kicker" data-i18n="co_kicker">Private Beta Request</p>
+        <h3 id="coTitle" data-i18n="co_title">Select Your CutGate AI Plan</h3>
       </div>
       <button type="button" class="co-close close-modal" aria-label="Close">×</button>
     </div>
@@ -509,7 +509,7 @@
         </div>
         <div class="co-price-col">
           <span class="co-price" id="coPlanPrice">$3.90/mo</span>
-          <span class="co-due" id="coDueNote" data-i18n="co_due_note">$0 due today (Private Beta)</span>
+          <span class="co-due" id="coDueNote" data-i18n="co_due_note">Private Beta · $0 billed online</span>
         </div>
       </div>
 
@@ -522,7 +522,7 @@
         <div class="co-row">
           <label class="co-field">
             <span data-i18n="co_lbl_team">Studio / Company Name</span>
-            <input id="coTeam" type="text" placeholder="CutGate Studio" />
+            <input id="coTeam" type="text" placeholder="Optional" />
           </label>
           <label class="co-field">
             <span data-i18n="co_lbl_engine">Primary Video Engine</span>
@@ -537,29 +537,29 @@
         </div>
 
         <label class="co-field" id="coBillingWrap">
-          <span data-i18n="co_lbl_billing">Billing &amp; Checkout Preference</span>
+          <span data-i18n="co_lbl_billing">Preferred Billing Setup</span>
           <select id="coBilling">
-            <option value="Beta Card / Stripe Link on Provisioning" data-i18n="co_bill_opt1">Card Checkout Link (Stripe / Mastercard) on Provisioning</option>
-            <option value="B2B Invoice on Activation" data-i18n="co_bill_opt2">B2B Invoice upon Workspace Activation</option>
+            <option value="Invoice after beta onboarding" data-i18n="co_bill_opt1">Invoice after beta onboarding</option>
+            <option value="Payment link after beta approval" data-i18n="co_bill_opt2">Payment link after beta approval</option>
           </select>
         </label>
 
-        <p class="co-note" data-i18n="co_security_note">No card numbers are collected on this preview page. Verified workspaces receive a secure Stripe / Mastercard checkout link or invoice upon provisioning.</p>
+        <p class="co-note" data-i18n="co_security_note">CutGate AI is in Private Beta and does not process online card payments on this static page. Submitting prepares your request to send directly to hwangjin@cutgateai.com.</p>
 
         <div class="co-actions">
           <button type="button" class="btn-ghost close-modal" data-i18n="close_btn">Close</button>
-          <button type="submit" class="btn-primary" id="coSubmitBtn" data-i18n="co_submit">Activate Workspace Request</button>
+          <button type="submit" class="btn-primary" id="coSubmitBtn" data-i18n="co_submit">Prepare Beta Request</button>
         </div>
       </form>
     </div>
 
     <div id="coReceiptPane" hidden>
       <div class="co-receipt">
-        <div class="co-receipt-badge" data-i18n="co_rec_badge">ORDER RECORDED · PRIVATE BETA</div>
-        <p class="co-receipt-row"><span data-i18n="co_rec_id">Reference ID</span><strong class="mono" id="recId"></strong></p>
+        <div class="co-receipt-badge" data-i18n="co_rec_badge">REQUEST READY · SEND VIA EMAIL</div>
         <p class="co-receipt-row"><span data-i18n="co_rec_plan">Plan &amp; Cycle</span><strong id="recPlan"></strong></p>
         <p class="co-receipt-row"><span data-i18n="co_rec_email">Workspace Email</span><strong class="mono" id="recEmail"></strong></p>
-        <p class="co-receipt-row"><span data-i18n="co_rec_bill">Billing Mode</span><strong id="recBilling"></strong></p>
+        <p class="co-receipt-row"><span data-i18n="co_rec_team">Team &amp; Engine</span><strong id="recTeam"></strong></p>
+        <p class="co-receipt-row"><span data-i18n="co_rec_bill">Billing Preference</span><strong id="recBilling"></strong></p>
       </div>
       <div class="co-receipt-actions">
         <button type="button" class="btn-secondary btn-sm" id="copyOrderBtn" data-i18n="co_copy_rec">Copy Summary</button>

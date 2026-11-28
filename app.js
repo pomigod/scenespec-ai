@@ -125,24 +125,25 @@ const I18N = {
     footer_gh: "CutGate AI on GitHub",
     footer_privacy: "Privacy Policy",
     footer_terms: "Terms of Service",
-    co_kicker: "Workspace Activation",
-    co_title: "Configure Your CutGate AI Plan",
-    co_due_note: "$0 due today (Private Beta)",
-    co_free_note: "Free Tier — No payment required",
+    co_kicker: "Private Beta Request",
+    co_title: "Select Your CutGate AI Plan",
+    co_due_note: "Private Beta · $0 billed online",
+    co_free_note: "Free Tier · No billing required",
     co_lbl_email: "Work Email",
     co_lbl_team: "Studio / Company Name",
+    co_team_placeholder: "Optional",
     co_lbl_engine: "Primary Video Engine",
-    co_lbl_billing: "Billing & Checkout Preference",
-    co_bill_opt1: "Card Checkout Link (Stripe / Mastercard) on Provisioning",
-    co_bill_opt2: "B2B Invoice upon Workspace Activation",
+    co_lbl_billing: "Preferred Billing Setup",
+    co_bill_opt1: "Invoice after beta onboarding",
+    co_bill_opt2: "Payment link after beta approval",
     co_security_note:
-      "No card numbers are collected on this preview page. Verified workspaces receive a secure Stripe / Mastercard checkout link or invoice upon provisioning.",
-    co_submit: "Activate Workspace Request",
-    co_rec_badge: "ORDER RECORDED · PRIVATE BETA",
-    co_rec_id: "Reference ID",
+      "CutGate AI is in Private Beta and does not process online card payments on this static page. Submitting prepares your request to send directly to hwangjin@cutgateai.com.",
+    co_submit: "Prepare Beta Request",
+    co_rec_badge: "REQUEST READY · SEND VIA EMAIL",
     co_rec_plan: "Plan & Cycle",
     co_rec_email: "Workspace Email",
-    co_rec_bill: "Billing Mode",
+    co_rec_team: "Team & Engine",
+    co_rec_bill: "Billing Preference",
     co_copy_rec: "Copy Summary",
     co_send_mail: "Send Activation Email →",
     co_edit_btn: "Change Plan",
@@ -278,26 +279,27 @@ const I18N = {
     footer_gh: "CutGate AI GitHub 보기",
     footer_privacy: "개인정보처리방침",
     footer_terms: "이용약관",
-    co_kicker: "워크스페이스 활성화",
-    co_title: "CutGate AI 플랜 설정 및 결제 요청",
-    co_due_note: "오늘 결제 금액 $0 (프라이빗 베타)",
-    co_free_note: "무료 플랜 — 결제 정보 불필요",
+    co_kicker: "프라이빗 베타 신청",
+    co_title: "CutGate AI 플랜 신청",
+    co_due_note: "프라이빗 베타 · 온라인 결제 미과금",
+    co_free_note: "무료 플랜 · 결제 불필요",
     co_lbl_email: "업무용 이메일",
     co_lbl_team: "스튜디오 / 회사명",
+    co_team_placeholder: "선택 입력",
     co_lbl_engine: "주력 영상 생성 모델",
-    co_lbl_billing: "결제 및 청구 방식",
-    co_bill_opt1: "워크스페이스 승인 후 카드 결제 링크(Stripe / 해외겸용 카드) 발송",
-    co_bill_opt2: "활성화 시 B2B 인보이스 청구",
+    co_lbl_billing: "선호 청구 방식",
+    co_bill_opt1: "온보딩 승인 후 인보이스 안내",
+    co_bill_opt2: "베타 승인 후 결제 링크 안내",
     co_security_note:
-      "이 페이지에서는 실제 카드 번호를 직접 수집하지 않습니다. 워크스페이스 승인 시 안전한 Stripe / 해외겸용 카드 결제 링크 또는 인보이스가 발송됩니다.",
-    co_submit: "워크스페이스 활성화 요청",
-    co_rec_badge: "주문 요청 기록 완료 · 프라이빗 베타",
-    co_rec_id: "접수 번호",
+      "CutGate AI는 현재 프라이빗 베타 중이며 이 정적 페이지에서 온라인 카드 결제를 직접 처리하지 않습니다. 신청 시 hwangjin@cutgateai.com 으로 보낼 요청서가 준비됩니다.",
+    co_submit: "신청 요청서 준비",
+    co_rec_badge: "요청서 준비 완료 · 이메일 발송 필요",
     co_rec_plan: "선택 플랜 · 주기",
     co_rec_email: "워크스페이스 이메일",
-    co_rec_bill: "결제 방식",
+    co_rec_team: "팀 · 생성 모델",
+    co_rec_bill: "청구 방식",
     co_copy_rec: "요청 내역 복사",
-    co_send_mail: "활성화 메일 바로 보내기 →",
+    co_send_mail: "이메일로 바로 보내기 →",
     co_edit_btn: "플랜 변경",
     privacy_body:
       "시행일 2026년. CutGate AI(cutgateai.com)는 프라이빗 베타 안내 및 기술 지원 응대를 위해 사용자가 직접 입력한 업무용 이메일만 수집하며, 제3자 광고주에게 판매·공유하지 않습니다. QA 과정에서 처리되는 영상 초안은 Google Cloud Vertex AI 및 AWS 인프라에서만 안전하게 처리되며 워크스페이스 보관 정책에 따라 파기됩니다. 열람·삭제 요청은 contact@cutgateai.com 또는 hwangjin@cutgateai.com 으로 문의해 주세요.",
@@ -565,6 +567,10 @@ function applyLanguage(lang) {
   if (coEmailInput && dict.email_placeholder) {
     coEmailInput.placeholder = dict.email_placeholder;
   }
+  const coTeamInput = document.getElementById("coTeam");
+  if (coTeamInput && dict.co_team_placeholder) {
+    coTeamInput.placeholder = dict.co_team_placeholder;
+  }
   const copyBtn = document.getElementById("copyEmailBtn");
   if (copyBtn && !copyBtn.classList.contains("copied")) {
     copyBtn.textContent = dict.copy_btn;
@@ -830,7 +836,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!emailEl || !emailEl.value.trim()) return;
 
     const email = emailEl.value.trim();
-    const team = (teamEl?.value || "").trim() || "Independent Studio";
+    const team = (teamEl?.value || "").trim() || "-";
     const engine = engineEl?.value || "Multi-Model";
     const plan = PLANS[currentPlan];
     const dict = I18N[currentLang];
@@ -838,16 +844,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const priceLabel = `${plan[currentCycle]}${unit}`;
     const billingMode = plan.isFree
       ? dict.co_free_note
-      : billingEl?.options[billingEl.selectedIndex]?.text || "Invoice / Card Link";
-    const refId = `CG-2026-${currentPlan.toUpperCase()}-${Math.floor(1000 + Math.random() * 9000)}`;
+      : billingEl?.options[billingEl.selectedIndex]?.text || "Invoice after beta onboarding";
 
-    const orderPayload = { refId, plan: plan.name, priceLabel, cycle: currentCycle, email, team, engine, billingMode };
-    lastOrderText = `Ref: ${refId}
-Plan: ${plan.name} (${priceLabel})
-Email: ${email}
-Team: ${team}
-Engine: ${engine}
-Billing: ${billingMode}`;
+    const orderPayload = { plan: plan.name, priceLabel, cycle: currentCycle, email, team, engine, billingMode };
+    lastOrderText = [
+      `Plan: ${plan.name} (${priceLabel})`,
+      `Email: ${email}`,
+      `Team: ${team}`,
+      `Engine: ${engine}`,
+      `Billing: ${billingMode}`
+    ].join("\n");
 
     try {
       localStorage.setItem("cutgate_checkout_order", JSON.stringify(orderPayload));
@@ -856,25 +862,20 @@ Billing: ${billingMode}`;
       // ignore storage errors
     }
 
-    const recIdEl = document.getElementById("recId");
     const recPlanEl = document.getElementById("recPlan");
     const recEmailEl = document.getElementById("recEmail");
+    const recTeamEl = document.getElementById("recTeam");
     const recBillEl = document.getElementById("recBilling");
     const mailBtn = document.getElementById("sendOrderMailBtn");
 
-    if (recIdEl) recIdEl.textContent = refId;
     if (recPlanEl) recPlanEl.textContent = `${plan.name} · ${priceLabel}`;
     if (recEmailEl) recEmailEl.textContent = email;
+    if (recTeamEl) recTeamEl.textContent = `${team} · ${engine}`;
     if (recBillEl) recBillEl.textContent = billingMode;
     if (mailBtn) {
-      const subject = encodeURIComponent(`[CutGate AI] Workspace Activation (${refId})`);
+      const subject = encodeURIComponent(`[CutGate AI] Private Beta Request — ${plan.name}`);
       const body = encodeURIComponent(
-        `Hi CutGate AI team,
-
-Please provision my workspace with the following plan:
-
-${lastOrderText}
-`
+        `Hi CutGate AI team,\n\nPlease provision my Private Beta workspace:\n\n${lastOrderText}\n`
       );
       mailBtn.href = `mailto:hwangjin@cutgateai.com?subject=${subject}&body=${body}`;
     }
