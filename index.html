@@ -24,19 +24,24 @@
     "operatingSystem": "Web, Cloud API",
     "description": "Model-agnostic AI video QA, continuity gating, and mastering platform for Veo, Kling, Seedance, and Runway.",
     "offers": {
-      "@type": "AggregateOffer",
-      "priceCurrency": "USD",
-      "lowPrice": "0",
-      "highPrice": "49"
+      "@type": "OfferCatalog",
+      "name": "CutGate AI Early-Access Beta Plans",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Starter", "price": "0", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Pro Studio (Beta -79%)", "price": "3.90", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Team API (Beta -70%)", "price": "14.90", "priceCurrency": "USD" }
+      ]
     },
     "publisher": {
       "@type": "Organization",
       "name": "CutGate AI",
       "url": "https://cutgateai.com",
       "email": "contact@cutgateai.com",
+      "foundingDate": "2025-10-11",
       "founder": {
         "@type": "Person",
-        "name": "Jin Hwang"
+        "name": "Jin Hwang",
+        "jobTitle": "Founder & CEO"
       },
       "areaServed": "Global"
     }
@@ -390,16 +395,20 @@
         </div>
 
         <div class="stack-strip" aria-label="Cloud Infrastructure">
-          <span class="stack-pill primary">Google Cloud · Vertex AI &amp; Cloud Run</span>
-          <span class="stack-pill primary">AWS · EC2 GPU, Bedrock &amp; S3</span>
+          <span class="stack-pill primary">Google Cloud · Vertex AI, Cloud Run &amp; Storage</span>
+          <span class="stack-pill primary">AWS · EC2 GPU, Bedrock, Lambda &amp; S3</span>
           <span class="stack-pill">Cloud Firestore &amp; DynamoDB</span>
           <span class="stack-pill">FFmpeg 7.1 + AMD CAS</span>
         </div>
 
         <div class="cards-3">
           <article class="price-card">
-            <div class="price-head"><span class="price-tier">Starter</span></div>
+            <div class="price-head">
+              <span class="price-tier">Starter</span>
+              <span class="price-badge neutral" data-i18n="p_free_badge">Free Trial</span>
+            </div>
             <div class="price-amount"><span id="priceStarter">$0</span><span class="price-unit" data-i18n="per_mo">/mo</span></div>
+            <p class="price-save neutral" data-i18n="p1_save">No card required · Always free tier</p>
             <p class="price-for" data-i18n="p1_for">For trying out draft screening</p>
             <ul class="price-list">
               <li data-i18n="p1_1">20 draft continuity checks / mo</li>
@@ -412,9 +421,10 @@
           <article class="price-card featured">
             <div class="price-head">
               <span class="price-tier">Pro Studio</span>
-              <span class="price-badge" data-i18n="p_popular">Beta Rate</span>
+              <span class="price-badge" id="proDiscountBadge">-79% BETA</span>
             </div>
             <div class="price-amount"><s class="price-old" id="oldPro">$19</s> <span id="pricePro">$3.90</span><span class="price-unit" data-i18n="per_mo">/mo</span></div>
+            <p class="price-save" id="proSaveNote">Save $15.10/mo · Beta Launch Discount</p>
             <p class="price-for" data-i18n="p2_for">For active AI video creators &amp; studios</p>
             <ul class="price-list">
               <li data-i18n="p2_1">300 draft-to-HD checks / mo</li>
@@ -427,10 +437,11 @@
           <article class="price-card">
             <div class="price-head">
               <span class="price-tier">Team API</span>
-              <span class="price-badge" data-i18n="p_api_badge">Beta Rate</span>
+              <span class="price-badge" id="apiDiscountBadge">-70% BETA</span>
             </div>
             <div class="price-amount"><s class="price-old" id="oldApi">$49</s> <span id="priceApi">$14.90</span><span class="price-unit" data-i18n="per_mo">/mo</span></div>
-            <p class="price-for" data-i18n="p3_for">For automated studio pipelines</p>
+            <p class="price-save" id="apiSaveNote">Save $34.10/mo · Beta Launch Discount</p>
+            <p class="price-for" data-i18n="p3_for">For automated B2B &amp; studio pipelines</p>
             <ul class="price-list">
               <li data-i18n="p3_1">REST &amp; webhook QA integration</li>
               <li data-i18n="p3_2">Custom continuity rulesets</li>
@@ -454,14 +465,14 @@
           <div class="founder-card">
             <div>
               <h3 data-i18n="team_name">CutGate AI</h3>
-              <p class="founder-role" data-i18n="team_role">Founded by Jin Hwang · South Korea</p>
+              <p class="founder-role" data-i18n="team_role">Founded Oct 2025 by Jin Hwang (CEO) · South Korea</p>
               <ul class="step-list">
                 <li data-i18n="about_b1">Model-agnostic: works with Veo, Kling, Seedance, and Runway</li>
                 <li data-i18n="about_b2">Saves render budget by catching broken clips at 480p</li>
-                <li data-i18n="about_b3">Delivers sharp, loudness-leveled 1080p masters</li>
+                <li data-i18n="about_b3">Delivers sharp, loudness-leveled 1080p masters via Web &amp; API</li>
               </ul>
             </div>
-            <div class="card-meta" data-i18n="team_meta">Private Beta · Google Cloud Vertex AI &amp; AWS</div>
+            <div class="card-meta" data-i18n="team_meta">Pre-Seed B2B &amp; Creator SaaS · Private Beta · Multi-Cloud</div>
           </div>
 
           <div class="contact-card">
@@ -539,9 +550,10 @@
         <div>
           <strong id="coPlanLabel">Pro Studio</strong>
           <p class="co-quota" id="coPlanQuota">300 draft-to-HD checks / mo · CAS 0.18 + -15.5 LUFS</p>
+          <span class="co-discount-tag" id="coDiscountTag">-79% BETA · Save $15.10/mo</span>
         </div>
         <div class="co-price-col">
-          <span class="co-price" id="coPlanPrice">$3.90/mo</span>
+          <span class="co-price"><s class="price-old" id="coOldPrice">$19</s> <span id="coPlanPrice">$3.90/mo</span></span>
           <span class="co-due" id="coDueNote" data-i18n="co_due_note">Private Beta · $0 billed online</span>
         </div>
       </div>
@@ -560,7 +572,7 @@
           <label class="co-field">
             <span data-i18n="co_lbl_engine">Primary Video Engine</span>
             <select id="coEngine">
-              <option value="Multi-Model (Veo + Kling + Seedance)">Multi-Model (All)</option>
+              <option value="Multi-Model (Veo + Kling + Seedance)" data-i18n="co_eng_all">Multi-Model (All)</option>
               <option value="Veo">Google Veo</option>
               <option value="Kling">Kling</option>
               <option value="Seedance">Seedance</option>
@@ -607,13 +619,13 @@
 
   <dialog id="privacyModal" class="info-modal">
     <h3 data-i18n="footer_privacy">Privacy Policy</h3>
-    <p data-i18n="privacy_body">Effective 2026. CutGate AI (cutgateai.com) collects only the work email you submit for private beta onboarding and support correspondence. We never sell or share personal data with third-party advertisers. Media drafts processed during QA are handled solely via our Google Cloud Vertex AI and AWS infrastructure and purged per workspace retention settings. To request access or deletion, contact contact@cutgateai.com or hwangjin@cutgateai.com.</p>
+    <p data-i18n="privacy_body">Effective Nov 2026. CutGate AI (cutgateai.com, South Korea) collects only the work email you submit for private beta onboarding and support correspondence. We use zero third-party ad trackers or cross-site profiling cookies, and never sell or share data with advertisers. Media drafts processed during QA are handled solely via our Google Cloud and AWS infrastructure and purged per workspace retention settings. Contact contact@cutgateai.com or hwangjin@cutgateai.com for access or deletion.</p>
     <button type="button" class="btn-secondary btn-sm close-modal" data-i18n="close_btn">Close</button>
   </dialog>
 
   <dialog id="termsModal" class="info-modal">
     <h3 data-i18n="footer_terms">Terms of Service</h3>
-    <p data-i18n="terms_body">Effective 2026. CutGate AI is currently offered in Private Beta on an as-is basis for generative video QA, continuity verification, and mastering. Workspace owners retain 100% ownership and intellectual property rights over all uploaded reference clips, 480p drafts, QA logs, and 1080p mastered exports. Questions regarding API usage or enterprise terms can be directed to contact@cutgateai.com.</p>
+    <p data-i18n="terms_body">Effective Nov 2026. CutGate AI is an independent B2B and creator SaaS platform (founded Oct 2025, South Korea) offered in Private Beta for generative video QA, continuity verification, and mastering. Workspace owners retain 100% ownership and IP rights over all uploaded reference clips, 480p drafts, QA logs, and 1080p masters. Prohibited uses include unlawful content, unauthorized redistribution, or violation of upstream cloud Acceptable Use Policies. Contact contact@cutgateai.com.</p>
     <button type="button" class="btn-secondary btn-sm close-modal" data-i18n="close_btn">Close</button>
   </dialog>
 

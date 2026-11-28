@@ -93,8 +93,8 @@ const I18N = {
     bill_annual: "Annual (-20%)",
     per_mo: "/mo",
     per_yr: "/yr",
-    p_popular: "Beta Rate",
-    p_api_badge: "Beta Rate",
+    p_free_badge: "Free Trial",
+    p1_save: "No card required · Always free tier",
     p1_for: "For trying out draft screening",
     p1_1: "20 draft continuity checks / mo",
     p1_2: "3 adaptive 1080p masters",
@@ -105,7 +105,7 @@ const I18N = {
     p2_2: "CAS 0.18 sharpening & -15.5 LUFS audio",
     p2_3: "SHA-256 segment cache & QA summary",
     p_cta_pro: "Join Pro Beta",
-    p3_for: "For automated studio pipelines",
+    p3_for: "For automated B2B & studio pipelines",
     p3_1: "REST & webhook QA integration",
     p3_2: "Custom continuity rulesets",
     p3_3: "Signed X-Ray QA audit logs",
@@ -113,11 +113,11 @@ const I18N = {
     founder_kicker: "Company & Early Access",
     founder_title: "Start screening drafts with CutGate AI",
     team_name: "CutGate AI",
-    team_role: "Founded by Jin Hwang · South Korea",
+    team_role: "Founded Oct 2025 by Jin Hwang (CEO) · South Korea",
     about_b1: "Model-agnostic: works with Veo, Kling, Seedance, and Runway",
     about_b2: "Saves render budget by catching broken clips at 480p",
-    about_b3: "Delivers sharp, loudness-leveled 1080p masters",
-    team_meta: "Private Beta · Google Cloud Vertex AI & AWS",
+    about_b3: "Delivers sharp, loudness-leveled 1080p masters via Web & API",
+    team_meta: "Pre-Seed B2B & Creator SaaS · Private Beta · Multi-Cloud",
     contact_title: "Get in touch",
     contact_sub: "Copy our team email or request private beta access below.",
     copy_btn: "Copy",
@@ -137,6 +137,7 @@ const I18N = {
     co_lbl_team: "Studio / Company Name",
     co_team_placeholder: "Optional",
     co_lbl_engine: "Primary Video Engine",
+    co_eng_all: "Multi-Model (All)",
     co_lbl_billing: "Preferred Billing Setup",
     co_bill_opt1: "Invoice after beta onboarding",
     co_bill_opt2: "Payment link after beta approval",
@@ -152,9 +153,9 @@ const I18N = {
     co_send_mail: "Send Activation Email →",
     co_edit_btn: "Change Plan",
     privacy_body:
-      "Effective 2026. CutGate AI (cutgateai.com) collects only the work email you submit for private beta onboarding and support correspondence. We never sell or share personal data with third-party advertisers. Media drafts processed during QA are handled solely via our Google Cloud Vertex AI and AWS infrastructure and purged per workspace retention settings. To request access or deletion, contact contact@cutgateai.com or hwangjin@cutgateai.com.",
+      "Effective Nov 2026. CutGate AI (cutgateai.com, South Korea) collects only the work email you submit for private beta onboarding and support correspondence. We use zero third-party ad trackers or cross-site profiling cookies, and never sell or share data with advertisers. Media drafts processed during QA are handled solely via our Google Cloud and AWS infrastructure and purged per workspace retention settings. Contact contact@cutgateai.com or hwangjin@cutgateai.com for access or deletion.",
     terms_body:
-      "Effective 2026. CutGate AI is currently offered in Private Beta on an as-is basis for generative video QA, continuity verification, and mastering. Workspace owners retain 100% ownership and intellectual property rights over all uploaded reference clips, 480p drafts, QA logs, and 1080p mastered exports. Questions regarding API usage or enterprise terms can be directed to contact@cutgateai.com.",
+      "Effective Nov 2026. CutGate AI is an independent B2B and creator SaaS platform (founded Oct 2025, South Korea) offered in Private Beta for generative video QA, continuity verification, and mastering. Workspace owners retain 100% ownership and IP rights over all uploaded reference clips, 480p drafts, QA logs, and 1080p masters. Prohibited uses include unlawful content, unauthorized redistribution, or violation of upstream cloud Acceptable Use Policies. Contact contact@cutgateai.com.",
     close_btn: "Close"
   },
   ko: {
@@ -251,8 +252,8 @@ const I18N = {
     bill_annual: "연간 (-20%)",
     per_mo: "/월",
     per_yr: "/년",
-    p_popular: "베타 특가",
-    p_api_badge: "베타 특가",
+    p_free_badge: "무료 체험",
+    p1_save: "카드 등록 불필요 · 상시 무료 티어",
     p1_for: "초안 검수 기능 체험용",
     p1_1: "월 20회 초안 연속성 검수",
     p1_2: "월 3회 1080p 마스터링",
@@ -263,7 +264,7 @@ const I18N = {
     p2_2: "CAS 0.18 보정 · -15.5 LUFS 음량",
     p2_3: "SHA-256 세그먼트 캐시 · QA 요약",
     p_cta_pro: "Pro 베타 신청",
-    p3_for: "자동화된 스튜디오 파이프라인용",
+    p3_for: "자동화된 B2B·스튜디오 파이프라인용",
     p3_1: "REST · 웹훅 QA API 연동",
     p3_2: "팀 맞춤형 연속성 검수 규칙",
     p3_3: "서명된 X-Ray QA 감사 로그",
@@ -271,11 +272,11 @@ const I18N = {
     founder_kicker: "기업 정보 · 얼리 액세스",
     founder_title: "CutGate AI로 초안 검수를 바로 시작하세요",
     team_name: "CutGate AI",
-    team_role: "설립자 황진 (Jin Hwang) · 대한민국",
+    team_role: "2025년 10월 설립 · 대표 황진 (Jin Hwang) · 대한민국",
     about_b1: "모델 무관 호환: Veo, Kling, Seedance, Runway 지원",
     about_b2: "480p 단계에서 불량 클립을 걸러내 렌더링 예산 절감",
-    about_b3: "선명하고 음량이 고른 1080p 마스터 자동 출력",
-    team_meta: "프라이빗 베타 · Google Cloud Vertex AI & AWS 기반",
+    about_b3: "웹 브라우저 및 REST API로 선명한 1080p 마스터 제공",
+    team_meta: "프리시드 B2B·크리에이터 SaaS · 프라이빗 베타 · 멀티클라우드",
     contact_title: "문의 및 베타 신청",
     contact_sub: "팀 이메일을 복사하거나 아래에서 프라이빗 베타를 신청하세요.",
     copy_btn: "복사",
@@ -295,6 +296,7 @@ const I18N = {
     co_lbl_team: "스튜디오 / 회사명",
     co_team_placeholder: "선택 입력",
     co_lbl_engine: "주력 영상 생성 모델",
+    co_eng_all: "전체 모델 (Veo · Kling · Seedance · Runway)",
     co_lbl_billing: "선호 청구 방식",
     co_bill_opt1: "온보딩 승인 후 인보이스 안내",
     co_bill_opt2: "베타 승인 후 결제 링크 안내",
@@ -310,9 +312,9 @@ const I18N = {
     co_send_mail: "이메일로 바로 보내기 →",
     co_edit_btn: "플랜 변경",
     privacy_body:
-      "시행일 2026년. CutGate AI(cutgateai.com)는 프라이빗 베타 안내 및 기술 지원 응대를 위해 사용자가 직접 입력한 업무용 이메일만 수집하며, 제3자 광고주에게 판매·공유하지 않습니다. QA 과정에서 처리되는 영상 초안은 Google Cloud Vertex AI 및 AWS 인프라에서만 안전하게 처리되며 워크스페이스 보관 정책에 따라 파기됩니다. 열람·삭제 요청은 contact@cutgateai.com 또는 hwangjin@cutgateai.com 으로 문의해 주세요.",
+      "시행일 2026년 11월. CutGate AI(cutgateai.com, 대한민국)는 프라이빗 베타 안내 및 기술 지원 응대를 위해 사용자가 직접 입력한 업무용 이메일만 수집합니다. 제3자 광고 추적기나 교차 사이트 프로파일링 쿠키를 사용하지 않으며 개인정보를 광고주에게 판매·공유하지 않습니다. QA 처리 중인 영상 초안은 Google Cloud 및 AWS 인프라에서만 안전하게 처리되며 보관 정책에 따라 파기됩니다. 문의: contact@cutgateai.com / hwangjin@cutgateai.com.",
     terms_body:
-      "시행일 2026년. CutGate AI는 생성형 AI 영상 QA·연속성 검증·마스터링 기능을 프라이빗 베타 형태로 제공합니다. 업로드된 모든 기준 클립, 480p 초안, QA 로그, 1080p 마스터 결과물에 대한 100% 소유권과 지식재산권은 워크스페이스 소유자에게 귀속됩니다. API 연동 및 약관 문의는 contact@cutgateai.com 으로 연락해 주세요.",
+      "시행일 2026년 11월. CutGate AI는 2025년 10월 설립된 독립 B2B·크리에이터 SaaS 플랫폼으로, 현재 프라이빗 베타 형태로 AI 영상 QA·연속성 검증·마스터링 기능을 제공합니다. 업로드된 모든 기준 클립, 480p 초안, QA 로그, 1080p 마스터 결과물의 100% 소유권과 지식재산권은 워크스페이스 소유자에게 귀속됩니다. 불법 콘텐츠 처리, 무단 재배포, 상위 클라우드 이용정책(AUP) 위반 행위는 금지됩니다. 문의: contact@cutgateai.com.",
     close_btn: "닫기"
   }
 };
@@ -382,6 +384,12 @@ const PLANS = {
     name: "Starter",
     monthly: "$0",
     annual: "$0",
+    oldMonthly: "",
+    oldAnnual: "",
+    badgeEn: { monthly: "Free Trial", annual: "Free Trial" },
+    badgeKo: { monthly: "무료 체험", annual: "무료 체험" },
+    saveEn: { monthly: "No card required · Always free tier", annual: "No card required · Always free tier" },
+    saveKo: { monthly: "카드 등록 불필요 · 상시 무료 티어", annual: "카드 등록 불필요 · 상시 무료 티어" },
     quotaEn: "20 draft checks / mo · 3 1080p masters",
     quotaKo: "월 20회 초안 검수 · 1080p 마스터 3회",
     isFree: true
@@ -390,6 +398,12 @@ const PLANS = {
     name: "Pro Studio",
     monthly: "$3.90",
     annual: "$37.40",
+    oldMonthly: "$19",
+    oldAnnual: "$228",
+    badgeEn: { monthly: "-79% BETA", annual: "-84% BETA" },
+    badgeKo: { monthly: "79% 베타 할인", annual: "84% 베타 할인" },
+    saveEn: { monthly: "Save $15.10/mo · Beta Launch Discount", annual: "Save $190.60/yr · Beta Launch Discount" },
+    saveKo: { monthly: "월 $15.10 절약 · 베타 할인 적용", annual: "연 $190.60 절약 · 베타 할인 적용" },
     quotaEn: "300 draft-to-HD checks / mo · CAS 0.18 + -15.5 LUFS",
     quotaKo: "월 300회 초안-HD 검수 · CAS 0.18 + -15.5 LUFS",
     isFree: false
@@ -398,6 +412,12 @@ const PLANS = {
     name: "Team API",
     monthly: "$14.90",
     annual: "$143.00",
+    oldMonthly: "$49",
+    oldAnnual: "$588",
+    badgeEn: { monthly: "-70% BETA", annual: "-76% BETA" },
+    badgeKo: { monthly: "70% 베타 할인", annual: "76% 베타 할인" },
+    saveEn: { monthly: "Save $34.10/mo · Beta Launch Discount", annual: "Save $445.00/yr · Beta Launch Discount" },
+    saveKo: { monthly: "월 $34.10 절약 · 베타 할인 적용", annual: "연 $445.00 절약 · 베타 할인 적용" },
     quotaEn: "REST & webhook QA · Custom rules · Signed audit logs",
     quotaKo: "REST·웹훅 연동 · 맞춤형 규칙 · 서명된 감사 로그",
     isFree: false
@@ -491,12 +511,23 @@ function renderPricingDisplay() {
   const aEl = document.getElementById("priceApi");
   const oldProEl = document.getElementById("oldPro");
   const oldApiEl = document.getElementById("oldApi");
+  const proBadgeEl = document.getElementById("proDiscountBadge");
+  const apiBadgeEl = document.getElementById("apiDiscountBadge");
+  const proSaveEl = document.getElementById("proSaveNote");
+  const apiSaveEl = document.getElementById("apiSaveNote");
 
   if (sEl) sEl.textContent = PLANS.starter[currentCycle];
   if (pEl) pEl.textContent = PLANS.pro[currentCycle];
   if (aEl) aEl.textContent = PLANS.api[currentCycle];
-  if (oldProEl) oldProEl.textContent = currentCycle === "monthly" ? "$19" : "$228";
-  if (oldApiEl) oldApiEl.textContent = currentCycle === "monthly" ? "$49" : "$588";
+  if (oldProEl) oldProEl.textContent = currentCycle === "monthly" ? PLANS.pro.oldMonthly : PLANS.pro.oldAnnual;
+  if (oldApiEl) oldApiEl.textContent = currentCycle === "monthly" ? PLANS.api.oldMonthly : PLANS.api.oldAnnual;
+
+  const badgeMap = currentLang === "en" ? "badgeEn" : "badgeKo";
+  const saveMap = currentLang === "en" ? "saveEn" : "saveKo";
+  if (proBadgeEl) proBadgeEl.textContent = PLANS.pro[badgeMap][currentCycle];
+  if (apiBadgeEl) apiBadgeEl.textContent = PLANS.api[badgeMap][currentCycle];
+  if (proSaveEl) proSaveEl.textContent = PLANS.pro[saveMap][currentCycle];
+  if (apiSaveEl) apiSaveEl.textContent = PLANS.api[saveMap][currentCycle];
 
   document.querySelectorAll(".price-unit").forEach((el) => {
     el.textContent = unit;
@@ -511,15 +542,29 @@ function renderCheckoutPlan() {
   const dict = I18N[currentLang];
   const plan = PLANS[currentPlan];
   const unit = currentCycle === "monthly" ? dict.per_mo : dict.per_yr;
+  const oldPrice = currentCycle === "monthly" ? plan.oldMonthly : plan.oldAnnual;
+  const badgeMap = currentLang === "en" ? "badgeEn" : "badgeKo";
+  const saveMap = currentLang === "en" ? "saveEn" : "saveKo";
 
   const labelEl = document.getElementById("coPlanLabel");
   const quotaEl = document.getElementById("coPlanQuota");
+  const discountTagEl = document.getElementById("coDiscountTag");
+  const oldPriceEl = document.getElementById("coOldPrice");
   const priceEl = document.getElementById("coPlanPrice");
   const dueEl = document.getElementById("coDueNote");
   const billingWrap = document.getElementById("coBillingWrap");
 
   if (labelEl) labelEl.textContent = plan.name;
   if (quotaEl) quotaEl.textContent = currentLang === "en" ? plan.quotaEn : plan.quotaKo;
+  if (discountTagEl) {
+    discountTagEl.textContent = plan.isFree
+      ? plan[saveMap][currentCycle]
+      : `${plan[badgeMap][currentCycle]} · ${plan[saveMap][currentCycle]}`;
+  }
+  if (oldPriceEl) {
+    oldPriceEl.textContent = oldPrice;
+    oldPriceEl.style.display = oldPrice ? "inline" : "none";
+  }
   if (priceEl) priceEl.textContent = `${plan[currentCycle]}${unit}`;
   if (dueEl) dueEl.textContent = plan.isFree ? dict.co_free_note : dict.co_due_note;
   if (billingWrap) billingWrap.style.display = plan.isFree ? "none" : "grid";
